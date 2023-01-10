@@ -3,6 +3,7 @@ import DesktopSidebar from "./DesktopSidebar";
 import Head from "next/head";
 import { useState } from "react";
 import MobileNavbar from "./MobileNavbar";
+import MobileSidebar from "./MobileSidebar";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
@@ -30,6 +31,13 @@ const DashboardLayout = ({
 				<DesktopNavbar />
 				<MobileNavbar setSidebarOpen={setSidebarOpen} />
 				<div className="flex flex-grow">
+				<MobileSidebar
+						sidebarOpen={sidebarOpen}
+						setSidebarOpen={setSidebarOpen}
+						primaryNavigation={primaryNavigation}
+						secondaryNavigation={secondaryNavigation}
+						classNames={classNames}
+					/>
 					<DesktopSidebar
 						primaryNavigation={primaryNavigation}
 						secondaryNavigation={secondaryNavigation}
