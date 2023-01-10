@@ -3,7 +3,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 
 const DesktopNavbar = () => {
 	return (
-		<nav className="hidden lg:flex sticky top-0 z-50 flex-wrap items-center justify-between bg-white p-6 pl-8 pr-8 shadow">
+		<nav className="sticky top-0 z-50 hidden flex-wrap items-center justify-between bg-white p-6 pl-8 pr-8 shadow lg:flex">
 			<a href="/">
 				<img src="next.svg" alt="Logo" className="h-8 cursor-pointer" />
 			</a>
