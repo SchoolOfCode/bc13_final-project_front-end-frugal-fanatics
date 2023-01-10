@@ -19,7 +19,6 @@ const Overview = () => {
 			title="Overview Page"
 		>
 			<h1 className="text-9xl">HelloWorld</h1>
-			<div className="h-96 w-96"></div>
 			<div className="h-96 w-96">
 				{/* CHART.JS TEST */}
 				<Doughnut
