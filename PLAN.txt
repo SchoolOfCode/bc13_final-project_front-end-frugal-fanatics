@@ -1,0 +1,8 @@
+PLAN
+
+Build onboarding.js component with complete form
+Landing container is the parent component
+The children components are the pages (Income, Expenses, Savings) which are rendered within that based on the State
+
+1. Render Income within onboarding.js
+2. Within Income render the appropriate components: Formsteps, FormDescription, Heading (within Form), Form (with Input and Submit button nested within), Input (with label passed down as props), and finally Submit button (with props that change the text therein)

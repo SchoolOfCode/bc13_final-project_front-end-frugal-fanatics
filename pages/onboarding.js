@@ -19,14 +19,18 @@ export default function LandingPage() {
 	return (
 		<LandingLayout>
 			<LandingContainer>
-				<FormSteps />
+			
+
+
+
+				{/* <FormSteps />
 				<FormDescription>
 					<Heading />
 				</FormDescription>
 				<Form>
 					<FormInput />
 					<SubmitButton />
-				</Form>
+				</Form> */}
 			</LandingContainer>
 		</LandingLayout>
 	);
