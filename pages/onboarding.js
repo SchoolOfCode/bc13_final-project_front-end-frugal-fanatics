@@ -8,10 +8,25 @@ import FormInput from "../components/FormInput";
 import SubmitButton from "../components/SubmitButton";
 
 export default function LandingPage() {
+
+	const [formStep, setFormStep] = useState(0);
+
+	const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
+  
+	const prevFormStep = () => setFormStep((currentStep) => currentStep - 1);
+  
+
 	return (
 		<LandingLayout>
 			<LandingContainer>
-				<h1>This is the landing page</h1>
+				<FormSteps />
+				<FormDescription>
+					<Heading />
+				</FormDescription>
+				<Form>
+					<FormInput />
+					<SubmitButton />
+				</Form>
 			</LandingContainer>
 		</LandingLayout>
 	);
