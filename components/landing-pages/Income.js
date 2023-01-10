@@ -7,7 +7,7 @@ import SubmitButton from "../components/SubmitButton";
 
 const Income = () => {
     return ( 
-
+    <></>
      );
 }
  
