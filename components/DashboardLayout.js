@@ -1,6 +1,8 @@
 import DesktopNavbar from "./DesktopNavbar";
 import DesktopSidebar from "./DesktopSidebar";
 import Head from "next/head";
+import { useState } from "react";
+import MobileNavbar from "./MobileNavbar";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
@@ -13,6 +15,9 @@ const DashboardLayout = ({
 	title = "Frugal Franatics",
 	description = "Dashboard"
 }) => {
+
+	const [sidebarOpen, setSidebarOpen] = useState(false);
+	
 	return (
 		<>
 			<Head>
@@ -23,6 +28,7 @@ const DashboardLayout = ({
 			</Head>
 			<main className="flex h-full flex-col">
 				<DesktopNavbar />
+				<MobileNavbar setSidebarOpen={setSidebarOpen} />
 				<div className="flex flex-grow">
 					<DesktopSidebar
 						primaryNavigation={primaryNavigation}

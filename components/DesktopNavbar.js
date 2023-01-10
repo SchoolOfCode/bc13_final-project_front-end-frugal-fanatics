@@ -2,6 +2,7 @@ import React from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 
 const DesktopNavbar = () => {
+    
 	return (
 		<nav className="sticky top-0 z-50 hidden flex-wrap items-center justify-between bg-white p-6 pl-8 pr-8 shadow lg:flex">
 			<a href="/">
