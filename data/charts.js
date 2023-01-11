@@ -3,10 +3,10 @@ export const outerBudgetOptions = {
 	cutout: "91%",
 	plugins: {
 		legend: {
-			display: false,
-			position: "right"
-		}
-	}
+			display: true,
+			position: "right",
+		},
+	},
 };
 export const innerBudgetOptions = {
 	responsive: true,
@@ -14,12 +14,12 @@ export const innerBudgetOptions = {
 	plugins: {
 		legend: {
 			display: false,
-			position: "right"
-		}
+			position: "right",
+		},
 	},
 	layout: {
-		padding: 18
-	}
+		padding: 18,
+	},
 };
 
 export const outerBudgetData = {
@@ -29,7 +29,7 @@ export const outerBudgetData = {
 		"Home Energy Bills",
 		"Council Tax",
 		"Credit Repayments",
-		"Leftover Income"
+		"Leftover Income",
 	],
 	datasets: [
 		{
@@ -41,14 +41,14 @@ export const outerBudgetData = {
 				"#F68DFF",
 				"#ABE6FF",
 				"#FFA59E",
-				"#F5F5F5"
+				"#F5F5F5",
 			],
 			hoverOffset: 0,
 			responsive: true,
 			maintainAspectRatio: true,
-			borderWidth: 0
-		}
-	]
+			borderWidth: 0,
+		},
+	],
 };
 
 export const innerBudgetData = {
@@ -58,7 +58,7 @@ export const innerBudgetData = {
 		"Home Energy Bills",
 		"Council Tax",
 		"Credit Repayments",
-		"Leftover Income"
+		"Leftover Income",
 	],
 	datasets: [
 		{
@@ -68,7 +68,32 @@ export const innerBudgetData = {
 			hoverOffset: 0,
 			responsive: true,
 			maintainAspectRatio: true,
-			borderWidth: 0
-		}
-	]
+			borderWidth: 0,
+		},
+	],
+};
+export const savingsData = {
+	labels: ["Savings", "Target Savings"],
+	datasets: [
+		{
+			label: "My First Dataset",
+			data: [85, 70],
+			backgroundColor: ["#AFF192", "#F5F5F5"],
+			hoverOffset: 0,
+			responsive: true,
+			maintainAspectRatio: true,
+			borderWidth: 0,
+		},
+	],
+};
+
+export const savingsOptions = {
+	responsive: true,
+	cutout: "91%",
+	plugins: {
+		legend: {
+			display: true,
+			position: "right",
+		},
+	},
 };

@@ -3,7 +3,7 @@ import {
 	ChartBarIcon,
 	CurrencyPoundIcon,
 	Cog6ToothIcon,
-	ArrowRightOnRectangleIcon
+	ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
 
 /**
@@ -15,9 +15,9 @@ import {
  * @property {boolean} current - Whether the page is currently selected.
  */
 export const primaryNavigation = [
-	{ name: "Overview", href: "#", icon: Squares2X2Icon, current: false },
-	{ name: "Budgeting", href: "#", icon: ChartBarIcon, current: false },
-	{ name: "Savings", href: "#", icon: CurrencyPoundIcon, current: false }
+	{ name: "Overview", href: "/overview", icon: Squares2X2Icon, current: false },
+	{ name: "Budgeting", href: "/budgeting", icon: ChartBarIcon, current: false },
+	{ name: "Savings", href: "#", icon: CurrencyPoundIcon, current: false },
 ];
 
 /**
@@ -30,7 +30,12 @@ export const primaryNavigation = [
  */
 export const secondaryNavigation = [
 	{ name: "Settings", href: "#", icon: Cog6ToothIcon, current: false },
-	{ name: "Logout", href: "#", icon: ArrowRightOnRectangleIcon, current: false }
+	{
+		name: "Logout",
+		href: "#",
+		icon: ArrowRightOnRectangleIcon,
+		current: false,
+	},
 ];
 
 /**

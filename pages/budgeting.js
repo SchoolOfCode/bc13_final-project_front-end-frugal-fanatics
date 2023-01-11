@@ -1,13 +1,12 @@
-import BudgetOverview from "../components/BudgetOverview";
 import DashboardLayout from "../components/DashboardLayout";
-import SavingsOverview from "../components/SavingsOverview";
+
 import {
 	primaryNavigation,
 	secondaryNavigation,
 	setCurrentPage,
 } from "../utils/navigation";
 
-setCurrentPage(primaryNavigation, "Overview");
+setCurrentPage(primaryNavigation, "Budgeting");
 
 const Overview = () => {
 	return (
@@ -17,8 +16,7 @@ const Overview = () => {
 			title="Overview Page"
 		>
 			<div className="flex flex-col items-center gap-8 xl:flex-row">
-				<BudgetOverview />
-				<SavingsOverview />
+				hello world
 			</div>
 		</DashboardLayout>
 	);
