@@ -7,7 +7,15 @@ import SubmitButton from "../components/SubmitButton";
 
 const Income = () => {
     return ( 
-    <></>
+    <>
+        <Form>
+            <FormSteps />
+            <Heading />
+            <FormDescription />
+            <FormInput />
+            <SubmitButton />
+        </Form>
+    </>
      );
 }
  

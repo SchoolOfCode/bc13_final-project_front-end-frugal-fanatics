@@ -1,6 +1,4 @@
-const FormSteps = ({
-    children,
-}) => {
+const FormSteps = ({children}) => {
     return ( 
         <div>
             
