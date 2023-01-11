@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer components {
 	#__next {
 		@apply h-full;
@@ -9,4 +10,10 @@
 	body {
 		@apply h-full;
 	}
+}
+
+@font-face {
+	font-family: "Shapiro";
+	font-weight: 400;
+	src: url(/fonts/Shapiro55MiddleExtd.woff2) format("woff2");
 }

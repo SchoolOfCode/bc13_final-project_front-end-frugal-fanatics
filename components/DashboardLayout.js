@@ -16,9 +16,8 @@ const DashboardLayout = ({
 	title = "Frugal Franatics",
 	description = "Dashboard"
 }) => {
-
 	const [sidebarOpen, setSidebarOpen] = useState(false);
-	
+
 	return (
 		<>
 			<Head>
@@ -31,7 +30,7 @@ const DashboardLayout = ({
 				<DesktopNavbar />
 				<MobileNavbar setSidebarOpen={setSidebarOpen} />
 				<div className="flex flex-grow">
-				<MobileSidebar
+					<MobileSidebar
 						sidebarOpen={sidebarOpen}
 						setSidebarOpen={setSidebarOpen}
 						primaryNavigation={primaryNavigation}
@@ -43,7 +42,7 @@ const DashboardLayout = ({
 						secondaryNavigation={secondaryNavigation}
 						classNames={classNames}
 					/>
-					<div className="flex min-w-0 flex-1 flex-col overflow-hidden">
+					<div className="flex min-w-0 flex-1 flex-col overflow-hidden bg-[#F4F7FB]">
 						<div className="relative z-0 flex flex-1 overflow-hidden">
 							<main className="relative z-0 flex-1 overflow-y-auto focus:outline-none">
 								<div className="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
