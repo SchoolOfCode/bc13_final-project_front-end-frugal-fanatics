@@ -1,9 +1,9 @@
-import FormSteps from "../components/FormSteps";
-import FormDescription from "../components/FormDescription";
-import Heading from "../components/Heading";
-import Form from "../components/Form";
-import FormInput from "../components/FormInput";
-import SubmitButton from "../components/SubmitButton";
+import FormSteps from "../FormSteps";
+import FormDescription from "../FormDescription";
+import Heading from "../Heading";
+import Form from "../Form";
+import FormInput from "../FormInput";
+import SubmitButton from "../SubmitButton";
 
 const Savings = () => {
   return (

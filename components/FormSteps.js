@@ -1,7 +1,9 @@
+import MultiStepProgressBar from "./MultiStageProgressBar/MultiStepProgressBar.js";
+
 const FormSteps = ({children}) => {
     return ( 
         <div>
-            <p>Test</p>
+            <MultiStepProgressBar />
         </div>
      );
 }

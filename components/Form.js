@@ -3,7 +3,7 @@ const Form = ({
 } ) => {
     return (
         <div>
-
+        {children}
         </div>
      );
 }

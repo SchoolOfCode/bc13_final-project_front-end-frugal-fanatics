@@ -1,9 +1,11 @@
-import FormSteps from "../components/FormSteps.js";
-import FormDescription from "../components/FormDescription";
-import Heading from "../components/Heading";
-import Form from "../components/Form";
-import FormInput from "../components/FormInput";
-import SubmitButton from "../components/SubmitButton";
+import React from "react";
+import "react-step-progress-bar/styles.css";
+import { ProgressBar, Step } from "react-step-progress-bar";
+import FormSteps from "../FormSteps";
+import FormDescription from "../FormDescription";
+import Heading from "../Heading";
+import FormInput from "../FormInput";
+import SubmitButton from "../SubmitButton";
 
 const Expenses = () => {
   return (
