@@ -1,7 +1,7 @@
 const FormSteps = ({children}) => {
     return ( 
         <div>
-            
+            <p>Test</p>
         </div>
      );
 }

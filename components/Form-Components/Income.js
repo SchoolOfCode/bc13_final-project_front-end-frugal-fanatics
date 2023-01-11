@@ -6,17 +6,15 @@ import FormInput from "../components/FormInput";
 import SubmitButton from "../components/SubmitButton";
 
 const Income = () => {
-    return ( 
+  return (
     <>
-        <Form>
-            <FormSteps />
-            <Heading />
-            <FormDescription />
-            <FormInput />
-            <SubmitButton />
-        </Form>
+      <FormSteps />
+      <Heading />
+      <FormDescription />
+      <FormInput />
+      <SubmitButton />
     </>
-     );
-}
- 
+  );
+};
+
 export default Income;
