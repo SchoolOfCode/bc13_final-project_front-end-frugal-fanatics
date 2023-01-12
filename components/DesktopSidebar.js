@@ -1,10 +1,7 @@
 import React from "react";
+import { classNames } from "../utils/helpers";
 
-const DesktopSidebar = ({
-	primaryNavigation,
-	secondaryNavigation,
-	classNames
-}) => {
+const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 	return (
 		<div className="hidden lg:flex lg:flex-shrink-0">
 			<div className="flex w-64 flex-col">

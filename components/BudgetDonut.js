@@ -1,14 +1,44 @@
-import { Chart, ArcElement } from "chart.js";
+import { Chart as ChartJS, ArcElement } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import { extractAmounts } from "../utils/helpers";
 import {
-	outerBudgetData,
 	outerBudgetOptions,
 	innerBudgetData,
-	innerBudgetOptions
+	innerBudgetOptions,
 } from "../data/charts";
-Chart.register(ArcElement);
+ChartJS.register(ArcElement);
 
-const BudgetDonut = () => {
+const BudgetDonut = ({ data }) => {
+	const amounts = extractAmounts(data.expenses);
+	const outerBudgetData = {
+		labels: [
+			"Rent or Mortgage",
+			"Food and Groceries",
+			"Home Energy Bills",
+			"Council Tax",
+			"Credit Repayments",
+			"Leftover Income",
+		],
+		datasets: [
+			{
+				label: "My First Dataset",
+				data: amounts,
+				backgroundColor: [
+					"#B884FF",
+					"#FFD482",
+					"#F68DFF",
+					"#ABE6FF",
+					"#FFA59E",
+					"#F5F5F5",
+				],
+				hoverOffset: 0,
+				responsive: true,
+				maintainAspectRatio: true,
+				borderWidth: 0,
+			},
+		],
+	};
+
 	return (
 		<div className="relative h-[180px] w-[180px]">
 			{/* Use relative parent and absolute children so donut charts overlay each other */}
