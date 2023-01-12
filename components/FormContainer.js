@@ -1,4 +1,4 @@
-const Form = ({
+const FormContainer = ({
     children,
 } ) => {
     return (
@@ -8,4 +8,4 @@ const Form = ({
      );
 }
  
-export default Form;
+export default FormContainer;
