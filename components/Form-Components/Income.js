@@ -1,21 +1,19 @@
 import React from "react";
 import "react-step-progress-bar/styles.css";
-import { ProgressBar, Step } from "react-step-progress-bar";
 import FormSteps from "../FormSteps";
-import FormDescription from "../FormDescription";
 import Heading from "../Heading";
-import Form from "../Form";
+import SubHeading from "../SubHeading";
 import FormInput from "../FormInput";
 import SubmitButton from "../SubmitButton";
 
 const Income = ({ formStep, nextFormStep }) => {
   return (
     <>
-      <FormSteps />
-      <Heading />
-      <FormDescription />
-      <FormInput />
-      <SubmitButton />
+      <FormSteps formstep={formStep}/>
+      <Heading title="What's your income after tax?" />
+      <SubHeading subHeading="Gastropub hoodie vegan air plant kickstarter ascot adipisicing, hoodie twee small batch incididunt fit freegan meh." />
+      <FormInput labelname="Total Income (per month)" placeholder="0" />
+      <SubmitButton nextFormStep={nextFormStep} buttonText="Next Step ->"/>
     </>
   );
 };

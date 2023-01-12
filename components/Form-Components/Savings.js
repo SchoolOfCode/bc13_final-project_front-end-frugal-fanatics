@@ -1,18 +1,17 @@
 import FormSteps from "../FormSteps";
-import FormDescription from "../FormDescription";
 import Heading from "../Heading";
-import Form from "../Form";
+import SubHeading from "../SubHeading";
 import FormInput from "../FormInput";
 import SubmitButton from "../SubmitButton";
 
-const Savings = () => {
+const Savings = ({ formStep, nextFormStep }) => {
   return (
     <>
-      <FormSteps />
-      <Heading />
-      <FormDescription />
-      <FormInput />
-      <SubmitButton />
+      <FormSteps formstep={formStep}/>
+      <Heading title="Do you have any savings?"/>
+      <SubHeading subHeading="Gastropub hoodie vegan air plant kickstarter ascot adipisicing, hoodie twee small batch incididunt fit freegan meh." />
+      <FormInput labelname="Total Savings (Optional)"/>
+      <SubmitButton buttonText="Get your tailored results ->"/>
     </>
   );
 };

@@ -1,23 +1,29 @@
 import React from "react";
-import "./MultiStepProgressBar.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
+
+// const MultiStepProgressBarFunction = () => (
+//   <div className={styles.container}>
+//     {/* ... */}
+//   </div>
+// );
+
 
 const MultiStepProgressBar = ({ page, onPageNumberClick }) => {
   var stepPercentage = 0;
-  if (page === "pageone") {
-    stepPercentage = 16;
-  } else if (page === "pagetwo") {
-    stepPercentage = 49.5;
-  } else if (page === "pagethree") {
-    stepPercentage = 82.5;
-  } else if (page === "pagefour") {
+  if (page === 0) {
+    stepPercentage = 0;
+  } else if (page === 1) {
+    stepPercentage = 50;
+  } else if (page === 2) {
     stepPercentage = 100;
   } else {
     stepPercentage = 0;
   }
+  
+  // Have yet to figure out the best method for applying the css to this element. The css that came with the component can be found in ../styles as its own module.
 
   return (
-    <ProgressBar percent={stepPercentage}>
+    <ProgressBar percent={stepPercentage} className="w-4/5">
       <Step>
         {({ accomplished, index }) => (
           <div
