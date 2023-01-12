@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import LandingLayout from "../components/LandingLayout";
 import LandingContainer from "../components/LandingContainer";
-import Form from "../components/FormContainer";
-import Income from "../components/Form-Components/Income";
-import Expenses from "../components/Form-Components/Expenses";
-import Savings from "../components/Form-Components/Savings";
 import FormContainer from "../components/FormContainer";
 import { extractLabels } from "../utils/helpers";
+
+import { useRouter } from "next/router";
 
 // 1. First we will remove current components
 // 2. Pull all the JSX one by one into this file to preserve the styling
@@ -14,6 +12,7 @@ import { extractLabels } from "../utils/helpers";
 // 4. Revisit adstracting the file into seperate components once all the functionality is working
 
 export default function LandingPage({ data, setData }) {
+	const router = useRouter();
 	const [formInput, setFormInput] = useState({
 		totalIncome: 0,
 		expenses: [
@@ -49,7 +48,6 @@ export default function LandingPage({ data, setData }) {
 	};
 
 	const handleChange2 = (e, key) => {
-		e.preventDefault();
 		const updatedExpenses = [...formInput.expenses];
 		updatedExpenses[key] = {
 			label: labels[key],
@@ -59,18 +57,38 @@ export default function LandingPage({ data, setData }) {
 			...formInput,
 			expenses: updatedExpenses,
 		});
-		console.log(formInput.expenses);
 	};
-
 	const handleSubmit2 = (e) => {
 		e.preventDefault();
 		setData({ ...data, expenses: formInput.expenses });
 		nextFormStep();
 	};
 
+	const handleChange3 = (e) => {
+		if (e.target.id === "total") {
+			const updatedSavings = { ...formInput.savings, total: e.target.value };
+			setFormInput({ ...formInput, savings: updatedSavings });
+		}
+		if (e.target.id === "goal") {
+			const updatedSavings = { ...formInput.savings, goal: e.target.value };
+			setFormInput({ ...formInput, savings: updatedSavings });
+		}
+	};
+	const handleSubmit3 = (e) => {
+		e.preventDefault();
+		setData({ ...data, savings: formInput.savings });
+		router.push("/overview");
+	};
+
 	useEffect(() => {
-		console.log(data.expenses);
+		console.log("this means main data is working =>", data.totalIncome);
+	}, [data.totalIncome]);
+	useEffect(() => {
+		console.log("this means main data is working =>", data.expenses);
 	}, [data.expenses]);
+	useEffect(() => {
+		console.log("this means main data is working =>", data.savings);
+	}, [data.savings]);
 
 	return (
 		<LandingLayout>
@@ -109,7 +127,7 @@ export default function LandingPage({ data, setData }) {
 						</>
 					)}
 					{formStep === 1 && (
-						<form onSubmit={handleSubmit1}>
+						<form onSubmit={handleSubmit2}>
 							<h1 className="pt-20 pb-10 text-3xl">
 								What's your income after tax?
 							</h1>
@@ -133,6 +151,39 @@ export default function LandingPage({ data, setData }) {
 							</div>
 							<button
 								onClick={handleSubmit2}
+								className="text-1xl mt-12 w-max rounded-md border border-black p-2"
+							>
+								Next Step
+							</button>
+						</form>
+					)}
+					{formStep === 2 && (
+						<form onSubmit={handleSubmit3}>
+							<h1 className="pt-20 pb-10 text-3xl">Do you have any savings?</h1>
+							<p className="pb-8 text-gray-500">
+								Gastropub hoodie vegan air plant kickstarter ascot adipisicing,
+								hoodie twee small batch incididunt fit freegan meh.
+							</p>
+							<div className="flex w-4/5 flex-col pt-4">
+								<label className="pb-2">Total savings (optional)</label>
+								<input
+									id="total"
+									placeholder="0"
+									type="number"
+									onChange={handleChange3}
+									className="h-12 w-full rounded-md bg-gray-200 p-4"
+								></input>
+								<label className="pb-2">Total savings goal (optional)</label>
+								<input
+									id="goal"
+									placeholder="0"
+									type="number"
+									onChange={handleChange3}
+									className="h-12 w-full rounded-md bg-gray-200 p-4"
+								></input>
+							</div>
+							<button
+								onClick={handleSubmit3}
 								className="text-1xl mt-12 w-max rounded-md border border-black p-2"
 							>
 								Next Step
