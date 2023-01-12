@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import { useState } from "react";
 
+
 export default function App({ Component, pageProps }) {
 	const [data, setData] = useState({
 		totalIncome: 3200,

@@ -1,10 +1,8 @@
-const Heading = ({
-    children,
-}) => {
+const Heading = ({ children, title }) => {
     return ( 
-        <div>
-            
-        </div>
+        <h1 className="text-3xl pt-20 pb-10">
+            {title}
+        </h1>
      );
 }
  
