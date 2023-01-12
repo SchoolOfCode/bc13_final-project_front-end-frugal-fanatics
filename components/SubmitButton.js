@@ -1,6 +1,10 @@
-const SubmitButton = () => {
+const SubmitButton = ({ children,  nextFormStep, buttonText}) => {
     return ( 
-        <button /*onClick={}*/ >Submit</button>
+        <div>
+        <button className="w-max mt-12 p-2 rounded-md border border-black text-1xl" onClick={nextFormStep}>
+        {buttonText}
+        </button>
+        </div>
      );
 }
  
