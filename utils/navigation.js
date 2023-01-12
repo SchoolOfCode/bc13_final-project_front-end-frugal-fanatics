@@ -17,7 +17,12 @@ import {
 export const primaryNavigation = [
 	{ name: "Overview", href: "/overview", icon: Squares2X2Icon, current: false },
 	{ name: "Budgeting", href: "/budgeting", icon: ChartBarIcon, current: false },
-	{ name: "Savings", href: "#", icon: CurrencyPoundIcon, current: false },
+	{
+		name: "Savings",
+		href: "/savings",
+		icon: CurrencyPoundIcon,
+		current: false,
+	},
 ];
 
 /**
@@ -45,6 +50,10 @@ export const secondaryNavigation = [
  */
 export const setCurrentPage = (navigation, pageName) => {
 	navigation.forEach((page) => {
-		if (page.name === pageName) page.current = true;
+		if (page.name === pageName) {
+			page.current = true;
+		} else {
+			page.current = false;
+		}
 	});
 };

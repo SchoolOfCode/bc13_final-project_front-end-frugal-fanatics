@@ -7,9 +7,8 @@ import {
 	setCurrentPage,
 } from "../utils/navigation";
 
-setCurrentPage(primaryNavigation, "Overview");
-
-const Overview = () => {
+const Overview = ({ data }) => {
+	setCurrentPage(primaryNavigation, "Overview");
 	return (
 		<DashboardLayout
 			primaryNavigation={primaryNavigation}
@@ -17,8 +16,8 @@ const Overview = () => {
 			title="Overview Page"
 		>
 			<div className="flex flex-col items-center gap-8 xl:flex-row">
-				<BudgetOverview />
-				<SavingsOverview />
+				<BudgetOverview data={data} />
+				<SavingsOverview data={data} />
 			</div>
 		</DashboardLayout>
 	);

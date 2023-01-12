@@ -3,7 +3,7 @@ export const outerBudgetOptions = {
 	cutout: "91%",
 	plugins: {
 		legend: {
-			display: true,
+			display: false,
 			position: "right",
 		},
 	},
@@ -92,7 +92,7 @@ export const savingsOptions = {
 	cutout: "91%",
 	plugins: {
 		legend: {
-			display: true,
+			display: false,
 			position: "right",
 		},
 	},

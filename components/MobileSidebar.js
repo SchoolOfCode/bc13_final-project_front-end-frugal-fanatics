@@ -2,14 +2,13 @@ import React from "react";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { classNames } from "../utils/helpers";
 
 const MobileSidebar = ({
 	sidebarOpen,
-	Fragment,
 	setSidebarOpen,
 	primaryNavigation,
 	secondaryNavigation,
-	classNames
 }) => {
 	return (
 		// The Transition component adds conditional enter/leave transitions to sidebar:

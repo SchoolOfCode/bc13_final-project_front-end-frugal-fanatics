@@ -1,24 +1,26 @@
-import BudgetingSection from "../components/BudgetingSection";
 import DashboardLayout from "../components/DashboardLayout";
+import SavingsPotsSection from "../components/SavingsPotsSection";
+import TotalSavings from "../components/TotalSavings";
 import {
 	primaryNavigation,
 	secondaryNavigation,
 	setCurrentPage,
 } from "../utils/navigation";
 
-const Budgeting = ({ data }) => {
-	setCurrentPage(primaryNavigation, "Budgeting");
+const Savings = ({ data }) => {
+	setCurrentPage(primaryNavigation, "Savings");
 	return (
 		<DashboardLayout
 			primaryNavigation={primaryNavigation}
 			secondaryNavigation={secondaryNavigation}
-			title="Budgeting Page"
+			title="Savings Page"
 		>
 			<div className="flex flex-col items-center gap-8">
-				<BudgetingSection data={data} />
+				<TotalSavings data={data} />
+				<SavingsPotsSection data={data} />
 			</div>
 		</DashboardLayout>
 	);
 };
 
-export default Budgeting;
+export default Savings;
