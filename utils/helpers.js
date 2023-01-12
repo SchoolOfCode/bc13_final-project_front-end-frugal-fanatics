@@ -2,7 +2,7 @@
  * Calculates the percentages of each expense in the data object
  * and returns an array of the percentages.
  *
- * @param {Object} data - an object with property expenses and totalIncome
+ * @param {Object} data - our main mock data object located in _app.js
  * @returns {Array} percentages - an array of percentages
  * representing each expense amount to the totalIncome
  */
