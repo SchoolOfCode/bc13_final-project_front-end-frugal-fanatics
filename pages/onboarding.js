@@ -6,6 +6,7 @@ import Income from "../components/Form-Components/Income";
 import Expenses from "../components/Form-Components/Expenses";
 import Savings from "../components/Form-Components/Savings";
 import FormContainer from "../components/FormContainer";
+import { extractLabels } from "../utils/helpers";
 
 // 1. First we will remove current components
 // 2. Pull all the JSX one by one into this file to preserve the styling
@@ -35,8 +36,28 @@ export default function LandingPage({ data, setData }) {
   // This function in not currently used and should be added as an onClick if we want to add a back button to the form.
   const prevFormStep = () => setFormStep((currentStep) => currentStep - 1);
 
-  const handleSubmit1 = () => {
+  const handleSubmit1 = (e) => {
+    e.preventDefault();
     setData({ ...data, totalIncome: formInput.totalIncome });
+    nextFormStep();
+    console.log(data);
+  };
+
+  const labels = extractLabels(data.expenses);
+  const handleChange1 = (e) => {
+    setFormInput({ ...formInput, totalIncome: e.target.value });
+  };
+
+  const handleChange2 = (e) => {
+    // formInput.expenses.forEach((e, i) => {
+    // 	formInput.expenses = labels[i]
+    // })
+    setFormInput({
+      ...formInput,
+      expenses: formInput.expenses.map((expense) => {
+        return { ...expense, amount: e.target.value };
+      }),
+    });
   };
 
   return (
@@ -45,6 +66,7 @@ export default function LandingPage({ data, setData }) {
         <FormContainer>
           <h1>{data.totalIncome}</h1>
           <h1>{formInput.totalIncome}</h1>
+          <h1>{formStep}</h1>
           <h1 className="pt-20 pb-10 text-3xl">
             What's your income after tax?
           </h1>
@@ -53,15 +75,20 @@ export default function LandingPage({ data, setData }) {
             hoodie twee small batch incididunt fit freegan meh.
           </p>
           <div className="flex w-4/5 flex-col pt-4">
-            <label className="pb-2">Total Income (per month) </label>
-            <input
-              handleChange={handleChange}
-              placeholder="0"
-              type="number"
-              onChange={handleChange}
-              className="h-12 w-full rounded-md bg-gray-200 p-4"
-              defaultValue="£"
-            ></input>
+            <form onSubmit={handleSubmit1}>
+              <label className="pb-2">Total Income (per month) </label>
+
+              <input
+                placeholder="0"
+                type="number"
+                onChange={handleChange1}
+                className="h-12 w-full rounded-md bg-gray-200 p-4"
+              ></input>
+
+              <button className="text-1xl mt-12 w-max rounded-md border border-black p-2">
+                Next Step
+              </button>
+            </form>
           </div>
         </FormContainer>
       </LandingContainer>
