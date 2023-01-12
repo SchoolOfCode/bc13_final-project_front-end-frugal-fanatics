@@ -6,6 +6,28 @@ import {
 	ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
 
+export const handleNavClick = (pageName, router) => {
+	switch (pageName) {
+		case "Overview":
+			router.push("/overview");
+			break;
+		case "Budgeting":
+			router.push("/budgeting");
+			break;
+		case "Savings":
+			router.push("/savings");
+			break;
+		case "Settings":
+			router.push("/overview");
+			break;
+		case "Logout":
+			router.push("/overview");
+			break;
+		default:
+			router.push("/overview");
+	}
+};
+
 /**
  * An array of objects representing the primary navigation links.
  * @type {Array}
