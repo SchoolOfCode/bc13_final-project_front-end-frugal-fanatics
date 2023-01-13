@@ -1,9 +1,14 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 function TotalSavings({ data }) {
 	const totalSavings = data.savings.total.toLocaleString("en-GB");
 	const savingsGoal = data.savings.goal.toLocaleString("en-GB");
 	const percentage = (data.savings.total / data.savings.goal) * 100;
+	const [barWidth, setBarWidth] = useState(0);
+	useEffect(() => {
+		setBarWidth(percentage);
+	}, []);
 
 	return (
 		<section className="stack flex w-full flex-col gap-5 rounded-2xl bg-white px-12 py-9 pb-11 xl:w-full">
@@ -22,13 +27,15 @@ function TotalSavings({ data }) {
 
 				<div className="h-3 w-full bg-[#F5F5F5]">
 					<div
-						style={{ width: `${percentage}%` }}
-						className="h-full bg-[#AFF192]"
+						style={{
+							width: `${barWidth}%`,
+							transition: "width 1s ease-in-out",
+						}}
+						className="h-full bg-[#AFF192] transition-transform"
 					></div>
 				</div>
 			</div>
 		</section>
 	);
 }
-
 export default TotalSavings;
