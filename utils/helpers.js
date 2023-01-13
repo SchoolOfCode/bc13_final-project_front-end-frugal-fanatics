@@ -63,3 +63,67 @@ export const extractAmounts = (data) => {
 export const classNames = (...classes) => {
 	return classes.filter(Boolean).join(" ");
 };
+
+export const handleChange1 = (e, formInput, setFormInput) => {
+	// convert a string to a number using the plus operator ( + )e.target.value
+	setFormInput({ ...formInput, totalIncome: +e.target.value });
+};
+export const handleSubmit1 = (
+	e,
+	formInput,
+	data,
+	setData,
+	steps,
+	nextFormStep
+) => {
+	e.preventDefault();
+	setData({ ...data, totalIncome: +formInput.totalIncome });
+	nextFormStep();
+	steps[0].status = "complete";
+	steps[1].status = "current";
+};
+
+export const handleChange2 = (e, formInput, setFormInput, key, labels) => {
+	const updatedExpenses = [...formInput.expenses];
+	updatedExpenses[key] = {
+		label: labels[key],
+		amount: +e.target.value,
+	};
+	setFormInput({
+		...formInput,
+		expenses: updatedExpenses,
+	});
+};
+
+export const handleSubmit2 = (
+	e,
+	formInput,
+	data,
+	setData,
+	steps,
+	nextFormStep
+) => {
+	e.preventDefault();
+	setData({ ...data, expenses: formInput.expenses });
+	nextFormStep();
+	steps[1].status = "complete";
+	steps[2].status = "current";
+};
+
+export const handleChange3 = (e, formInput, setFormInput) => {
+	if (e.target.id === "total") {
+		const updatedSavings = { ...formInput.savings, total: +e.target.value };
+		setFormInput({ ...formInput, savings: updatedSavings });
+	}
+	if (e.target.id === "goal") {
+		const updatedSavings = { ...formInput.savings, goal: +e.target.value };
+		setFormInput({ ...formInput, savings: updatedSavings });
+	}
+};
+
+export const handleSubmit3 = (e, formInput, data, setData, steps, router) => {
+	steps[2].status = "complete";
+	e.preventDefault();
+	setData({ ...data, savings: formInput.savings });
+	router.push("/overview");
+};

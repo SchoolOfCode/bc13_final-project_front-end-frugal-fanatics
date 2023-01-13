@@ -11,3 +11,34 @@
 		@apply h-full;
 	}
 }
+
+@font-face {
+	font-family: "Shapiro Welter Wide";
+	src: url("/fonts/Shapiro45WelterWide.woff2") format("woff2");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Shapiro Middle";
+	src: url("/fonts/Shapiro55Middle.woff2") format("woff2");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Shapiro Middle Extd";
+	src: url("/fonts/Shapiro55MiddleExtd.woff2") format("woff2");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Shapiro Middle Wide";
+	src: url("/fonts/Shapiro55MiddleWide.woff2") format("woff2");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Shapiro Light Heavy";
+	src: url("/fonts/Shapiro65LightHeavy.woff2") format("woff2");
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Shapiro Light Heavy Wide";
+	src: url("/fonts/Shapiro65LightHeavy.woff2") format("woff2");
+	font-weight: 600;
+}

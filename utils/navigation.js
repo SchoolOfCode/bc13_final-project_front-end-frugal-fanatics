@@ -6,6 +6,11 @@ import {
 	ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
 
+/**
+ * handleNavClick - Handles navigation clicks with the NextJS useRouter custom hook
+ * @param {string} pageName - The name of the page to navigate to, with first letter of each word capitalized
+ * @param {function} router - NextJS useRouter() custom hook function
+ */
 export const handleNavClick = (pageName, router) => {
 	switch (pageName) {
 		case "Overview":
@@ -79,3 +84,18 @@ export const setCurrentPage = (navigation, pageName) => {
 		}
 	});
 };
+
+/**
+ * @typedef {Object} Step
+ * @property {string} name - The name or title of the step (eg. Step 1)
+ * @property {string} status - The current status of the step (either "current", "upcoming", or "complete")
+ */
+
+/**
+ * @type {Array.<Step>} steps - An array of step objects representing the progress the multi-step onboarding form.
+ */
+export const steps = [
+	{ name: "Step 1", status: "current" },
+	{ name: "Step 2", status: "upcoming" },
+	{ name: "Step 3", status: "upcoming" },
+];

@@ -1,9 +1,9 @@
-const LandingContainer = ({children}) => {
-    return ( 
-        <div className="flex flex-col items-center height: 100vh width: 100%">
-            {children}
-        </div>
-     );
-}
- 
+const LandingContainer = ({ children }) => {
+	return (
+		<div className="m-0 flex h-full w-full flex-col items-center p-0">
+			{children}
+		</div>
+	);
+};
+
 export default LandingContainer;

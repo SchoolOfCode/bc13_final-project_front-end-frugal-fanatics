@@ -1,93 +1,37 @@
 import React from "react";
-import { extractLabels } from "../utils/helpers";
-
 const FormInput = ({
-	handleSubmit,
-	formStep,
-	nextFormStep,
+	text,
+	handleChange,
 	formInput,
-	title,
 	setFormInput,
-	data,
+	id,
+	labels,
 }) => {
-	const labels = extractLabels(data.expenses);
-	const handleChange1 = (e) => {
-		setFormInput({ ...formInput, totalIncome: e.target.value });
-	};
-
-	const handleChange2 = (e) => {
-		// formInput.expenses.forEach((e, i) => {
-		// 	formInput.expenses = labels[i]
-		// })
-		setFormInput({
-			...formInput,
-			expenses: formInput.expenses.map((e, i) => {
-				return { ...expenses[i], amount: e.target.value };
-			}),
-		});
-	};
-
 	return (
-		<form onClick={handleSubmit}>
-			<h1>{formStep}</h1>
-			{/* Total Income (per month) onClick={handleSubmit} onChange={handleChange} array of labels for step 2, and array of savings data for step 3 */}
-
-			{formStep === 0 && (
-				<div>
-					<label className="pb-2">{title} </label>
-					<input
-						placeholder="0"
-						type="number"
-						onChange={handleChange1}
-						className="h-12 w-full rounded-md bg-gray-200 p-4"
-					></input>
-				</div>
-			)}
-			{formStep === 1 &&
-				labels.map((label) => {
-					<>
-						<label className="pb-2">{label}</label>
-						<input
-							placeholder="0"
-							type="number"
-							onChange={handleChange2}
-							className="h-12 w-full rounded-md bg-gray-200 p-4"
-						></input>
-					</>;
-				})}
-
-			<button
-				className="text-1xl mt-12 w-max rounded-md border border-black p-2"
-				onClick={nextFormStep}
+		<div>
+			<label
+				htmlFor="price"
+				className="block text-base font-normal leading-8 tracking-wide text-slate-800"
 			>
-				Next Step
-			</button>
-		</form>
+				{text}
+			</label>
+			<div className="relative mt-2 h-[58px] rounded-md">
+				<div className="pointer-events-none absolute inset-y-0 left-0 flex  items-center pl-3">
+					<span className="flex h-[58px] translate-y-[1px] items-center pl-2 text-xl text-slate-800">
+						£
+					</span>
+				</div>
+				<input
+					type="number"
+					name="price"
+					id={id}
+					onChange={(e) => handleChange(e, formInput, setFormInput, id, labels)}
+					className="block h-[58px] w-full rounded-lg border-0 bg-slate-50 pl-11 pr-4 text-xl 
+					placeholder:font-light placeholder:text-gray-300 focus:ring-2 focus:ring-indigo-500"
+					placeholder="0"
+				/>
+			</div>
+		</div>
 	);
 };
-
 export default FormInput;
-
-// {
-// 	formStep == 1 && (
-// 		<Expenses
-// 			formStep={formStep}
-// 			nextFormStep={nextFormStep}
-// 			formInput={formInput}
-// 			setFormInput={setFormInput}
-// 		/>
-// 	);
-// }
-// {
-// 	formStep == 2 && (
-// 		<Savings
-// 			formStep={formStep}
-// 			nextFormStep={nextFormStep}
-// 			formInput={formInput}
-// 			setFormInput={setFormInput}
-// 		/>
-// 	);
-// }
-// {
-// 	formStep > 2 && <FormCompleted />;
-// }

@@ -8,7 +8,10 @@ function BudgetingSection({ data }) {
 	const paddedPercentages = padPercentages(percentages);
 
 	return (
-		<section className="flex w-full flex-col gap-8 rounded-2xl bg-white px-12 py-9 pb-11 xl:w-full">
+		<section
+			className="flex w-full flex-col gap-8 rounded-2xl bg-white px-12 py-9 pb-11 xl:w-full"
+			style={{ fontFamily: "Shapiro Welter Wide", weight: "400" }}
+		>
 			<h2 className=" mb-4 text-2xl font-medium leading-none text-[#202834] md:text-3xl">
 				Budgeting
 			</h2>
