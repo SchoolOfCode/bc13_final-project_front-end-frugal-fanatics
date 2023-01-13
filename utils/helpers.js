@@ -104,6 +104,16 @@ export const handleSubmit2 = (
 	nextFormStep
 ) => {
 	e.preventDefault();
+	console.log(formInput.expenses);
+	formInput.expenses[5].amount =
+		formInput.totalIncome -
+		formInput.expenses[0].amount -
+		formInput.expenses[1].amount -
+		formInput.expenses[2].amount -
+		formInput.expenses[3].amount -
+		formInput.expenses[4].amount;
+	formInput.expenses[5].label = "Leftover Income";
+	console.log(formInput.expenses);
 	setData({ ...data, expenses: formInput.expenses });
 	nextFormStep();
 	steps[1].status = "complete";

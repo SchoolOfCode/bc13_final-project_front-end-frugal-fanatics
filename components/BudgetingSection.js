@@ -6,6 +6,7 @@ import React from "react";
 function BudgetingSection({ data }) {
 	const percentages = calculatePercentages(data);
 	const paddedPercentages = padPercentages(percentages);
+	console.log(data.expenses);
 
 	return (
 		<section

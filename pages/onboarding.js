@@ -70,17 +70,53 @@ export default function LandingPage({ data, setData }) {
 							/>
 							<div className="py-5">
 								<div className="flex flex-col gap-8">
-									{labels.map((label, i) => (
-										<FormInput
-											key={i}
-											text={label}
-											handleChange={handleChange2}
-											formInput={formInput}
-											setFormInput={setFormInput}
-											labels={labels}
-											id={i}
-										/>
-									))}
+									{/* ouiswgfuiosdhfouisdhfoisudhfoisudfhosidufhosiufhosiudfh */}
+
+									<FormInput
+										key={0}
+										text="Rent or Mortgage"
+										handleChange={handleChange2}
+										formInput={formInput}
+										setFormInput={setFormInput}
+										labels={labels}
+										id={0}
+									/>
+									<FormInput
+										key={1}
+										text="Food and Groceries"
+										handleChange={handleChange2}
+										formInput={formInput}
+										setFormInput={setFormInput}
+										labels={labels}
+										id={1}
+									/>
+									<FormInput
+										key={2}
+										text="Home Energy Bills"
+										handleChange={handleChange2}
+										formInput={formInput}
+										setFormInput={setFormInput}
+										labels={labels}
+										id={2}
+									/>
+									<FormInput
+										key={3}
+										text="Council Tax"
+										handleChange={handleChange2}
+										formInput={formInput}
+										setFormInput={setFormInput}
+										labels={labels}
+										id={3}
+									/>
+									<FormInput
+										key={4}
+										text="Credit Payments"
+										handleChange={handleChange2}
+										formInput={formInput}
+										setFormInput={setFormInput}
+										labels={labels}
+										id={4}
+									/>
 								</div>
 								<FormButton text="Almost there" />
 							</div>
