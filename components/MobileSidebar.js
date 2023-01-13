@@ -3,6 +3,8 @@ import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { classNames } from "../utils/helpers";
+import { handleNavClick } from "../utils/navigation";
+import { useRouter } from "next/router";
 
 const MobileSidebar = ({
 	sidebarOpen,
@@ -10,6 +12,7 @@ const MobileSidebar = ({
 	primaryNavigation,
 	secondaryNavigation,
 }) => {
+	const router = useRouter();
 	return (
 		// The Transition component adds conditional enter/leave transitions to sidebar:
 		// https://headlessui.com/react/transition
@@ -81,14 +84,14 @@ const MobileSidebar = ({
 								<nav aria-label="Sidebar" className="mt-8 flex-1 p-4">
 									<div className="space-y-6 p-4 px-2">
 										{primaryNavigation.map((item) => (
-											<a
+											<button
 												key={item.name}
-												href={item.href}
+												onClick={() => handleNavClick(item.name, router)}
 												className={classNames(
 													item.current
 														? "bg-[#F4F7FB] tracking-wide text-black"
 														: "tracking-wide text-slate-600 hover:bg-slate-50 hover:text-slate-900",
-													"group flex items-center rounded-md px-2 py-2 text-base font-normal"
+													"group flex w-full items-center rounded-md px-2 py-2 text-base font-normal"
 												)}
 											>
 												<item.icon
@@ -101,7 +104,7 @@ const MobileSidebar = ({
 													aria-hidden="true"
 												/>
 												{item.name}
-											</a>
+											</button>
 										))}
 									</div>
 								</nav>
@@ -110,14 +113,14 @@ const MobileSidebar = ({
 							<div className="flex flex-col border-t border-gray-200 p-4">
 								<div className="space-y-6 py-9 px-2">
 									{secondaryNavigation.map((item) => (
-										<a
+										<button
 											key={item.name}
-											href={item.href}
+											onClick={() => handleNavClick(item.name, router)}
 											className={classNames(
 												item.current
 													? "bg-[#F4F7FB] tracking-wide text-black"
 													: "tracking-wide text-slate-600 hover:bg-slate-50 hover:text-slate-900",
-												"group flex items-center rounded-md px-2 py-2 text-base font-normal"
+												"group flex w-full items-center rounded-md px-2 py-2 text-base font-normal"
 											)}
 										>
 											<item.icon
@@ -130,7 +133,7 @@ const MobileSidebar = ({
 												aria-hidden="true"
 											/>
 											{item.name}
-										</a>
+										</button>
 									))}
 								</div>
 							</div>

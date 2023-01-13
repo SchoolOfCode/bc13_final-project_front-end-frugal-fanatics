@@ -1,7 +1,10 @@
 import React from "react";
 import { classNames } from "../utils/helpers";
+import { handleNavClick } from "../utils/navigation";
+import { useRouter } from "next/router";
 
 const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
+	const router = useRouter();
 	return (
 		<div className="hidden lg:flex lg:flex-shrink-0">
 			<div className="flex w-64 flex-col">
@@ -10,14 +13,14 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 						<nav className="mt-5 flex-1 p-4" aria-label="Sidebar">
 							<div className="space-y-6 px-2">
 								{primaryNavigation.map((item) => (
-									<a
+									<button
 										key={item.name}
-										href={item.href}
+										onClick={() => handleNavClick(item.name, router)}
 										className={classNames(
 											item.current
 												? "bg-[#F4F7FB] tracking-wide text-black"
 												: "tracking-wide text-slate-600 hover:bg-slate-50 hover:text-slate-900",
-											"group flex items-center rounded-md px-2 py-2 text-base font-normal"
+											"group flex w-full items-center rounded-md px-2 py-2 text-base font-normal"
 										)}
 									>
 										<item.icon
@@ -30,7 +33,7 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 											aria-hidden="true"
 										/>
 										{item.name}
-									</a>
+									</button>
 								))}
 							</div>
 						</nav>
@@ -38,14 +41,14 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 					<div className="flex flex-col border-t border-slate-200 p-4">
 						<div className="space-y-6 py-9 px-2">
 							{secondaryNavigation.map((item) => (
-								<a
+								<button
 									key={item.name}
-									href={item.href}
+									onClick={() => handleNavClick(item.name, router)}
 									className={classNames(
 										item.current
 											? "bg-[#F4F7FB] tracking-wide text-black"
 											: "tracking-wide text-slate-600 hover:bg-slate-50 hover:text-slate-900",
-										"group flex items-center rounded-md px-2 py-2 text-base font-normal"
+										"group flex w-full rounded-md px-2 py-2 text-base font-normal first-letter:items-center"
 									)}
 								>
 									<item.icon
@@ -58,7 +61,7 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 										aria-hidden="true"
 									/>
 									{item.name}
-								</a>
+								</button>
 							))}
 						</div>
 					</div>
