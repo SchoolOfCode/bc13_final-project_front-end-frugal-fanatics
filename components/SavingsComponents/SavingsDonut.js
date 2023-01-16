@@ -1,6 +1,6 @@
 import { Chart as ChartJS, ArcElement } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import { savingsOptions } from "../data/charts";
+import { savingsOptions } from "../../data/charts";
 ChartJS.register(ArcElement);
 
 const SavingsDonut = ({ data }) => {
