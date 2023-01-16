@@ -19,7 +19,7 @@ const Budgeting = ({ data }) => {
 			<div className="flex flex-col items-center gap-8">
 				<BudgetingSection data={data} />
 			</div>
-			<div className="flex">
+			<div className="flex py-10">
 				{budgetArticlesData.map((articles, key) => (
 					<CardComponent
 						imageSrc={articles.imageSrc}

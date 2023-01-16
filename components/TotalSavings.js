@@ -11,16 +11,25 @@ function TotalSavings({ data }) {
 	}, []);
 
 	return (
-		<section className="stack flex w-full flex-col gap-5 rounded-2xl bg-white px-12 py-9 pb-11 xl:w-full">
-			<h2 className="text-2xl font-medium leading-none text-[#202834]">
+		<div className="stack flex w-full flex-col gap-10 rounded-2xl bg-white px-12 py-8 pb-14 max-[560px]:items-center xl:w-[100%]">
+			<h2
+				className="text-2xl font-medium text-[#202834]"
+				style={{ fontFamily: "Shapiro Welter Wide", weight: "500" }}
+			>
 				Total Savings
 			</h2>
 			<div className="flex flex-col gap-8">
 				<div className="flex items-end gap-1.5">
-					<p className="text-4xl leading-none text-[#202834] md:text-[40px]">
+					<p
+						className="text-xl leading-none text-[#202834] md:text-[35px]"
+						style={{ fontFamily: "Shapiro Welter Wide", weight: "500" }}
+					>
 						£{totalSavings}.00
 					</p>
-					<p className="text-2xl text-[#bfc9d5] md:text-3xl">
+					<p
+						className="text-lg text-[#bfc9d5] md:text-2xl"
+						style={{ fontFamily: "Shapiro Welter Wide", weight: "500" }}
+					>
 						/ £{savingsGoal}.00
 					</p>
 				</div>
@@ -35,7 +44,7 @@ function TotalSavings({ data }) {
 					></div>
 				</div>
 			</div>
-		</section>
+		</div>
 	);
 }
 export default TotalSavings;

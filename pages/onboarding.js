@@ -70,8 +70,6 @@ export default function LandingPage({ data, setData }) {
 							/>
 							<div className="py-5">
 								<div className="flex flex-col gap-8">
-									{/* ouiswgfuiosdhfouisdhfoisudhfoisudfhosidufhosiufhosiudfh */}
-
 									<FormInput
 										key={0}
 										text="Rent or Mortgage"
