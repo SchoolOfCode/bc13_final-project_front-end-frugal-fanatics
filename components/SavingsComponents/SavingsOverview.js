@@ -1,5 +1,5 @@
 import React from "react";
-import SavingsDonut from "./../components/SavingsDonut";
+import SavingsDonut from "../../components/SavingsComponents/SavingsDonut";
 
 function SavingsOverview({ data }) {
 	return (

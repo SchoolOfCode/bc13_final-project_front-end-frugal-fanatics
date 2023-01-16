@@ -1,6 +1,6 @@
 import BudgetingBar from "./BudgetingBar";
-import { calculatePercentages, padPercentages } from "../utils/helpers";
-import { budgetColors } from "../data/colors";
+import { calculatePercentages, padPercentages } from "../../utils/helpers";
+import { budgetColors } from "../../data/colors";
 import React from "react";
 
 function BudgetingSection({ data }) {

@@ -1,4 +1,4 @@
-import BudgetingSection from "../components/BudgetingSection";
+import BudgetingSection from "../components/BudgetingComponents/BudgetingSection";
 import CardComponent from "../components/CardComponent";
 import DashboardLayout from "../components/DashboardLayout";
 import { budgetArticlesData } from "../data/budgetArtData";

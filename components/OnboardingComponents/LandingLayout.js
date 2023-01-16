@@ -1,6 +1,6 @@
 import Head from "next/head";
-import DesktopNavbar from "./DesktopNavbar";
-import MobileNavbar from "./MobileNavbar";
+import DesktopNavbar from "../../components/DesktopNavbar";
+import MobileNavbar from "../../components/MobileNavbar";
 
 const LandingLayout = ({
 	children,

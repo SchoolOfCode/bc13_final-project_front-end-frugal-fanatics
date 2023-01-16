@@ -1,7 +1,7 @@
 import CardComponent from "../components/CardComponent";
 import DashboardLayout from "../components/DashboardLayout";
-import SavingsPotsSection from "../components/SavingsPotsSection";
-import TotalSavings from "../components/TotalSavings";
+import SavingsPotsSection from "../components/SavingsComponents/SavingsPotsSection";
+import TotalSavings from "../components/SavingsComponents/TotalSavings";
 import {
   primaryNavigation,
   secondaryNavigation,

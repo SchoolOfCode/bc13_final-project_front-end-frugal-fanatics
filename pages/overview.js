@@ -1,8 +1,8 @@
-import BudgetOverview from "../components/BudgetOverview";
+import BudgetOverview from "../components/BudgetingComponents/BudgetOverview";
 import DashboardLayout from "../components/DashboardLayout";
-import SavingsOverview from "../components/SavingsOverview";
+import SavingsOverview from "../components/SavingsComponents/SavingsOverview";
 import Mindfulness from "../components/Mindfulness";
-import TotalSavings from "../components/TotalSavings";
+import TotalSavings from "../components/SavingsComponents/TotalSavings";
 import {
   primaryNavigation,
   secondaryNavigation,
