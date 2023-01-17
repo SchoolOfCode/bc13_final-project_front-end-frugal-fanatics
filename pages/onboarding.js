@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { steps } from "../utils/navigation";
 import { formInputShape } from "../data/states";
 import FormButton from "./../components/FormButton";
 import LandingLayout from "../components/LandingLayout";
@@ -13,7 +12,7 @@ export default function LandingPage({ data, setData }) {
 	const router = useRouter();
 	const [formInput, setFormInput] = useState(formInputShape);
 
-	const handleChange3 = (e, formInput, setFormInput) => {
+	const handleChange = (e, formInput, setFormInput) => {
 		if (e.target.id === "total") {
 			const updatedSavings = { ...formInput.savings, total: +e.target.value };
 			setFormInput({ ...formInput, savings: updatedSavings });
@@ -24,8 +23,7 @@ export default function LandingPage({ data, setData }) {
 		}
 	};
 
-	const handleSubmit3 = (e, formInput, data, setData, steps, router) => {
-		steps[2].status = "complete";
+	const handleSubmit = (e, formInput, data, setData, router) => {
 		e.preventDefault();
 		setData({ ...data, savings: formInput.savings });
 		router.push("/savings");
@@ -37,9 +35,7 @@ export default function LandingPage({ data, setData }) {
 				<FormContainer>
 					<form
 						className="flex flex-col gap-5"
-						onSubmit={(e) =>
-							handleSubmit3(e, formInput, data, setData, steps, router)
-						}
+						onSubmit={(e) => handleSubmit(e, formInput, data, setData, router)}
 					>
 						<FormText
 							question="Do you have any savings?"
@@ -51,14 +47,14 @@ export default function LandingPage({ data, setData }) {
 								<FormInput
 									id="total"
 									text="Total savings"
-									handleChange={handleChange3}
+									handleChange={handleChange}
 									formInput={formInput}
 									setFormInput={setFormInput}
 								/>
 								<FormInput
 									id="goal"
 									text="Savings goal"
-									handleChange={handleChange3}
+									handleChange={handleChange}
 									formInput={formInput}
 									setFormInput={setFormInput}
 								/>
