@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Link from "next/Link";
+//import Link from "next/Link";
 import { savingArticlesData } from "../data/savingsArtData";
-import next from "next";
+//import next from "next";
 //button text has a default to read more or you can pass props
 function CardComponent({
   imageSrc,
