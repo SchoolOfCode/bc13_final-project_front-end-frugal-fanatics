@@ -1,4 +1,3 @@
 {
-	"extends": ["next/babel", "next/core-web-vitals"],
-	"plugins": ["prettier"]
+	"extends": ["next/babel", "next/core-web-vitals"]
 }
