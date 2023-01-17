@@ -1,10 +1,7 @@
 import React from "react";
-const FormText = ({ step, question, description }) => {
+const FormText = ({ question, description }) => {
 	return (
 		<>
-			<h2 className="font-light tracking-wide text-[#B0B6C0]">
-				Step {step} of 3
-			</h2>
 			<h1
 				className="text-[27px] text-slate-800"
 				style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}

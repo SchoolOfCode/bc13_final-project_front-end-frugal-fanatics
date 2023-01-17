@@ -13,23 +13,17 @@ import {
  */
 export const handleNavClick = (pageName, router) => {
 	switch (pageName) {
-		case "Overview":
-			router.push("/overview");
-			break;
-		case "Budgeting":
-			router.push("/budgeting");
-			break;
 		case "Savings":
 			router.push("/savings");
 			break;
 		case "Settings":
-			router.push("/overview");
+			router.push("/savings");
 			break;
 		case "Logout":
-			router.push("/overview");
+			router.push("/savings");
 			break;
 		default:
-			router.push("/overview");
+			router.push("/savings");
 	}
 };
 
@@ -42,8 +36,6 @@ export const handleNavClick = (pageName, router) => {
  * @property {boolean} current - Whether the page is currently selected.
  */
 export const primaryNavigation = [
-	{ name: "Overview", href: "/overview", icon: Squares2X2Icon, current: false },
-	{ name: "Budgeting", href: "/budgeting", icon: ChartBarIcon, current: false },
 	{
 		name: "Savings",
 		href: "/savings",
