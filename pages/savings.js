@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import CardComponent from "../components/CardComponent";
 import DashboardLayout from "../components/DashboardLayout";
 import SavingsPotsSection from "../components/SavingsPotsSection";
