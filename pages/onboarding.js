@@ -104,10 +104,54 @@ export default function LandingPage() {
 						</form>
 					) : !session ? (
 						<>
-							<p>Log in now to get your personalised dashboard!</p>
+							<p
+								className="text-center text-[27px] text-slate-800"
+								style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
+							>
+								{"Log in to get your"}
+								<br></br>
+								{"personalised dashboard!"}
+							</p>
 							<Auth
 								supabaseClient={supabase}
-								appearance={{ theme: ThemeSupa }}
+								appearance={{
+									style: {
+										button: {
+											// --> button needs hover styling if custom colors
+											// background: "white",
+											// color: "#1e293b",
+											// borderColor: "#1e293b",
+											// borderWidth: "2px",
+											fontSize: "20px",
+											borderRadius: "8px",
+											fontWeight: "400",
+											marginTop: "30px",
+											height: "58px",
+											paddingTop: "11px",
+											letterSpacing: "0.025em",
+										},
+										label: {
+											fontSize: "16px",
+											color: "#1e293b",
+											letterSpacing: "0.025em",
+											marginTop: "10px",
+										},
+										input: {
+											height: "58px",
+											fontSize: "20px",
+											color: "#1e293b",
+											border: "0px",
+											backgroundColor: "#f8fafc",
+										},
+										anchor: {
+											fontSize: "16px",
+											paddingTop: "20px",
+											color: "#475569",
+											textDecoration: "none",
+											letterSpacing: "0.025em",
+										},
+									},
+								}}
 								// theme="dark"
 							/>
 						</>
