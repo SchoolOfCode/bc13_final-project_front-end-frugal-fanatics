@@ -53,13 +53,40 @@ export default function Onboarding({ data, setData }) {
 	
 	async function updateProfile(formInput) {
 		try {
-			const updates = {
+			const savingsUpdates = {
 				user_id: user.id,
-				total: formInput.savings.total,
-				goal: formInput.savings.goal,
+				savings_total: formInput.savings.total,
+				savings_goal: formInput.savings.goal,
 				inserted_at: new Date().toISOString(),
 			};
-			let { error } = await supabase.from("savings").insert(updates);
+			let { error } = await supabase.from("savings").insert(savingsUpdates);
+			if (error) throw error;
+			// alert("Profile updated!");
+		} catch (error) {
+			// alert("Error updating the data!");
+			console.log(error);
+		}
+		try {
+			const expensesUpdates = {
+				user_id: user.id,
+				expenses_type: formInput.expenses.type,
+				expenses_amount: formInput.expenses.amount,
+				inserted_at: new Date().toISOString(),
+			};
+			let { error } = await supabase.from("savings").insert(expensesUpdates);
+			if (error) throw error;
+			// alert("Profile updated!");
+		} catch (error) {
+			// alert("Error updating the data!");
+			console.log(error);
+		}
+		try {
+			const incomeUpdates = {
+				user_id: user.id,
+				total_income: formInput.income.total,
+				inserted_at: new Date().toISOString(),
+			};
+			let { error } = await supabase.from("savings").insert(incomeUpdates);
 			if (error) throw error;
 			// alert("Profile updated!");
 		} catch (error) {

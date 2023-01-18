@@ -1,5 +1,7 @@
 PLAN
 
-1. Create tables for income & expenses
+1. Create tables for income & expenses ✅
+
 2. Refactor savings updateProfile to update all three tables
-3. Refactor Form -> if form is not complete, we see the form, if form is complete and session is false, we display auth UI; if form is complete and sessionis true, we push router to dashboard. 
+
+3. Refactor Form -> if form is not complete, we see the form, if form is complete and session is false, we display auth UI; if form is complete and sessionis true, we push router to dashboard 
