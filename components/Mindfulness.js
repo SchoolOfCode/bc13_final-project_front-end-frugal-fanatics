@@ -11,7 +11,7 @@ const Mindfulness = () => {
 					It is better to try and fail, than fail to try at all
 				</div>
 				<div className="flex pb-2 opacity-95">
-					<img src="Mindfulness_lady.png" />
+					<img src="Mindfulness_lady.png" alt="cartoon lady sat crossed legged"/>
 				</div>
 			</div>
 		</div>
