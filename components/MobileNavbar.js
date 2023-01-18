@@ -1,13 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 const MobileNavbar = ({ setSidebarOpen }) => {
 	return (
 		<div className="lg:hidden">
 			<div className="flex items-center justify-between border-b border-slate-200 bg-white px-4 py-1.5">
 				<div>
-					<img className="h-6 w-auto" src="next.svg" alt="Your Company" />
+					<Image src="next.svg" alt="Your Company" height="32" width="157" />
 				</div>
 				<div>
 					<button
