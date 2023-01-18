@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 const Mindfulness = () => {
@@ -6,7 +8,7 @@ const Mindfulness = () => {
 			<h2 className="text-2xl font-medium text-[#202834]">Mindfulness</h2>
 			<div className="relative flex flex-col justify-center gap-5 min-[560px]:flex-row">
 				<div className="flex h-full w-full flex-col pt-10">
-					"It's better to try and fail, than fail to try at all"
+					It is better to try and fail, than fail to try at all
 				</div>
 				<div className="flex pb-2 opacity-95">
 					<img src="Mindfulness_lady.png" />
