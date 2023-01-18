@@ -1,8 +1,20 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useSession } from "@supabase/auth-helpers-react";
+import { useEffect } from "react";
 
 export default function Home() {
 	const router = useRouter();
+	const session = useSession();
+
+	useEffect(() => {
+		if (session) {
+			router.push("/savings");
+		} else {
+			router.push("/onboarding");
+		}
+	}, [session]);
+
 	return (
 		<>
 			<Head>
@@ -12,12 +24,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className="flex h-full w-full flex-col items-center justify-center">
-				<button
-					className=" w-96 bg-indigo-500 p-10 text-2xl text-white"
-					onClick={() => router.push("/onboarding")}
-				>
-					{"go to /onboarding page ->"}
-				</button>
+				<h1>Hello World</h1>
 			</main>
 		</>
 	);

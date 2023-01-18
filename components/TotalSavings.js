@@ -1,14 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-function TotalSavings({ data }) {
-	const totalSavings = data.savings.total.toLocaleString("en-GB");
-	const savingsGoal = data.savings.goal.toLocaleString("en-GB");
-	const percentage = (data.savings.total / data.savings.goal) * 100;
+function TotalSavings({ userData }) {
+	const totalSavings = userData.savings.total.toLocaleString("en-GB");
+	const savingsGoal = userData.savings.goal.toLocaleString("en-GB");
+	const percentage = (userData.savings.total / userData.savings.goal) * 100;
 	const [barWidth, setBarWidth] = useState(0);
 	useEffect(() => {
 		setBarWidth(percentage);
-	}, []);
+	}, [percentage]);
 
 	return (
 		<div className="stack flex w-full flex-col gap-10 rounded-2xl bg-white px-12 py-8 pb-14 max-[560px]:items-center xl:w-[100%]">

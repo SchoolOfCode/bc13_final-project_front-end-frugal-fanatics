@@ -42,3 +42,62 @@
 	src: url("/fonts/Shapiro65LightHeavy.woff2") format("woff2");
 	font-weight: 600;
 }
+
+.footer-container {
+	border-top: 1px solid #d8d8d8;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #d8d8d8;
+	padding-bottom: 1.5rem;
+}
+.footer-text {
+	margin-top: 2rem;
+}
+
+.footer-repo {
+	text-decoration: underline;
+	cursor: pointer;
+	margin-top: 1rem;
+}
+
+.footer-stack {
+	color: #f35815;
+	cursor: pointer;
+}
+
+.navbar-container {
+	color: #d8d8d8;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 3rem;
+}
+
+.navbar-content {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-title {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.navbar-name {
+	margin-right: 2rem;
+	color: #f35815;
+	cursor: pointer;
+}
+
+.navbar-buttons {
+	border: 1px solid #f35815;
+	background-color: transparent;
+	color: #d8d8d8;
+	padding: 0.5rem 2rem;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	margin-right: 1.5rem;
+}
