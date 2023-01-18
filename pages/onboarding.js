@@ -18,13 +18,35 @@ import {
 	handleSubmit2,
 	handleSubmit3,
 } from "../utils/helpers";
+import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
+import {
+	useSession,
+	useUser,
+	useSupabaseClient,
+} from "@supabase/auth-helpers-react";
 
-export default function LandingPage({ data, setData }) {
+export default function Onboarding({ data, setData }) {
 	const router = useRouter();
 	const [formInput, setFormInput] = useState(formInputShape);
 	const [formStep, setFormStep] = useState(1);
 	const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
 	const labels = extractLabels(data.expenses);
+	const [isFormComplete, setIsFormComplete] = useState(false);
+	const supabase = useSupabaseClient();
+	const session = useSession();
+	const user = useUser();
+	
+	useEffect(() => {
+		if (session && !isFormComplete) {
+			router.push("/savings");
+		}
+		// if (!session && isFormComplete) {
+		// 	router.push("#auth-sign-up");
+		// }
+		if (session && isFormComplete) {
+			handleSubmit(formInput, router);
+		}
+	}, [session, isFormComplete]);
 
 	return (
 		<LandingLayout>
