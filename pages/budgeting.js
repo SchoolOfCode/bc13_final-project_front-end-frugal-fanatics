@@ -24,9 +24,11 @@ const Budgeting = ({ data }) => {
         {budgetArticlesData.map((articles) => (
           <CardComponent
             imageSrc={articles.imageSrc}
+            altSrc={articles.altSrc}
             title={articles.title}
             description={articles.description}
             link={articles.link}
+            ariaLabelSrc={articles.ariaLabelSrc}
           />
         ))}
       </div>

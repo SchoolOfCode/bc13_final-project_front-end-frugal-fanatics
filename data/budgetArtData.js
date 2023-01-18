@@ -1,22 +1,30 @@
+import personalBudget from "../public/budget.jpg"
+import woodenCubes from "../public/woodenCubesBudget.jpeg"
+import budgetWoman from "../public/budgetWoman.jpeg"
+
 export const budgetArticlesData = [
   {
-    imageSrc: "https://sjcengage.com/wp-content/uploads/2017/10/budget.jpg",
+    imageSrc: personalBudget,
+    altSrc: "photo of piggy bank and jar filled with coins next to a whiteboard with to-do list on it",
     title: "Moneyhelper.co.uk",
     description: "For free guidance you can trust, we can help.",
     link: "https://www.moneyhelper.org.uk/en/everyday-money/budgeting/beginners-guide-to-managing-your-money",
+    ariaLabelSrc: "money helper website, beginners guide to budgeting",
   },
   {
-    imageSrc:
-      "https://th.bing.com/th/id/OIP.X6ZralbAMz_LfwxCRWZyVQHaFA?w=293&h=198&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    imageSrc: woodenCubes,
+    altSrc: "wooden cubes with letters on spelling out the word budget",
     title: "Money Saving Expert advice",
     description: "MoneySavingExpert talks about budgets.....",
     link: "https://www.moneysavingexpert.com/banking/budget-planning",
+    ariaLabelSrc: "MoneySavingExpert budget planning webpage",
   },
   {
-    imageSrc:
-      "https://media.istockphoto.com/photos/budget-with-woman-using-a-smartphone-picture-id1090652214?k=6&m=1090652214&s=612x612&w=0&h=byrcAZYpz4VqP_9pl44VDTLhYEebBaERwhKNYJl6LGI=",
+    imageSrc: budgetWoman,
+    altSrc: "the word budget on a screen and a woman using a smartphone",
     title: "Which the consumers champion",
     description: "Which guide to budgeting",
     link: "https://www.which.co.uk/money/money-saving-tips/budgeting",
+    ariaLabelSrc: "Which wepbage with money saving tips",
   },
 ];
