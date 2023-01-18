@@ -40,6 +40,9 @@ export default function Onboarding({ data, setData }) {
 		if (session && !isFormComplete) {
 			router.push("/savings");
 		}
+		// Tried to force auth to default to sign up rather than sign in
+		// This doesn't work could potentialy revisit this to improve UX
+
 		// if (!session && isFormComplete) {
 		// 	router.push("#auth-sign-up");
 		// }
@@ -47,7 +50,29 @@ export default function Onboarding({ data, setData }) {
 			handleSubmit(formInput, router);
 		}
 	}, [session, isFormComplete]);
+	
+	async function updateProfile(formInput) {
+		try {
+			const updates = {
+				user_id: user.id,
+				total: formInput.savings.total,
+				goal: formInput.savings.goal,
+				inserted_at: new Date().toISOString(),
+			};
+			let { error } = await supabase.from("savings").insert(updates);
+			if (error) throw error;
+			// alert("Profile updated!");
+		} catch (error) {
+			// alert("Error updating the data!");
+			console.log(error);
+		}
+	}
 
+	const handleSubmit = (formInput, router) => {
+		updateProfile(formInput);
+		router.push("/savings");
+	};
+	
 	return (
 		<LandingLayout>
 			<LandingContainer>
