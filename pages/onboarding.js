@@ -10,7 +10,7 @@ import FormContainer from "../components/FormContainer";
 import FormInput from "./../components/FormInput";
 import FormText from "./../components/FormText";
 import FormSteps from "./../components/FormSteps";
-import { handleChange1, handleChange2, handleChange3 } from "../utils/helpers";
+import { handleChange1, handleChange2, handleChange3, nextStep } from "../utils/helpers";
 import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import {
 	useSession,
@@ -22,7 +22,7 @@ export default function Onboarding() {
 	const router = useRouter();
 	const [formInput, setFormInput] = useState(formInputState);
 	const [formStep, setFormStep] = useState(1);
-	const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
+	// const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
 	const labels = extractLabels(formInput.expenses);
 	const [isFormComplete, setIsFormComplete] = useState(false);
 	const supabase = useSupabaseClient();
@@ -98,11 +98,13 @@ export default function Onboarding() {
 		<LandingLayout>
 			<LandingContainer>
 				<FormContainer>
+				{!isFormComplete && (
 					<FormSteps steps={steps} />
+				)}
 					{formStep === 1 && !isFormComplete && (
 						<form
 							className="flex flex-col gap-5"
-							onSubmit={() => nextFormStep()}
+							onSubmit={() => nextStep(steps, setFormStep, 0, 1)}
 						>
 							<FormText
 								step="1"
@@ -123,7 +125,7 @@ export default function Onboarding() {
 					{formStep === 2 && !isFormComplete && (
 						<form
 							className="flex flex-col gap-5"
-							onSubmit={() => nextFormStep()}
+							onSubmit={() => nextStep(steps, setFormStep, 1, 2)}
 						>
 							<FormText
 								step="2"

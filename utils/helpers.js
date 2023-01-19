@@ -143,6 +143,12 @@ export const handleSubmit3 = (e, formInput, data, setData, steps, router) => {
   router.push("/overview");
 };
 
+export const nextStep = (steps, setFormStep, currentIndex, nextIndex) => {
+  setFormStep((currentStep) => currentStep + 1)
+  steps[currentIndex].status = "complete";
+  steps[nextIndex].status = "current";
+}
+
 // useEffect(() => {
 // 	console.log("userSavings", userSavings);
 // }, [userSavings]);
