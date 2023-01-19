@@ -107,8 +107,7 @@ export default function Onboarding() {
 							<FormText
 								step="1"
 								question="What's your income after tax?"
-								description="Gastropub hoodie vegan air plant kickstarter ascot 
-								adipisicing, hoodie twee small batch incididunt fit freegan meh."
+								description="This could be your wages, any money you get from a lodger(s) or anyone else living with you, any money you get from a pension, any money you get from investments, and or any child maintenance or support you receive."
 							/>
 							<div className="py-5">
 								<FormInput
