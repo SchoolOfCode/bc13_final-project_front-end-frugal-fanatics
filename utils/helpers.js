@@ -6,11 +6,11 @@
  * @returns {Array} percentages - an array of percentages
  * representing each expense amount to the totalIncome
  */
-export const calculatePercentages = (data) => {
-	const percentages = data.expenses.map((expense) => {
-		return Math.round((expense.amount / data.totalIncome) * 100);
-	});
-	return percentages;
+export const calculatePercentages = (userExpenses, userIncome) => {
+  const percentages = userExpenses.expenses.map((expense) => {
+    return Math.round((expense.amount / userIncome.totalIncome) * 100);
+  });
+  return percentages;
 };
 
 /**
@@ -21,10 +21,10 @@ export const calculatePercentages = (data) => {
  * @returns {Array} - an array of numbers rounded and scaled
  */
 export const padPercentages = (arr) => {
-	const padding = 90 / Math.max(...arr);
-	return arr.map((percentage) => {
-		return Math.round(percentage * padding);
-	});
+  const padding = 90 / Math.max(...arr);
+  return arr.map((percentage) => {
+    return Math.round(percentage * padding);
+  });
 };
 
 /**
@@ -35,9 +35,9 @@ export const padPercentages = (arr) => {
  * @returns {Array} - an array of labels
  */
 export const extractLabels = (data) => {
-	return data.map((expense) => {
-		return expense.label;
-	});
+  return data.map((expense) => {
+    return expense.label;
+  });
 };
 
 /**
@@ -48,9 +48,9 @@ export const extractLabels = (data) => {
  * @returns {Array} - an array of amounts
  */
 export const extractAmounts = (data) => {
-	return data.map((expense) => {
-		return expense.amount;
-	});
+  return data.map((expense) => {
+    return expense.amount;
+  });
 };
 
 /**
@@ -61,86 +61,86 @@ export const extractAmounts = (data) => {
  * @returns {string} - a string of classnames filtered and joined by " "
  */
 export const classNames = (...classes) => {
-	return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(" ");
 };
 
 export const handleChange1 = (e, formInput, setFormInput) => {
-	// convert a string to a number using the plus operator ( + )e.target.value
-	setFormInput({ ...formInput, totalIncome: +e.target.value });
+  // convert a string to a number using the plus operator ( + )e.target.value
+  setFormInput({ ...formInput, totalIncome: +e.target.value });
 };
 export const handleSubmit1 = (
-	e,
-	formInput,
-	data,
-	setData,
-	steps,
-	nextFormStep
+  e,
+  formInput,
+  data,
+  setData,
+  steps,
+  nextFormStep
 ) => {
-	e.preventDefault();
-	setData({ ...data, totalIncome: +formInput.totalIncome });
-	nextFormStep();
-	steps[0].status = "complete";
-	steps[1].status = "current";
+  e.preventDefault();
+  setData({ ...data, totalIncome: +formInput.totalIncome });
+  nextFormStep();
+  steps[0].status = "complete";
+  steps[1].status = "current";
 };
 
 export const calculateLeftoverIncome = (expenses, totalIncome) => {
-	const leftoverIncome =
-		totalIncome -
-		expenses[0].amount -
-		expenses[1].amount -
-		expenses[2].amount -
-		expenses[3].amount -
-		expenses[4].amount;
-	return leftoverIncome;
+  const leftoverIncome =
+    totalIncome -
+    expenses[0].amount -
+    expenses[1].amount -
+    expenses[2].amount -
+    expenses[3].amount -
+    expenses[4].amount;
+  return leftoverIncome;
 };
 
 export const handleChange2 = (e, formInput, setFormInput, key, labels) => {
-	const updatedExpenses = [...formInput.expenses];
-	updatedExpenses[key] = {
-		label: labels[key],
-		amount: +e.target.value,
-	};
-	updatedExpenses[5] = {
-		label: "Leftover Income",
-		amount: calculateLeftoverIncome(updatedExpenses, formInput.totalIncome),
-	};
-	setFormInput({
-		...formInput,
-		expenses: updatedExpenses,
-	});
+  const updatedExpenses = [...formInput.expenses];
+  updatedExpenses[key] = {
+    label: labels[key],
+    amount: +e.target.value,
+  };
+  updatedExpenses[5] = {
+    label: "Leftover Income",
+    amount: calculateLeftoverIncome(updatedExpenses, formInput.totalIncome),
+  };
+  setFormInput({
+    ...formInput,
+    expenses: updatedExpenses,
+  });
 };
 
 export const handleSubmit2 = (
-	e,
-	formInput,
-	data,
-	setData,
-	steps,
-	nextFormStep
+  e,
+  formInput,
+  data,
+  setData,
+  steps,
+  nextFormStep
 ) => {
-	e.preventDefault();
-	setData({ ...data, expenses: formInput.expenses });
-	nextFormStep();
-	steps[1].status = "complete";
-	steps[2].status = "current";
+  e.preventDefault();
+  setData({ ...data, expenses: formInput.expenses });
+  nextFormStep();
+  steps[1].status = "complete";
+  steps[2].status = "current";
 };
 
 export const handleChange3 = (e, formInput, setFormInput) => {
-	if (e.target.id === "total") {
-		const updatedSavings = { ...formInput.savings, total: +e.target.value };
-		setFormInput({ ...formInput, savings: updatedSavings });
-	}
-	if (e.target.id === "goal") {
-		const updatedSavings = { ...formInput.savings, goal: +e.target.value };
-		setFormInput({ ...formInput, savings: updatedSavings });
-	}
+  if (e.target.id === "total") {
+    const updatedSavings = { ...formInput.savings, total: +e.target.value };
+    setFormInput({ ...formInput, savings: updatedSavings });
+  }
+  if (e.target.id === "goal") {
+    const updatedSavings = { ...formInput.savings, goal: +e.target.value };
+    setFormInput({ ...formInput, savings: updatedSavings });
+  }
 };
 
 export const handleSubmit3 = (e, formInput, data, setData, steps, router) => {
-	steps[2].status = "complete";
-	e.preventDefault();
-	setData({ ...data, savings: formInput.savings });
-	router.push("/overview");
+  steps[2].status = "complete";
+  e.preventDefault();
+  setData({ ...data, savings: formInput.savings });
+  router.push("/overview");
 };
 
 // useEffect(() => {
