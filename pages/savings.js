@@ -20,7 +20,7 @@ const Savings = ({ data }) => {
       <div className="flex flex-col items-center gap-8">
         <TotalSavings data={data} />
         <SavingsPotsSection data={data} />
-        <div className="flex">
+        <div className="flex flex-col gap-10 min-[950px]:flex-row">
           {savingArticlesData.map((articles) => (
             <CardComponent
               imageSrc={articles.imageSrc}

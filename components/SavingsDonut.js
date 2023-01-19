@@ -11,6 +11,7 @@ ChartJS.register(ArcElement);
 const SavingsDonut = ({ data }) => {
 	const total = data.savings.total;
 	const remainder = data.savings.goal - data.savings.total;
+	const img = data.pots.img;
 	const savingsDonutData = {
 		labels: ["Savings", "Target Savings"],
 		datasets: [

@@ -4,7 +4,7 @@ import { PlusCircleIcon } from "@heroicons/react/24/outline";
 
 const SavingsPot = ({ title, progress, goal, data }) => {
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex flex-col items-center gap-5 ">
       <SavingsDonut data={data} />
       <h3 className="mb-[-7px] text-xl font-medium">{title}</h3>
       <div className="flex flex-col items-center gap-3">

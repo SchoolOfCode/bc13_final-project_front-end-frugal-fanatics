@@ -18,11 +18,11 @@ function TotalSavings({ data }) {
 			</h2>
 			<div className="flex flex-col gap-8">
 				<div className="flex items-end gap-1.5">
-					<p className="text-4xl leading-none text-[#202834] md:text-[40px]">
+					<p className="text-4xl leading-none text-[#202834] md:text-[40px] max-[450px]:text-[30px]">
 						£{totalSavings}.00
 					</p>
-					<p className="text-2xl text-[#bfc9d5] md:text-3xl">
-						/ £{savingsGoal}.00
+					<p className="text-2xl text-[#bfc9d5] md:text-3xl max-[450px]:text-[20px]">
+						/£{savingsGoal}.00
 					</p>
 				</div>
 
