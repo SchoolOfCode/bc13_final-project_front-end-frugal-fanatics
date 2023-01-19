@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 const BudgetingBar = ({
 	label,
@@ -7,6 +8,11 @@ const BudgetingBar = ({
 	color,
 	paddedPercentage,
 }) => {
+	const [barWidth, setBarWidth] = useState(0);
+	useEffect(() => {
+		setBarWidth(paddedPercentage);
+	}, [paddedPercentage, barWidth]);
+
 	return (
 		<div className="flex flex-col gap-3">
 			<div className="flex justify-between">
@@ -25,8 +31,9 @@ const BudgetingBar = ({
 			<div className="h-3 w-full bg-[#F5F5F5]">
 				<div
 					style={{
-						width: `${paddedPercentage}%`,
+						width: `${barWidth}%`,
 						backgroundColor: color,
+						transition: "width 1s ease-in-out",
 					}}
 					className="h-full"
 				></div>

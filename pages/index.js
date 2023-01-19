@@ -1,6 +1,18 @@
+import { useSession } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import Head from "next/head";
 
 export default function Home() {
+	const session = useSession();
+	const router = useRouter();
+
+	useEffect(() => {
+		if (session) {
+			router.push("/overview");
+		}
+	}, [session]);
+
 	return (
 		<>
 			<Head>
