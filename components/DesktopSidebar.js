@@ -17,7 +17,7 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 								{primaryNavigation.map((item) => (
 									<button
 										key={item.name}
-										onClick={() => handleNavClick(item.name, router)}
+										onClick={() => handleNavClick(item.name, router, supabase)}
 										className={classNames(
 											item.current
 												? "bg-[#F4F7FB] tracking-wide text-black"

@@ -115,6 +115,7 @@ export default function LandingPage() {
 							<Auth
 								supabaseClient={supabase}
 								appearance={{
+									theme: ThemeSupa,
 									style: {
 										button: {
 											// --> button needs hover styling if custom colors

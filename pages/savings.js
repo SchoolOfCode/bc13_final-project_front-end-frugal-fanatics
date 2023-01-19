@@ -43,7 +43,7 @@ const Savings = () => {
 				.from("savings")
 				.select(`total, goal`)
 				.eq("user_id", user.id)
-				.maybeSingle();
+				.single();
 
 			if (error && status !== 406) {
 				throw error;
