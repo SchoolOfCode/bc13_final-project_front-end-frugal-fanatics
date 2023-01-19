@@ -34,7 +34,7 @@ const Overview = ({ }) => {
 		savings: { total: 0, goal: 0 },
 	});
 
-		useEffect(() => {
+	useEffect(() => {
 		if (user) {
 			getUserData();
 			console.log("supabase user ->", user);
@@ -46,6 +46,10 @@ const Overview = ({ }) => {
 			router.push("/");
 		}
 	});
+
+	useEffect(() => {
+		console.log("useEffect userData should render", userData)
+	}, [userData])
 
 	const getUserData = async () => {
 		try {
@@ -67,7 +71,8 @@ const Overview = ({ }) => {
 		} catch (error) {
 			console.log("catch error ->", error);
 		}
-    try {
+
+		try {
 			let { data, error, status } = await supabase
 				.from("expenses")
 				.select(`expenses_type, expenses_amount`)
@@ -78,17 +83,45 @@ const Overview = ({ }) => {
 			}
 
 			if (data) {
-				console.log("user data ->", userData);
-        console.log("supabase data ->", data);
-        // setUserData({ ...userData, 
-        //   expenses: { label: data.expenses_type, amount: data.expenses_amount },
-				// });
+			console.log("user data ->", userData);
+			console.log("supabase data ->", data);
+			const expenseData = data.map((expense) => {
+				return {
+					label: expense.expenses_type,
+					amount: expense.expenses_amount
+				}
+			})
+        setUserData({ ...userData, 
+          expenses: expenseData,
+				});
 				console.log("should be updated", userData);
 			}
 		} catch (error) {
 			console.log("catch error ->", error);
 		}
 
+		try {
+			let { data, error, status } = await supabase
+				.from("income")
+				.select(`total_income`)
+				.eq("user_id", user.id)
+				.single()
+
+			if (error && status !== 406) {
+				throw error;
+			}
+
+			if (data) {
+			console.log("user data ->", userData);
+			console.log("supabase data ->", data);
+			setUserData({ ...userData, 
+				totalIncome: data.total_income
+						});
+				console.log("income should be updated", userData);
+			}
+		} catch (error) {
+			console.log("catch error ->", error);
+		}
 	};
 
   return (

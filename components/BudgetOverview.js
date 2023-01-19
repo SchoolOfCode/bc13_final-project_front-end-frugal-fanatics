@@ -4,6 +4,7 @@ import { extractLabels } from "../utils/helpers";
 import { budgetOverviewColors as colors } from "../data/colors";
 
 function BudgetOverview({ data }) {
+	console.log("from budgetOverview ",data)
 	const labels = extractLabels(data.expenses);
 
 	return (
