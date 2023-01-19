@@ -83,11 +83,26 @@ export const handleSubmit1 = (
 	steps[1].status = "current";
 };
 
+export const calculateLeftoverIncome = (expenses, totalIncome) => {
+	const leftoverIncome =
+		totalIncome -
+		expenses[0].amount -
+		expenses[1].amount -
+		expenses[2].amount -
+		expenses[3].amount -
+		expenses[4].amount;
+	return leftoverIncome;
+};
+
 export const handleChange2 = (e, formInput, setFormInput, key, labels) => {
 	const updatedExpenses = [...formInput.expenses];
 	updatedExpenses[key] = {
 		label: labels[key],
 		amount: +e.target.value,
+	};
+	updatedExpenses[5] = {
+		label: "Leftover Income",
+		amount: calculateLeftoverIncome(updatedExpenses, formInput.totalIncome),
 	};
 	setFormInput({
 		...formInput,

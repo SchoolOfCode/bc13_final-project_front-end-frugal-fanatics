@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { extractLabels } from "../utils/helpers";
+import { extractLabels, calculateLeftoverIncome } from "../utils/helpers";
 import { useRouter } from "next/router";
 import { steps } from "../utils/navigation";
 import { formInputShape } from "../data/states";
@@ -10,14 +10,7 @@ import FormContainer from "../components/FormContainer";
 import FormInput from "./../components/FormInput";
 import FormText from "./../components/FormText";
 import FormSteps from "./../components/FormSteps";
-import {
-	handleChange1,
-	handleChange2,
-	handleChange3,
-	handleSubmit1,
-	handleSubmit2,
-	handleSubmit3,
-} from "../utils/helpers";
+import { handleChange1, handleChange2, handleChange3 } from "../utils/helpers";
 import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import {
 	useSession,
@@ -25,33 +18,35 @@ import {
 	useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 
-export default function Onboarding({ data, setData }) {
+export default function Onboarding() {
 	const router = useRouter();
 	const [formInput, setFormInput] = useState(formInputShape);
 	const [formStep, setFormStep] = useState(1);
 	const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
-	const labels = extractLabels(data.expenses);
+	const labels = extractLabels(formInput.expenses);
 	const [isFormComplete, setIsFormComplete] = useState(false);
 	const supabase = useSupabaseClient();
 	const session = useSession();
 	const user = useUser();
-	
+
 	useEffect(() => {
 		if (session && !isFormComplete) {
 			router.push("/savings");
 		}
+
 		// Tried to force auth to default to sign up rather than sign in
-		// This doesn't work could potentialy revisit this to improve UX
+		// This doesn't work could potentialy revisit this to improve UX:
 
 		// if (!session && isFormComplete) {
 		// 	router.push("#auth-sign-up");
 		// }
+
 		if (session && isFormComplete) {
 			handleSubmit(formInput, router);
 		}
 	}, [session, isFormComplete]);
-	
-	async function updateProfile(formInput) {
+
+	async function uploadUserData(formInput) {
 		try {
 			const savingsUpdates = {
 				user_id: user.id,
@@ -61,56 +56,53 @@ export default function Onboarding({ data, setData }) {
 			};
 			let { error } = await supabase.from("savings").insert(savingsUpdates);
 			if (error) throw error;
-			// alert("Profile updated!");
 		} catch (error) {
-			// alert("Error updating the data!");
+			alert("Error updating the savings data!");
 			console.log(error);
 		}
 		try {
-			const expensesUpdates = {
-				user_id: user.id,
-				expenses_type: formInput.expenses.type,
-				expenses_amount: formInput.expenses.amount,
-				inserted_at: new Date().toISOString(),
-			};
-			let { error } = await supabase.from("savings").insert(expensesUpdates);
+			const expensesUpdates = formInput.expenses.map((expense) => {
+				return {
+					user_id: user.id,
+					expenses_type: expense.label,
+					expenses_amount: expense.amount,
+					inserted_at: new Date().toISOString(),
+				};
+			});
+			let { error } = await supabase.from("expenses").insert(expensesUpdates);
 			if (error) throw error;
-			// alert("Profile updated!");
 		} catch (error) {
-			// alert("Error updating the data!");
+			alert("Error updating the expenses data!");
 			console.log(error);
 		}
 		try {
 			const incomeUpdates = {
 				user_id: user.id,
-				total_income: formInput.income.total,
+				total_income: formInput.totalIncome,
 				inserted_at: new Date().toISOString(),
 			};
-			let { error } = await supabase.from("savings").insert(incomeUpdates);
+			let { error } = await supabase.from("income").insert(incomeUpdates);
 			if (error) throw error;
-			// alert("Profile updated!");
 		} catch (error) {
-			// alert("Error updating the data!");
+			alert("Error updating the income data!");
 			console.log(error);
 		}
 	}
 
 	const handleSubmit = (formInput, router) => {
-		updateProfile(formInput);
-		router.push("/savings");
+		uploadUserData(formInput);
+		router.push("/overview");
 	};
-	
+
 	return (
 		<LandingLayout>
 			<LandingContainer>
 				<FormContainer>
 					<FormSteps steps={steps} />
-					{formStep === 1 && (
+					{formStep === 1 && !isFormComplete && (
 						<form
 							className="flex flex-col gap-5"
-							onSubmit={(e) =>
-								handleSubmit1(e, formInput, data, setData, steps, nextFormStep)
-							}
+							onSubmit={() => nextFormStep()}
 						>
 							<FormText
 								step="1"
@@ -129,12 +121,10 @@ export default function Onboarding({ data, setData }) {
 							</div>
 						</form>
 					)}
-					{formStep === 2 && (
+					{formStep === 2 && !isFormComplete && (
 						<form
 							className="flex flex-col gap-5"
-							onSubmit={(e) =>
-								handleSubmit2(e, formInput, data, setData, steps, nextFormStep)
-							}
+							onSubmit={() => nextFormStep()}
 						>
 							<FormText
 								step="2"
@@ -144,28 +134,60 @@ export default function Onboarding({ data, setData }) {
 							/>
 							<div className="py-5">
 								<div className="flex flex-col gap-8">
-									{labels.map((label, i) => (
-										<FormInput
-											key={i}
-											text={label}
-											handleChange={handleChange2}
-											formInput={formInput}
-											setFormInput={setFormInput}
-											labels={labels}
-											id={i}
-										/>
-									))}
+									<FormInput
+										key={0}
+										text="Rent or Mortgage"
+										handleChange={handleChange2}
+										formInput={formInput}
+										setFormInput={setFormInput}
+										labels={labels}
+										id={0}
+									/>
+									<FormInput
+										key={1}
+										text="Food and Groceries"
+										handleChange={handleChange2}
+										formInput={formInput}
+										setFormInput={setFormInput}
+										labels={labels}
+										id={1}
+									/>
+									<FormInput
+										key={2}
+										text="Home Energy Bills"
+										handleChange={handleChange2}
+										formInput={formInput}
+										setFormInput={setFormInput}
+										labels={labels}
+										id={2}
+									/>
+									<FormInput
+										key={3}
+										text="Council Tax"
+										handleChange={handleChange2}
+										formInput={formInput}
+										setFormInput={setFormInput}
+										labels={labels}
+										id={3}
+									/>
+									<FormInput
+										key={4}
+										text="Credit Payments"
+										handleChange={handleChange2}
+										formInput={formInput}
+										setFormInput={setFormInput}
+										labels={labels}
+										id={4}
+									/>
 								</div>
 								<FormButton text="Almost there" />
 							</div>
 						</form>
 					)}
-					{formStep === 3 && (
+					{formStep === 3 && !isFormComplete && (
 						<form
 							className="flex flex-col gap-5"
-							onSubmit={(e) =>
-								handleSubmit3(e, formInput, data, setData, steps, router)
-							}
+							onSubmit={() => setIsFormComplete(true)}
 						>
 							<FormText
 								step="3"
@@ -193,6 +215,63 @@ export default function Onboarding({ data, setData }) {
 								<FormButton text="Get your tailored results" />
 							</div>
 						</form>
+					)}
+					{isFormComplete && !session ? (
+						<>
+							<p
+								className="text-center text-[27px] text-slate-800"
+								style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
+							>
+								{"Log in to get your"}
+								<br></br>
+								{"personalised dashboard!"}
+							</p>
+							<Auth
+								supabaseClient={supabase}
+								appearance={{
+									theme: ThemeSupa,
+									style: {
+										button: {
+											// --> button needs hover styling if custom colors
+											// background: "white",
+											// color: "#1e293b",
+											// borderColor: "#1e293b",
+											// borderWidth: "2px",
+											fontSize: "20px",
+											borderRadius: "8px",
+											fontWeight: "400",
+											marginTop: "30px",
+											height: "58px",
+											paddingTop: "11px",
+											letterSpacing: "0.025em",
+										},
+										label: {
+											fontSize: "16px",
+											color: "#1e293b",
+											letterSpacing: "0.025em",
+											marginTop: "10px",
+										},
+										input: {
+											height: "58px",
+											fontSize: "20px",
+											color: "#1e293b",
+											border: "0px",
+											backgroundColor: "#f8fafc",
+										},
+										anchor: {
+											fontSize: "16px",
+											paddingTop: "20px",
+											color: "#475569",
+											textDecoration: "none",
+											letterSpacing: "0.025em",
+										},
+									},
+								}}
+								// theme="dark"
+							/>
+						</>
+					) : (
+						<p></p>
 					)}
 				</FormContainer>
 			</LandingContainer>
