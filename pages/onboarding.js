@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { extractLabels, calculateLeftoverIncome } from "../utils/helpers";
 import { useRouter } from "next/router";
 import { steps } from "../utils/navigation";
-import { formInputShape } from "../data/states";
+import { formInputState } from "../data/states";
 import FormButton from "./../components/FormButton";
 import LandingLayout from "../components/LandingLayout";
 import LandingContainer from "../components/LandingContainer";
@@ -20,7 +20,7 @@ import {
 
 export default function Onboarding() {
 	const router = useRouter();
-	const [formInput, setFormInput] = useState(formInputShape);
+	const [formInput, setFormInput] = useState(formInputState);
 	const [formStep, setFormStep] = useState(1);
 	const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
 	const labels = extractLabels(formInput.expenses);

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 function TotalSavings({ data }) {
 	const totalSavings = data.savings.total.toLocaleString("en-GB");
 	const savingsGoal = data.savings.goal.toLocaleString("en-GB");
-	const percentage = (data.savings.total / data.savings.goal) * 100;
+	const percentage = Math.round((data.savings.total / data.savings.goal) * 100);
 	const [barWidth, setBarWidth] = useState(0);
 	useEffect(() => {
 		setBarWidth(percentage);

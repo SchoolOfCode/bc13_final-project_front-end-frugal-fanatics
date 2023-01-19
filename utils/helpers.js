@@ -142,3 +142,13 @@ export const handleSubmit3 = (e, formInput, data, setData, steps, router) => {
 	setData({ ...data, savings: formInput.savings });
 	router.push("/overview");
 };
+
+// useEffect(() => {
+// 	console.log("userSavings", userSavings);
+// }, [userSavings]);
+// useEffect(() => {
+// 	console.log("userIncome", userIncome);
+// }, [userIncome]);
+// useEffect(() => {
+// 	console.log("userExpenses", userExpenses);
+// }, [userExpenses]);
