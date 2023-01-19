@@ -60,15 +60,35 @@ const Overview = ({ }) => {
 			}
 
 			if (data) {
-				console.log("supabase savingsData ->", userData);
-        setUserData({ ...userData, 
-          savings: { total: data.total, goal: data.goal },
+	      setUserData({ ...userData, 
+        savings: { total: data.savings_total, goal: data.savings_goal },
 				});
-				console.log("supabase savingsData ->", userData);
 			}
 		} catch (error) {
 			console.log("catch error ->", error);
 		}
+    try {
+			let { data, error, status } = await supabase
+				.from("expenses")
+				.select(`expenses_type, expenses_amount`)
+				.eq("user_id", user.id)
+
+			if (error && status !== 406) {
+				throw error;
+			}
+
+			if (data) {
+				console.log("user data ->", userData);
+        console.log("supabase data ->", data);
+        // setUserData({ ...userData, 
+        //   expenses: { label: data.expenses_type, amount: data.expenses_amount },
+				// });
+				console.log("should be updated", userData);
+			}
+		} catch (error) {
+			console.log("catch error ->", error);
+		}
+
 	};
 
   return (
