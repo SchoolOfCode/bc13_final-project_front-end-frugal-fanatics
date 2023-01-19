@@ -16,6 +16,10 @@ function SavingsPotsSection({ data }) {
 			progress={pot.total}
 			goal={pot.goal}
 			key={i}
+			image={pot.img}
+			width={pot.width}
+			height={pot.height}
+			alt={pot.alt}
 			/>
 			 ))}	
 			</div>
