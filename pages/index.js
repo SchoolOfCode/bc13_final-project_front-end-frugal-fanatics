@@ -40,8 +40,8 @@ export default function Home() {
                 ascot, pork belly post-ironic meggings.
               </p>
               <div className="w-48 justify-end">
-                <FormButton text="Get Started" onClick={if(!session ) {}} />
-                <FormButton text="Log In" onClick={}/>
+                <FormButton text="Get Started" />
+                <FormButton text="Log In" />
               </div>
             </div>
           </LandingContainer>
