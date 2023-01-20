@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import { Fragment } from "react";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { classNames } from "../utils/helpers";
 import { handleNavClick } from "../utils/navigation";
+import { Fragment } from "react";
 import { useRouter } from "next/router";
 
 const MobileSidebar = ({
@@ -13,6 +13,7 @@ const MobileSidebar = ({
 	primaryNavigation,
 	secondaryNavigation,
 }) => {
+	const supabase = useSupabaseClient();
 	const router = useRouter();
 	return (
 		// The Transition component adds conditional enter/leave transitions to sidebar:
@@ -116,7 +117,9 @@ const MobileSidebar = ({
 									{secondaryNavigation.map((item) => (
 										<button
 											key={item.name}
-											onClick={() => handleNavClick(item.name, router)}
+											onClick={() =>
+												handleNavClick(item.name, router, supabase)
+											}
 											className={classNames(
 												item.current
 													? "bg-[#F4F7FB] tracking-wide text-black"
