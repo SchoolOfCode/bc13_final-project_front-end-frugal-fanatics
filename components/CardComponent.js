@@ -17,7 +17,7 @@ function CardComponent({
     <div className="flex justify-center">
       <div className="max-w-sm rounded-lg bg-white shadow-lg">
         <a href="#!">
-          <Image className="rounded-t-lg" src={imageSrc} alt={altSrc} height="368" width= "245"/>
+          <Image className="rounded-t-lg" src={imageSrc} alt={altSrc} height="368" width= "full"/>
         </a>
         <div className="p-6">
           <h3 className="mb-2 text-xl font-medium text-gray-900">{title}</h3>
