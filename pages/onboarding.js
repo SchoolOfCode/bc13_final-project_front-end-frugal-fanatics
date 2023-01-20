@@ -109,7 +109,10 @@ export default function Onboarding() {
 							<FormText
 								step="1"
 								question="What's your income after tax?"
-								description="This could be your wages, any money you get from a lodger(s) or anyone else living with you, any money you get from a pension, any money you get from investments, and or any child maintenance or support you receive."
+								description="This could be your wages, 
+								any money you get from a lodger or anyone else living with you, 
+								any money you get from a pension, any money you get from investments, 
+								and or any child maintenance or support you receive."
 							/>
 							<div className="py-5">
 								<FormInput
@@ -130,14 +133,13 @@ export default function Onboarding() {
 							<FormText
 								step="2"
 								question="What are your expenses?"
-								description="Gastropub hoodie vegan air plant kickstarter ascot
-									adipisicing, hoodie twee small batch incididunt fit freegan meh."
+								description="Enter the amount you spend on each of these expenses. Please skip any that don’t apply to you."
 							/>
 							<div className="py-5">
 								<div className="flex flex-col gap-8">
 									<FormInput
 										key={0}
-										text="Rent or Mortgage"
+										text="Rent or Mortgage (per month)"
 										handleChange={handleChange2}
 										formInput={formInput}
 										setFormInput={setFormInput}
@@ -146,7 +148,7 @@ export default function Onboarding() {
 									/>
 									<FormInput
 										key={1}
-										text="Food and Groceries"
+										text="Food and Groceries (per month)"
 										handleChange={handleChange2}
 										formInput={formInput}
 										setFormInput={setFormInput}
@@ -155,7 +157,7 @@ export default function Onboarding() {
 									/>
 									<FormInput
 										key={2}
-										text="Home Energy Bills"
+										text="Home Energy Bills (per month)"
 										handleChange={handleChange2}
 										formInput={formInput}
 										setFormInput={setFormInput}
@@ -164,7 +166,7 @@ export default function Onboarding() {
 									/>
 									<FormInput
 										key={3}
-										text="Council Tax"
+										text="Council Tax (per month)"
 										handleChange={handleChange2}
 										formInput={formInput}
 										setFormInput={setFormInput}
@@ -173,7 +175,7 @@ export default function Onboarding() {
 									/>
 									<FormInput
 										key={4}
-										text="Credit Payments"
+										text="Credit Payments (per month)"
 										handleChange={handleChange2}
 										formInput={formInput}
 										setFormInput={setFormInput}
