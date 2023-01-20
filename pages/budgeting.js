@@ -51,7 +51,7 @@ const Budgeting = () => {
       <div className="flex flex-col items-center gap-8">
         <BudgetingSection data={userExpenses} income={userIncome} />
       </div>
-      <div className="flex">
+      <div className="flex flex-col gap-10 min-[950px]:flex-row">
         {budgetArticlesData.map((articles) => (
           <CardComponent
             imageSrc={articles.imageSrc}
