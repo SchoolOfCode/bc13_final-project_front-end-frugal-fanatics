@@ -72,24 +72,40 @@ export const innerBudgetData = {
     },
   ],
 };
+// export const savingsData = {
+//   labels: ["Christmas", "Target", "Holiday", "Target", "Nursery", "Target", "Birthday", "Target"],
+//   datasets: [
+//     {
+//       label: "My First Dataset",
+//       data: [5, 95],
+//       backgroundColor: [
+//         "#FFA59E",
+//         "#AFF192",
+//         "#B884FF",
+//         "#ABE6FF",],
+//       hoverOffset: 0,
+//       responsive: true,
+//       maintainAspectRatio: true,
+//       borderWidth: 0,
+//     },
+//   ],
+// };
+
 export const savingsData = {
-  labels: ["Savings", "Target Savings"],
   datasets: [
     {
-      label: "My First Dataset",
       data: [5, 95],
-      backgroundColor: ["#AFF192", "#F5F5F5"],
       hoverOffset: 0,
       responsive: true,
       maintainAspectRatio: true,
       borderWidth: 0,
-    },
-  ],
+    }],
+  
 };
 
 export const savingsOptions = {
   responsive: true,
-  cutout: "91%",
+  cutout: "90%",
   plugins: {
     legend: {
       display: false,

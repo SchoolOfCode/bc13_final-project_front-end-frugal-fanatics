@@ -15,3 +15,10 @@ export const budgetOverviewColors = [
 	"#FFA59E",
 	"#ECECEC",
 ];
+
+export const savingsColors = [
+	"#FFA59E",
+	"#AFF192",
+    "#B884FF",
+    "#ABE6FF"
+]

@@ -20,6 +20,7 @@ function SavingsPotsSection({ data }) {
 			width={pot.width}
 			height={pot.height}
 			alt={pot.alt}
+			color={pot.color}
 			/>
 			 ))}	
 			</div>
