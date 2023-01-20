@@ -195,8 +195,7 @@ export default function Onboarding() {
 							<FormText
 								step="3"
 								question="Do you have any savings?"
-								description="Gastropub hoodie vegan air plant kickstarter ascot 
-								adipisicing, hoodie twee small batch incididunt fit freegan meh."
+								description="Please list any savings you have and any savings goal."
 							/>
 							<div className="py-5">
 								<div className="flex flex-col gap-8">
