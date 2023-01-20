@@ -2,8 +2,10 @@ import React from "react";
 import { classNames } from "../utils/helpers";
 import { handleNavClick } from "../utils/navigation";
 import { useRouter } from "next/router";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
+	const supabase = useSupabaseClient();
 	const router = useRouter();
 	return (
 		<div className="hidden lg:flex lg:flex-shrink-0">
@@ -43,7 +45,7 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 							{secondaryNavigation.map((item) => (
 								<button
 									key={item.name}
-									onClick={() => handleNavClick(item.name, router)}
+									onClick={() => handleNavClick(item.name, router, supabase)}
 									className={classNames(
 										item.current
 											? "bg-[#F4F7FB] tracking-wide text-black"

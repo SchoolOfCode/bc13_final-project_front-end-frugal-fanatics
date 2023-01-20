@@ -3,14 +3,41 @@ import CardComponent from "../components/CardComponent";
 import DashboardLayout from "../components/DashboardLayout";
 import SavingsPotsSection from "../components/SavingsPotsSection";
 import TotalSavings from "../components/TotalSavings";
+import { savingArticlesData } from "../data/savingsArtData";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { getUserSavings } from "../utils/queries";
 import {
   primaryNavigation,
   secondaryNavigation,
   setCurrentPage,
 } from "../utils/navigation";
-import { savingArticlesData } from "../data/savingsArtData";
-const Savings = ({ data }) => {
+import {
+  useUser,
+  useSession,
+  useSupabaseClient,
+} from "@supabase/auth-helpers-react";
+import { userSavingsState } from "../data/states";
+
+const Savings = () => {
   setCurrentPage(primaryNavigation, "Savings");
+  const router = useRouter();
+  const session = useSession();
+  const supabase = useSupabaseClient();
+  const user = useUser();
+
+  const [userSavings, setUserSavings] = useState(userSavingsState);
+  useEffect(() => {
+    if (session) {
+      getUserSavings(supabase, user, setUserSavings);
+    }
+  }, [session]);
+  // If there is no user session, push to homepage
+  useEffect(() => {
+    if (!session) {
+      router.push("/");
+    }
+  });
   return (
     <DashboardLayout
       primaryNavigation={primaryNavigation}
@@ -18,8 +45,8 @@ const Savings = ({ data }) => {
       title="Savings Page"
     >
       <div className="flex flex-col items-center gap-8">
-        <TotalSavings data={data} />
-        <SavingsPotsSection data={data} />
+        <TotalSavings data={userSavings} />
+        <SavingsPotsSection data={userSavings} />
         <div className="flex">
           {savingArticlesData.map((articles) => (
             <CardComponent

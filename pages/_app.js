@@ -1,8 +1,12 @@
 import "../styles/globals.css";
 import { useState } from "react";
-
+import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { SessionContextProvider } from "@supabase/auth-helpers-react";
 
 export default function App({ Component, pageProps }) {
+	//unsure need to research what this means later
+	const [supabase] = useState(() => createBrowserSupabaseClient());
+
 	const [data, setData] = useState({
 		totalIncome: 3200,
 		expenses: [
@@ -16,7 +20,12 @@ export default function App({ Component, pageProps }) {
 		savings: { total: 12900, goal: 20000 },
 	});
 
-	return <Component {...pageProps} data={data} setData={setData} />;
+	return (
+		<SessionContextProvider
+			supabaseClient={supabase}
+			initialSession={pageProps.initialSession}
+		>
+			<Component {...pageProps} data={data} setData={setData} />
+		</SessionContextProvider>
+	);
 }
-
-

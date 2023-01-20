@@ -11,7 +11,7 @@ import {
  * @param {string} pageName - The name of the page to navigate to, with first letter of each word capitalized
  * @param {function} router - NextJS useRouter() custom hook function
  */
-export const handleNavClick = (pageName, router) => {
+export const handleNavClick = (pageName, router, supabase) => {
 	switch (pageName) {
 		case "Overview":
 			router.push("/overview");
@@ -26,10 +26,10 @@ export const handleNavClick = (pageName, router) => {
 			router.push("/overview");
 			break;
 		case "Logout":
-			router.push("/overview");
-			break;
+			supabase.auth.signOut();
+			router.push("/");
 		default:
-			router.push("/overview");
+			router.push("/");
 	}
 };
 
