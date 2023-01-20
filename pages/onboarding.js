@@ -195,7 +195,7 @@ export default function Onboarding() {
 							<FormText
 								step="3"
 								question="Do you have any savings?"
-								description="Please list any savings you have and any savings goal."
+								description="Please list your total savings and any savings goal."
 							/>
 							<div className="py-5">
 								<div className="flex flex-col gap-8">
