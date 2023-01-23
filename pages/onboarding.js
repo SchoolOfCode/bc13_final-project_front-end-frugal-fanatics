@@ -10,7 +10,12 @@ import FormContainer from "../components/FormContainer";
 import FormInput from "./../components/FormInput";
 import FormText from "./../components/FormText";
 import FormSteps from "./../components/FormSteps";
-import { handleChange1, handleChange2, handleChange3, nextStep } from "../utils/helpers";
+import {
+	handleChange1,
+	handleChange2,
+	handleChange3,
+	nextStep,
+} from "../utils/helpers";
 import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import {
 	useSession,
@@ -98,9 +103,7 @@ export default function Onboarding() {
 		<OnboardingLayout>
 			<OnboardingContainer>
 				<FormContainer>
-				{!isFormComplete && (
-					<FormSteps steps={steps} />
-				)}
+					{!isFormComplete && <FormSteps steps={steps} />}
 					{formStep === 1 && !isFormComplete && (
 						<form
 							className="flex flex-col gap-5"
@@ -133,7 +136,7 @@ export default function Onboarding() {
 							<FormText
 								step="2"
 								question="What are your expenses?"
-								description="Enter the amount you spend on each of these expenses. Please skip any that don’t apply to you."
+								description="Enter the amount you spend on each of these expenses. Please skip any that don't apply to you."
 							/>
 							<div className="py-5">
 								<div className="flex flex-col gap-8">
