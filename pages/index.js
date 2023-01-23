@@ -4,7 +4,9 @@ import { useEffect } from "react";
 import Head from "next/head";
 import LandingLayout from "../components/LandingLayout";
 import LandingContainer from "../components/LandingContainer";
-import FormButton from "../components/FormButton";
+import { ArrowRightIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import DesktopNavbar from "../components/DesktopNavbar";
+import MobileNavbar from "../components/MobileNavbar";
 
 export default function Home() {
   const session = useSession();
@@ -24,28 +26,55 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <DesktopNavbar />
+      <MobileNavbar />
       <main>
-        <LandingLayout>
-          <LandingContainer>
-            <div className="> * flex h-screen w-96 flex-col justify-center ">
-              <h1 className="font serif pb-10 text-left text-6xl">
-                Save More.
-                <br></br>
-                Stress Less!
-              </h1>
-              <p className="font serif text-left text-xl text-gray-500">
-                Gastroflex flex-col justify-center text-centerpub hoodie vegan
-                air plant kickstarter ascot adipisicing, hoodie twee small batch
-                incididunt fit freegan meh, microdosing. Jianbing enim umami
-                ascot, pork belly post-ironic meggings.
-              </p>
-              <div className="w-48 justify-end">
-                <FormButton text="Get Started" />
-                <FormButton text="Log In" />
-              </div>
+        <div class="> * flex grid grid-cols-2 items-center justify-center gap-4 lg:pt-52 xl:pl-96 xl:pr-96">
+          <div>
+            <h1 className="font serif pb-10 text-left text-6xl ">
+              Save More.
+              <br></br>
+              Stress Less!
+            </h1>
+            <p className="font serif text-left text-xl text-gray-500">
+              Gastroflex flex-col justify-center text-centerpub hoodie vegan air
+              plant kickstarter ascot adipisicing, hoodie twee small batch
+              incididunt fit freegan meh, microdosing. Jianbing enim umami
+              ascot, pork belly post-ironic meggings.
+            </p>
+            <div className="center space-x-5 ">
+              <button
+                className="mt-16 inline-flex items-center justify-center rounded-lg border-2 border-slate-800 bg-slate-800
+										px-7 py-2.5 text-lg font-normal tracking-wide text-white transition-colors hover:bg-white 
+										hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                Get Started
+                <ArrowRightIcon
+                  className="ml-1.5 -mr-1 h-6 w-6 translate-y-px"
+                  aria-hidden="true"
+                />
+              </button>
+              <button
+                className="mt-16 inline-flex items-center justify-center rounded-lg border-2 border-slate-800 bg-white
+										px-7 py-2.5 text-lg font-normal tracking-wide text-slate-800 transition-colors hover:bg-slate-900 
+										hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                Log In
+                <ArrowRightIcon
+                  className="ml-1.5 -mr-1 h-6 w-6 translate-y-px"
+                  aria-hidden="true"
+                />
+              </button>
             </div>
-          </LandingContainer>
-        </LandingLayout>
+          </div>
+          <div>
+            <img
+              src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
+              class="h-auto w-full rounded-lg object-cover"
+              alt=""
+            />
+          </div>
+        </div>
       </main>
     </>
   );
