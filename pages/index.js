@@ -29,8 +29,8 @@ export default function Home() {
       <DesktopNavbar />
       <MobileNavbar />
       <main>
-        <div class="> * flex grid grid-cols-2 items-center justify-center gap-4 lg:pt-52 xl:pl-96 xl:pr-96">
-          <div>
+        <div className="flex flex-col lg:flex-row p-32 items-center justify-center gap-4">
+          <div className="border border-blue-600 lg:w-1/2">
             <h1 className="font serif pb-10 text-left text-6xl ">
               Save More.
               <br></br>
@@ -67,10 +67,10 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div>
+          <div className="border border-red-600 gap-4 flex flex-col justify-center lg:w-1/2">
             <img
               src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
-              class="h-auto w-full rounded-lg object-cover"
+              className="h-auto w-full rounded-lg object-cover 'md': '768px'"
               alt=""
             />
           </div>
