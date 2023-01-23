@@ -8,7 +8,7 @@ function BudgetOverview({ data }) {
 	const labels = extractLabels(data.expenses);
 
 	return (
-		<div className="stack flex w-full flex-col gap-10 rounded-2xl bg-[#212637] px-12 py-8 pb-14 max-[560px]:items-center xl:w-[50%]">
+		<div className="stack flex w-full flex-col gap-10 rounded-2xl bg-[#212637] px-12 py-8 pb-14 max-[560px]:items-center xl:w-1/2">
 			<h2 className="text-2xl font-medium text-[#EDEDEE]">Budget</h2>
 			<div className="flex flex-col gap-6 min-[560px]:flex-row">
 				<BudgetDonut data={data} />
