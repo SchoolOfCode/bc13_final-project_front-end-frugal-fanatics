@@ -49,11 +49,11 @@ const Overview = ({}) => {
 	}, [session]);
 
 	// If there is no user session, push to homepage
-	useEffect(() => {
-		if (!session) {
-			router.push("/");
-		}
-	});
+	// useEffect(() => {
+	// 	if (!session) {
+	// 		router.push("/");
+	// 	}
+	// });
 
 	return (
 		<DashboardLayout
@@ -68,7 +68,6 @@ const Overview = ({}) => {
 				</div>
 				<div className="flex flex-col items-center gap-8 xl:flex-row">
 					<TotalSavings data={userSavings} />
-					<Mindfulness />
 				</div>
 			</div>
 		</DashboardLayout>

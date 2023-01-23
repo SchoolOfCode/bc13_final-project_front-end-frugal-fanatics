@@ -32,12 +32,12 @@ const Savings = () => {
       getUserSavings(supabase, user, setUserSavings);
     }
   }, [session]);
-  // If there is no user session, push to homepage
-  useEffect(() => {
-    if (!session) {
-      router.push("/");
-    }
-  });
+  //If there is no user session, push to homepage
+  // useEffect(() => {
+  //   if (!session) {
+  //     router.push("/");
+  // //   }
+  // });
   return (
     <DashboardLayout
       primaryNavigation={primaryNavigation}
@@ -46,7 +46,7 @@ const Savings = () => {
     >
       <div className="flex flex-col items-center gap-8">
         <TotalSavings data={userSavings} />
-        <SavingsPotsSection data={userSavings} />
+        <SavingsPotsSection/>
         <div className="flex flex-col gap-10 min-[950px]:flex-row">
           {savingArticlesData.map((articles) => (
             <CardComponent
