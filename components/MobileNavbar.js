@@ -8,7 +8,7 @@ const MobileNavbar = ({ setSidebarOpen }) => {
 		<div className="lg:hidden">
 			<div className="flex items-center justify-between border-b border-slate-200 bg-white px-4 py-1.5">
 				<div>
-					<Image src="next.svg" alt="Your Company" height="32" width="157" />
+					<Image src="logo.svg" alt="Your Company" height="32" width="157" />
 				</div>
 				<div>
 					<button

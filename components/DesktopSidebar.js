@@ -26,13 +26,8 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 										)}
 									>
 										<item.icon
-											className={classNames(
-												item.current
-													? "text-white"
-													: "text-slate-400 group-hover:text-slate-500",
-												"mr-3 h-6 w-6"
-											)}
-											style = {{  }}
+											className="mr-3 h-6 w-6"
+											style={{ stroke: item.current ? "#FFF" : item.iconColor }}
 											aria-hidden="true"
 										/>
 										{item.name}
@@ -41,7 +36,7 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 							</div>
 						</nav>
 					</div>
-					<div className="flex flex-col border-t border-slate-200 p-4">
+					<div className="flex flex-col border-t border-[#373C51] p-4">
 						<div className="space-y-6 py-9 px-2">
 							{secondaryNavigation.map((item) => (
 								<button
@@ -49,16 +44,16 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 									onClick={() => handleNavClick(item.name, router, supabase)}
 									className={classNames(
 										item.current
-											? "bg-[#F4F7FB] tracking-wide text-black"
-											: "tracking-wide text-slate-600 hover:bg-slate-50 hover:text-slate-900",
-										"group flex w-full rounded-md px-2 py-2 text-base font-normal first-letter:items-center"
+											? "bg-[#4E29AA] tracking-wide text-white"
+											: "tracking-wide text-white hover:bg-[#242A3D]",
+										"group flex w-full items-center rounded-md px-2 py-2 text-base font-normal"
 									)}
 								>
 									<item.icon
 										className={classNames(
 											item.current
 												? "text-slate-500"
-												: "text-slate-400 group-hover:text-slate-500",
+												: "text-slate-400 group-hover:text-white",
 											"mr-3 h-6 w-6"
 										)}
 										aria-hidden="true"

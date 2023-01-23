@@ -68,7 +68,6 @@ const Overview = ({}) => {
 				</div>
 				<div className="flex flex-col items-center gap-8 xl:flex-row">
 					<TotalSavings data={userSavings} />
-					<Mindfulness />
 				</div>
 			</div>
 		</DashboardLayout>
