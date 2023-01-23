@@ -27,7 +27,8 @@ export default function Home() {
 
   const AuthLandingLogin = () => {
     return ( 
-      <div className="p-10 border-4 border-black h-3/5 w-4/5 absolute rounded-lg">
+      <div className="flex justify-center h-screen pt-32">
+      <div className="p-10 border-4 border-black h-3/5 w-1/2 absolute rounded-lg">
 							<p
 								className="text-center text-[27px] text-slate-800"
 								style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
@@ -80,6 +81,7 @@ export default function Home() {
 								// theme="dark"
 							/>
 						</div>
+            </div>
      );
   }
    
@@ -98,8 +100,9 @@ export default function Home() {
       <DesktopNavbar />
       <MobileNavbar />
       <main>
+      {!showLogin && 
         <div className="flex flex-col lg:flex-row p-32 items-center justify-center gap-4">
-          <div className="border border-blue-600 lg:w-1/2">
+          <div className="lg:w-1/2">
             <h1 className="font serif pb-10 text-left text-6xl ">
               Save More.
               <br></br>
@@ -134,10 +137,10 @@ export default function Home() {
                   aria-hidden="true"
                 />
               </button>
-              {showLogin && <AuthLandingLogin />}
+              
             </div>
           </div>
-          <div className="border border-red-600 gap-4 flex flex-col justify-center lg:w-1/2">
+          <div className=" gap-4 flex flex-col justify-center lg:w-1/2">
             <img
               src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
               className="h-auto w-full rounded-lg object-cover 'md': '768px'"
@@ -145,6 +148,8 @@ export default function Home() {
             />
           </div>
         </div>
+        }
+        {showLogin && <AuthLandingLogin />}
       </main>
     </>
   );
