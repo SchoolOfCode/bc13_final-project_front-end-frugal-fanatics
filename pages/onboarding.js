@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { extractLabels, calculateLeftoverIncome } from "../utils/helpers";
+import { extractLabels } from "../utils/helpers";
 import { useRouter } from "next/router";
 import { steps } from "../utils/navigation";
 import { formInputState } from "../data/states";
 import FormButton from "./../components/FormButton";
-import LandingLayout from "../components/LandingLayout";
-import LandingContainer from "../components/LandingContainer";
+import OnboardingLayout from "../components/OnboardingLayout";
+import OnboardingContainer from "../components/OnboardingContainer";
 import FormContainer from "../components/FormContainer";
 import FormInput from "./../components/FormInput";
 import FormText from "./../components/FormText";
@@ -95,8 +95,8 @@ export default function Onboarding() {
 	};
 
 	return (
-		<LandingLayout>
-			<LandingContainer>
+		<OnboardingLayout>
+			<OnboardingContainer>
 				<FormContainer>
 				{!isFormComplete && (
 					<FormSteps steps={steps} />
@@ -221,7 +221,7 @@ export default function Onboarding() {
 					{isFormComplete && !session ? (
 						<>
 							<p
-								className="text-center text-[27px] text-slate-800"
+								className="text-center text-[27px] text-[#EDEDEE]"
 								style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
 							>
 								{"Log in to get your"}
@@ -249,21 +249,22 @@ export default function Onboarding() {
 										},
 										label: {
 											fontSize: "16px",
-											color: "#1e293b",
+											fontWeight: "500",
+											color: "#B3B3C1",
 											letterSpacing: "0.025em",
 											marginTop: "10px",
 										},
 										input: {
 											height: "58px",
 											fontSize: "20px",
-											color: "#1e293b",
+											color: "#EDEDEE",
 											border: "0px",
-											backgroundColor: "#f8fafc",
+											backgroundColor: "#282E43",
 										},
 										anchor: {
 											fontSize: "16px",
 											paddingTop: "20px",
-											color: "#475569",
+											color: "#8C939D",
 											textDecoration: "none",
 											letterSpacing: "0.025em",
 										},
@@ -276,7 +277,7 @@ export default function Onboarding() {
 						<p></p>
 					)}
 				</FormContainer>
-			</LandingContainer>
-		</LandingLayout>
+			</OnboardingContainer>
+		</OnboardingLayout>
 	);
 }
