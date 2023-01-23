@@ -3,9 +3,9 @@ import SavingsDonut from "./../components/SavingsDonut";
 
 function SavingsOverview({ data }) {
 	return (
-		<div className="stack flex w-full flex-col gap-10 rounded-2xl bg-white px-12 py-8 pb-14 max-[560px]:items-center xl:w-[full]">
+		<div className="stack flex w-full flex-col gap-10 rounded-2xl bg-[#212637] px-12 py-8 pb-14 max-[560px]:items-center xl:w-[full]">
 			<h2
-				className="text-2xl font-medium text-[#202834]"
+				className="text-2xl font-medium text-[#EDEDEE]"
 				style={{ fontFamily: "Shapiro Welter Wide", weight: "500" }}
 			>
 				Savings Pots

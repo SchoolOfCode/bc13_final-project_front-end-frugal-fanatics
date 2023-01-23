@@ -35,7 +35,7 @@ const MobileSidebar = ({
 					leaveFrom="opacity-100"
 					leaveTo="opacity-0"
 				>
-					<div className="fixed inset-0 bg-gray-600 bg-opacity-75" />
+					<div className="fixed inset-0 bg-slate-600 bg-opacity-75" />
 				</Transition.Child>
 
 				<div className="fixed inset-0 z-40 flex">
@@ -48,7 +48,7 @@ const MobileSidebar = ({
 						leaveFrom="w-full"
 						leaveTo="-translate-x-full"
 					>
-						<Dialog.Panel className="relative flex h-full w-full max-w-xs flex-1 flex-col bg-white focus:outline-none">
+						<Dialog.Panel className="relative flex h-full w-full max-w-xs flex-1 flex-col bg-[#1A1E2C] focus:outline-none">
 							<Transition.Child
 								as={Fragment}
 								enter="ease-in-out duration-300"
@@ -78,7 +78,7 @@ const MobileSidebar = ({
 								<div className="flex flex-shrink-0 items-center px-4">
 									<img
 										className="h-6 w-auto"
-										src="next.svg"
+										src="logo.svg"
 										alt="Your Company"
 									/>
 								</div>
@@ -91,18 +91,14 @@ const MobileSidebar = ({
 												onClick={() => handleNavClick(item.name, router)}
 												className={classNames(
 													item.current
-														? "bg-[#F4F7FB] tracking-wide text-black"
-														: "tracking-wide text-slate-600 hover:bg-slate-50 hover:text-slate-900",
+														? "bg-[#4E29AA] tracking-wide text-white"
+														: "tracking-wide text-white hover:bg-[#242A3D]",
 													"group flex w-full items-center rounded-md px-2 py-2 text-base font-normal"
 												)}
 											>
 												<item.icon
-													className={classNames(
-														item.current
-															? "text-slate-500"
-															: "text-slate-400 group-hover:text-slate-500",
-														"mr-4 h-6 w-6"
-													)}
+													className="mr-4 h-6 w-6"
+													style={{ stroke: item.current ? "#FFF" : item.iconColor }}
 													aria-hidden="true"
 												/>
 												{item.name}
@@ -112,7 +108,7 @@ const MobileSidebar = ({
 								</nav>
 							</div>
 							{/* Mobile secondary navigation starts here */}
-							<div className="flex flex-col border-t border-gray-200 p-4">
+							<div className="flex flex-col border-t border-[#373C51] p-4">
 								<div className="space-y-6 py-9 px-2">
 									{secondaryNavigation.map((item) => (
 										<button
@@ -122,8 +118,8 @@ const MobileSidebar = ({
 											}
 											className={classNames(
 												item.current
-													? "bg-[#F4F7FB] tracking-wide text-black"
-													: "tracking-wide text-slate-600 hover:bg-slate-50 hover:text-slate-900",
+													? "bg-[#4E29AA] tracking-wide text-white"
+													: "tracking-wide text-white hover:bg-[#242A3D]",
 												"group flex w-full items-center rounded-md px-2 py-2 text-base font-normal"
 											)}
 										>
@@ -131,7 +127,7 @@ const MobileSidebar = ({
 												className={classNames(
 													item.current
 														? "text-slate-500"
-														: "text-slate-400 group-hover:text-slate-500",
+														: "text-slate-400 group-hover:text-white",
 													"mr-3 h-6 w-6"
 												)}
 												aria-hidden="true"

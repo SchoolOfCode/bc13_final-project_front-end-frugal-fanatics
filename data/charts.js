@@ -64,7 +64,7 @@ export const innerBudgetData = {
     {
       label: "My First Dataset",
       data: [100],
-      backgroundColor: ["#CFF7BE"],
+      backgroundColor: ["#139C72"],
       hoverOffset: 0,
       responsive: true,
       maintainAspectRatio: true,

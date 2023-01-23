@@ -36,7 +36,7 @@ const DashboardLayout = ({
 						primaryNavigation={primaryNavigation}
 						secondaryNavigation={secondaryNavigation}
 					/>
-					<div className="flex min-w-0 flex-1 flex-col overflow-hidden bg-[#F4F7FB]">
+					<div className="flex min-w-0 flex-1 flex-col overflow-hidden bg-[#1E1E1E]">
 						<div className="relative z-0 flex flex-1 overflow-hidden">
 							<main className="relative z-0 flex-1 overflow-y-auto focus:outline-none">
 								<div className="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8 ">

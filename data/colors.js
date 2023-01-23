@@ -8,12 +8,12 @@ export const budgetColors = [
 ];
 
 export const budgetOverviewColors = [
-	"#B884FF",
-	"#FFD482",
-	"#F68DFF",
-	"#ABE6FF",
-	"#FFA59E",
-	"#ECECEC",
+	"#956BFE",
+	"#FF9264",
+	"#E125FF",
+	"#31C1FF",
+	"#FF6054",
+	"#4D597E",
 ];
 
 export const savingsColors = [
