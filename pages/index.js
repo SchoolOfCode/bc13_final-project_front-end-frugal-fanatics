@@ -27,7 +27,7 @@ export default function Home() {
 
   const AuthLandingLogin = () => {
     return ( 
-      <div className="bg-gray-500 p-10 border-8">
+      <div className="p-10 border-4 border-black h-3/5 w-4/5 absolute rounded-lg">
 							<p
 								className="text-center text-[27px] text-slate-800"
 								style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
@@ -127,7 +127,7 @@ export default function Home() {
                 className="mt-16 inline-flex items-center justify-center rounded-lg border-2 border-slate-800 bg-white
 										px-7 py-2.5 text-lg font-normal tracking-wide text-slate-800 transition-colors hover:bg-slate-900 
 										hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-               onClick={() => setShowLogin(true)}>
+               onClick={() => setShowLogin(!showLogin)}>
                 Log In
                 <ArrowRightIcon
                   className="ml-1.5 -mr-1 h-6 w-6 translate-y-px"
