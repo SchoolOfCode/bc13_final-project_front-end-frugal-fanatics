@@ -1,16 +1,21 @@
 import { useState, useEffect } from "react";
-import { extractLabels, calculateLeftoverIncome } from "../utils/helpers";
+import { extractLabels } from "../utils/helpers";
 import { useRouter } from "next/router";
 import { steps } from "../utils/navigation";
 import { formInputState } from "../data/states";
 import FormButton from "./../components/FormButton";
-import LandingLayout from "../components/LandingLayout";
-import LandingContainer from "../components/LandingContainer";
+import OnboardingLayout from "../components/OnboardingLayout";
+import OnboardingContainer from "../components/OnboardingContainer";
 import FormContainer from "../components/FormContainer";
 import FormInput from "./../components/FormInput";
 import FormText from "./../components/FormText";
 import FormSteps from "./../components/FormSteps";
-import { handleChange1, handleChange2, handleChange3, nextStep } from "../utils/helpers";
+import {
+	handleChange1,
+	handleChange2,
+	handleChange3,
+	nextStep,
+} from "../utils/helpers";
 import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import {
 	useSession,
@@ -95,12 +100,10 @@ export default function Onboarding() {
 	};
 
 	return (
-		<LandingLayout>
-			<LandingContainer>
+		<OnboardingLayout>
+			<OnboardingContainer>
 				<FormContainer>
-				{!isFormComplete && (
-					<FormSteps steps={steps} />
-				)}
+					{!isFormComplete && <FormSteps steps={steps} />}
 					{formStep === 1 && !isFormComplete && (
 						<form
 							className="flex flex-col gap-5"
@@ -133,7 +136,7 @@ export default function Onboarding() {
 							<FormText
 								step="2"
 								question="What are your expenses?"
-								description="Enter the amount you spend on each of these expenses. Please skip any that don’t apply to you."
+								description="Enter the amount you spend on each of these expenses. Please skip any that don't apply to you."
 							/>
 							<div className="py-5">
 								<div className="flex flex-col gap-8">
@@ -195,8 +198,7 @@ export default function Onboarding() {
 							<FormText
 								step="3"
 								question="Do you have any savings?"
-								description="Gastropub hoodie vegan air plant kickstarter ascot 
-								adipisicing, hoodie twee small batch incididunt fit freegan meh."
+								description="Please list your total savings and any savings goal."
 							/>
 							<div className="py-5">
 								<div className="flex flex-col gap-8">
@@ -222,7 +224,7 @@ export default function Onboarding() {
 					{isFormComplete && !session ? (
 						<>
 							<p
-								className="text-center text-[27px] text-slate-800"
+								className="text-center text-[27px] text-[#EDEDEE]"
 								style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
 							>
 								{"Log in to get your"}
@@ -250,21 +252,22 @@ export default function Onboarding() {
 										},
 										label: {
 											fontSize: "16px",
-											color: "#1e293b",
+											fontWeight: "500",
+											color: "#B3B3C1",
 											letterSpacing: "0.025em",
 											marginTop: "10px",
 										},
 										input: {
 											height: "58px",
 											fontSize: "20px",
-											color: "#1e293b",
+											color: "#EDEDEE",
 											border: "0px",
-											backgroundColor: "#f8fafc",
+											backgroundColor: "#282E43",
 										},
 										anchor: {
 											fontSize: "16px",
 											paddingTop: "20px",
-											color: "#475569",
+											color: "#8C939D",
 											textDecoration: "none",
 											letterSpacing: "0.025em",
 										},
@@ -277,7 +280,7 @@ export default function Onboarding() {
 						<p></p>
 					)}
 				</FormContainer>
-			</LandingContainer>
-		</LandingLayout>
+			</OnboardingContainer>
+		</OnboardingLayout>
 	);
 }

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	color-scheme: dark;
+	background-color: #212637;
+}
+
 @layer components {
 	#__next {
 		@apply h-full;
