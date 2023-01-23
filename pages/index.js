@@ -6,17 +6,17 @@ import DesktopNavbar from "../components/DesktopNavbar";
 import MobileNavbar from "../components/MobileNavbar";
 import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import {
-	useSession,
-	useUser,
-	useSupabaseClient,
+  useSession,
+  useUser,
+  useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 
 export default function Home() {
   const router = useRouter();
-  const [showLogin, setShowLogin] = useState(false)
+  const [showLogin, setShowLogin] = useState(false);
   const supabase = useSupabaseClient();
   const session = useSession();
-	const user = useUser();
+  const user = useUser();
 
   useEffect(() => {
     if (session) {
@@ -24,70 +24,67 @@ export default function Home() {
     }
   }, [session]);
 
-
   const AuthLandingLogin = () => {
-    return ( 
-      <div className="flex justify-center h-screen pt-32">
-      <div className="p-10 border-4 border-black h-3/5 w-1/2 absolute rounded-lg">
-							<p
-								className="text-center text-[27px] text-slate-800"
-								style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
-							>
-								{"Log in to get your"}
-								<br></br>
-								{"personalised dashboard!"}
-							</p>
-							<Auth
-								supabaseClient={supabase}
-								appearance={{
-									theme: ThemeSupa,
-									style: {
-										button: {
-											// --> button needs hover styling if custom colors
-											// background: "white",
-											// color: "#1e293b",
-											// borderColor: "#1e293b",
-											// borderWidth: "2px",
-											fontSize: "20px",
-											borderRadius: "8px",
-											fontWeight: "400",
-											marginTop: "30px",
-											height: "58px",
-											paddingTop: "11px",
-											letterSpacing: "0.025em",
-										},
-										label: {
-											fontSize: "16px",
-											color: "#1e293b",
-											letterSpacing: "0.025em",
-											marginTop: "10px",
-										},
-										input: {
-											height: "58px",
-											fontSize: "20px",
-											color: "#1e293b",
-											border: "0px",
-											backgroundColor: "#f8fafc",
-										},
-										anchor: {
-											fontSize: "16px",
-											paddingTop: "20px",
-											color: "#475569",
-											textDecoration: "none",
-											letterSpacing: "0.025em",
-										},
-									},
-								}}
-								// theme="dark"
-							/>
-						</div>
-            </div>
-     );
-  }
-   
+    return (
+      <div className="flex h-screen justify-center pt-32">
+        <div className="absolute h-3/5 w-1/2 rounded-lg border-4 border-black p-10">
+          <p
+            className="text-center text-[27px] text-slate-800"
+            style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
+          >
+            {"Log in to get your"}
+            <br></br>
+            {"personalised dashboard!"}
+          </p>
+          <Auth
+            supabaseClient={supabase}
+            appearance={{
+              theme: ThemeSupa,
+              style: {
+                button: {
+                  // --> button needs hover styling if custom colors
+                  // background: "white",
+                  // color: "#1e293b",
+                  // borderColor: "#1e293b",
+                  // borderWidth: "2px",
+                  fontSize: "20px",
+                  borderRadius: "8px",
+                  fontWeight: "400",
+                  marginTop: "30px",
+                  height: "58px",
+                  paddingTop: "11px",
+                  letterSpacing: "0.025em",
+                },
+                label: {
+                  fontSize: "16px",
+                  color: "#1e293b",
+                  letterSpacing: "0.025em",
+                  marginTop: "10px",
+                },
+                input: {
+                  height: "58px",
+                  fontSize: "20px",
+                  color: "#1e293b",
+                  border: "0px",
+                  backgroundColor: "#f8fafc",
+                },
+                anchor: {
+                  fontSize: "16px",
+                  paddingTop: "20px",
+                  color: "#475569",
+                  textDecoration: "none",
+                  letterSpacing: "0.025em",
+                },
+              },
+            }}
+            // theme="dark"
+          />
+        </div>
+      </div>
+    );
+  };
+
   // export default AuthLandingLogin;
-
-
 
   return (
     <>
@@ -100,55 +97,58 @@ export default function Home() {
       <DesktopNavbar />
       <MobileNavbar />
       <main>
-      {!showLogin && 
-        <div className="flex flex-col lg:flex-row p-32 items-center justify-center gap-4">
-          <div className="lg:w-1/2">
-            <h1 className="font serif pb-10 text-left text-6xl ">
-              Save More.
-              <br></br>
-              Stress Less!
-            </h1>
-            <p className="font serif text-left text-xl text-gray-500">
-              Gastroflex flex-col justify-center text-centerpub hoodie vegan air
-              plant kickstarter ascot adipisicing, hoodie twee small batch
-              incididunt fit freegan meh, microdosing. Jianbing enim umami
-              ascot, pork belly post-ironic meggings.
-            </p>
-            <div className="center space-x-5 ">
-              <button
-                className="mt-16 inline-flex items-center justify-center rounded-lg border-2 border-slate-800 bg-slate-800
+        {!showLogin && (
+          <div className="flex flex-col items-center justify-center gap-4 p-32 lg:flex-row">
+            <div className="lg:w-1/2">
+              <h1 className="font serif pb-10 text-left text-6xl ">
+                Save More.
+                <br></br>
+                Stress Less!
+              </h1>
+              <p className="font serif text-left text-xl text-gray-500">
+                Gastroflex flex-col justify-center text-centerpub hoodie vegan
+                air plant kickstarter ascot adipisicing, hoodie twee small batch
+                incididunt fit freegan meh, microdosing. Jianbing enim umami
+                ascot, pork belly post-ironic meggings.
+              </p>
+              <div className="center space-x-5 ">
+                <button
+                  className="mt-16 inline-flex items-center justify-center rounded-lg border-2 border-slate-800 bg-slate-800
 										px-7 py-2.5 text-lg font-normal tracking-wide text-white transition-colors hover:bg-white 
 										hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                Get Started
-                <ArrowRightIcon
-                  className="ml-1.5 -mr-1 h-6 w-6 translate-y-px"
-                  aria-hidden="true"
-                />
-              </button>
-              <button
-                className="mt-16 inline-flex items-center justify-center rounded-lg border-2 border-slate-800 bg-white
+                  onClick={() => {
+                    router.push("/onboarding");
+                  }}
+                >
+                  Get Started
+                  <ArrowRightIcon
+                    className="ml-1.5 -mr-1 h-6 w-6 translate-y-px"
+                    aria-hidden="true"
+                  />
+                </button>
+                <button
+                  className="mt-16 inline-flex items-center justify-center rounded-lg border-2 border-slate-800 bg-white
 										px-7 py-2.5 text-lg font-normal tracking-wide text-slate-800 transition-colors hover:bg-slate-900 
 										hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-               onClick={() => setShowLogin(!showLogin)}>
-                Log In
-                <ArrowRightIcon
-                  className="ml-1.5 -mr-1 h-6 w-6 translate-y-px"
-                  aria-hidden="true"
-                />
-              </button>
-              
+                  onClick={() => setShowLogin(!showLogin)}
+                >
+                  Log In
+                  <ArrowRightIcon
+                    className="ml-1.5 -mr-1 h-6 w-6 translate-y-px"
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+            </div>
+            <div className=" flex flex-col justify-center gap-4 lg:w-1/2">
+              <img
+                src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
+                className="'md': '768px' h-auto w-full rounded-lg object-cover"
+                alt=""
+              />
             </div>
           </div>
-          <div className=" gap-4 flex flex-col justify-center lg:w-1/2">
-            <img
-              src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
-              className="h-auto w-full rounded-lg object-cover 'md': '768px'"
-              alt=""
-            />
-          </div>
-        </div>
-        }
+        )}
         {showLogin && <AuthLandingLogin />}
       </main>
     </>
