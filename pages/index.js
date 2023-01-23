@@ -1,22 +1,91 @@
-import { useSession } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
-import LandingLayout from "../components/LandingLayout";
-import LandingContainer from "../components/LandingContainer";
 import { ArrowRightIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import DesktopNavbar from "../components/DesktopNavbar";
 import MobileNavbar from "../components/MobileNavbar";
+import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
+import {
+	useSession,
+	useUser,
+	useSupabaseClient,
+} from "@supabase/auth-helpers-react";
 
 export default function Home() {
-  const session = useSession();
   const router = useRouter();
+  const [showLogin, setShowLogin] = useState(false)
+  const supabase = useSupabaseClient();
+  const session = useSession();
+	const user = useUser();
 
   useEffect(() => {
     if (session) {
       router.push("/overview");
     }
   }, [session]);
+
+
+  const AuthLandingLogin = () => {
+    return ( 
+      <div className="bg-gray-500 p-10 border-8">
+							<p
+								className="text-center text-[27px] text-slate-800"
+								style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
+							>
+								{"Log in to get your"}
+								<br></br>
+								{"personalised dashboard!"}
+							</p>
+							<Auth
+								supabaseClient={supabase}
+								appearance={{
+									theme: ThemeSupa,
+									style: {
+										button: {
+											// --> button needs hover styling if custom colors
+											// background: "white",
+											// color: "#1e293b",
+											// borderColor: "#1e293b",
+											// borderWidth: "2px",
+											fontSize: "20px",
+											borderRadius: "8px",
+											fontWeight: "400",
+											marginTop: "30px",
+											height: "58px",
+											paddingTop: "11px",
+											letterSpacing: "0.025em",
+										},
+										label: {
+											fontSize: "16px",
+											color: "#1e293b",
+											letterSpacing: "0.025em",
+											marginTop: "10px",
+										},
+										input: {
+											height: "58px",
+											fontSize: "20px",
+											color: "#1e293b",
+											border: "0px",
+											backgroundColor: "#f8fafc",
+										},
+										anchor: {
+											fontSize: "16px",
+											paddingTop: "20px",
+											color: "#475569",
+											textDecoration: "none",
+											letterSpacing: "0.025em",
+										},
+									},
+								}}
+								// theme="dark"
+							/>
+						</div>
+     );
+  }
+   
+  // export default AuthLandingLogin;
+
+
 
   return (
     <>
@@ -58,13 +127,14 @@ export default function Home() {
                 className="mt-16 inline-flex items-center justify-center rounded-lg border-2 border-slate-800 bg-white
 										px-7 py-2.5 text-lg font-normal tracking-wide text-slate-800 transition-colors hover:bg-slate-900 
 										hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
+               onClick={() => setShowLogin(true)}>
                 Log In
                 <ArrowRightIcon
                   className="ml-1.5 -mr-1 h-6 w-6 translate-y-px"
                   aria-hidden="true"
                 />
               </button>
+              {showLogin && <AuthLandingLogin />}
             </div>
           </div>
           <div className="border border-red-600 gap-4 flex flex-col justify-center lg:w-1/2">
