@@ -32,6 +32,7 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 													: "text-slate-400 group-hover:text-slate-500",
 												"mr-3 h-6 w-6"
 											)}
+											style = {{  }}
 											aria-hidden="true"
 										/>
 										{item.name}
