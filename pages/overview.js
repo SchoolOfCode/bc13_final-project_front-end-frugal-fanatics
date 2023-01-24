@@ -1,7 +1,6 @@
 import BudgetOverview from "../components/BudgetOverview";
 import DashboardLayout from "../components/DashboardLayout";
 import SavingsOverview from "../components/SavingsOverview";
-import Mindfulness from "../components/Mindfulness";
 import TotalSavings from "../components/TotalSavings";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
@@ -46,7 +45,7 @@ const Overview = ({}) => {
 			);
 			console.log("supabase user ->", user);
 		}
-	}, [session]);
+	}, [session, supabase, user]);
 
 	// If there is no user session, push to homepage
 	// useEffect(() => {

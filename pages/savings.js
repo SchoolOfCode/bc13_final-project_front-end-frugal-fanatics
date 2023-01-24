@@ -8,23 +8,23 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { getUserSavings } from "../utils/queries";
 import {
-  primaryNavigation,
-  secondaryNavigation,
-  setCurrentPage,
+	primaryNavigation,
+	secondaryNavigation,
+	setCurrentPage,
 } from "../utils/navigation";
 import {
-  useUser,
-  useSession,
-  useSupabaseClient,
+	useUser,
+	useSession,
+	useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 import { userSavingsState } from "../data/states";
 
 const Savings = () => {
-  setCurrentPage(primaryNavigation, "Savings");
-  const router = useRouter();
-  const session = useSession();
-  const supabase = useSupabaseClient();
-  const user = useUser();
+	setCurrentPage(primaryNavigation, "Savings");
+	const router = useRouter();
+	const session = useSession();
+	const supabase = useSupabaseClient();
+	const user = useUser();
 
   const [userSavings, setUserSavings] = useState(userSavingsState);
   useEffect(() => {

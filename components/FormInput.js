@@ -11,13 +11,13 @@ const FormInput = ({
 		<div>
 			<label
 				htmlFor="price"
-				className="block text-base font-normal leading-8 tracking-wide text-slate-800"
+				className="block font-sans text-lg font-medium leading-8 text-[#dfdfe2]"
 			>
 				{text}
 			</label>
 			<div className="relative mt-2 h-[58px] rounded-md">
 				<div className="pointer-events-none absolute inset-y-0 left-0 flex  items-center pl-3">
-					<span className="flex h-[58px] translate-y-[1px] items-center pl-2 text-xl text-slate-800">
+					<span className="flex h-[58px] items-center pl-2 text-xl text-[#dfdfe2]">
 						£
 					</span>
 				</div>
@@ -26,8 +26,7 @@ const FormInput = ({
 					name="price"
 					id={id}
 					onChange={(e) => handleChange(e, formInput, setFormInput, id, labels)}
-					className="block h-[58px] w-full rounded-lg border-0 bg-slate-50 pl-11 pr-4 text-xl 
-					placeholder:font-light placeholder:text-gray-300 focus:ring-2 focus:ring-indigo-500"
+					className="block h-[58px] w-full rounded-lg border-0 bg-[#282E43] pl-11 pr-4 text-xl placeholder:font-medium placeholder:text-[#646A7E] focus:ring-2 focus:ring-indigo-500"
 					placeholder="0"
 				/>
 			</div>

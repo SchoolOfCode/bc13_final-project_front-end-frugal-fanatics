@@ -42,13 +42,26 @@ export const handleNavClick = (pageName, router, supabase) => {
  * @property {boolean} current - Whether the page is currently selected.
  */
 export const primaryNavigation = [
-	{ name: "Overview", href: "/overview", icon: Squares2X2Icon, current: false },
-	{ name: "Budgeting", href: "/budgeting", icon: ChartBarIcon, current: false },
+	{
+		name: "Overview",
+		href: "/overview",
+		icon: Squares2X2Icon,
+		current: false,
+		iconColor: "#8459EF",
+	},
+	{
+		name: "Budgeting",
+		href: "/budgeting",
+		icon: ChartBarIcon,
+		current: false,
+		iconColor: "#10B981",
+	},
 	{
 		name: "Savings",
 		href: "/savings",
 		icon: CurrencyPoundIcon,
 		current: false,
+		iconColor: "#3B82F6",
 	},
 ];
 

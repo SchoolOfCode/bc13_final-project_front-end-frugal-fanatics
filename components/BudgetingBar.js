@@ -14,21 +14,24 @@ const BudgetingBar = ({
 	}, [paddedPercentage, barWidth]);
 
 	return (
-		<div className="flex flex-col gap-3">
+		<div
+			className="flex flex-col gap-2 md:gap-3"
+			style={{ fontFamily: "Shapiro Welter Wide", weight: "400" }}
+		>
 			<div className="flex justify-between">
-				<p className="leading-none text-[#202834] md:text-base md:leading-none">
+				<p className="text-[10px] leading-none text-[#EDEDEE] sm:text-sm md:text-lg md:leading-none">
 					{label}
-					<span className=" text-[#bfc9d5]"> / per month</span>
+					<span className=" text-[#6a727c]"> / month</span>
 				</p>
 
-				<p className="leading-none text-[#bfc9d5] md:text-base md:leading-none">
+				<p className="text-[10px] leading-none text-[#6a727c] sm:text-sm md:text-lg md:leading-none">
 					{`£${amount}`}
 					<span className="tracking-[0.3em]"> /</span>
-					<span className="text-[#202834]"> {`${percentage}%`}</span>
+					<span className="text-[#EDEDEE]"> {`${percentage}%`}</span>
 				</p>
 			</div>
 
-			<div className="h-3 w-full bg-[#F5F5F5]">
+			<div className="h-[6px] w-full bg-[#3D4767] sm:h-2 md:h-3">
 				<div
 					style={{
 						width: `${barWidth}%`,
