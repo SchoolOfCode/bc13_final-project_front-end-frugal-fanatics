@@ -101,26 +101,29 @@ export default function Home() {
         <LandingNavbar />
         <MobileLandPageNavbar />
         {!showLogin && (
-          <div className="flex flex-col items-center justify-center p-32 lg:flex-row">
-            <div className="flex flex-col gap-6 pr-14 lg:w-1/2">
+          <div className="flex flex-col items-center justify-center p-4 md:p-32 lg:flex-row">
+            <div className="flex flex-col gap-4 md:gap-6 md:pr-14 lg:w-1/2">
               <h1
-                className="text-left text-6xl leading-[70px]"
+                className="text-left text-3xl leading-10 md:text-6xl md:leading-[70px]"
                 style={{ fontFamily: "Shapiro Light Heavy Wide" }}
               >
-                Save More.
+                Take your money
                 <br></br>
-                Stress Less!
+                to the next level!
               </h1>
               <p className="font-sans text-lg font-normal leading-8 text-slate-400">
-                Gastropub hoodie vegan air plant kickstarter ascot adipisicing,
-                hoodie twee small batch incididunt fit freegan meh, microdosing.
-                Jianbing enim umami ascot, pork belly post-ironic meggings.
+                Say goodbye to scattered bills and scattered minds. With our
+                app, you can centralize and visualize your finances in one
+                easy-to-use platform. We want you to join us on this exciting
+                journey to financial freedom. Together, let's take control of
+                our future and make managing our finances a fun and enjoyable
+                experience. So, are you ready to join the fun and revolutionize
+                the way you handle your finances? Let's do this!
               </p>
-              <div className="mt-5 space-x-5">
+              <div className="mb-14 mt-5 flex flex-col gap-5 md:flex-row ">
                 <button
-                  className="inline-flex items-center justify-center rounded-lg border-2 border-[#108F68] bg-[#108F68]
-										px-7 py-2.5 font-sans text-lg font-medium tracking-wide text-white transition-colors hover:border-[#10B981] hover:bg-[#10B981]
-									 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="inline-flex min-w-max items-center justify-center rounded-lg border-2 border-[#108F68] bg-[#108F68]
+										px-7 py-2.5 font-sans text-lg font-medium tracking-wide text-white transition-colors hover:border-[#10B981] hover:bg-[#10B981] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                   onClick={() => {
                     router.push("/onboarding");
                   }}
@@ -128,9 +131,9 @@ export default function Home() {
                   Get Started!
                 </button>
                 <button
-                  className="inline-flex items-center justify-center rounded-lg border-2 border-slate-400 px-7
-										py-2.5 font-sans text-lg font-medium tracking-wide text-slate-300 transition-colors hover:border-white hover:bg-white
-										hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="inline-flex min-w-max items-center justify-center rounded-lg border-2 border-slate-400
+										px-7 py-2.5 font-sans text-lg font-medium tracking-wide text-slate-300 transition-colors hover:border-white
+										hover:bg-white hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                   onClick={() => setShowLogin(!showLogin)}
                 >
                   Log In
@@ -141,7 +144,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className=" flex flex-col justify-center gap-4 lg:w-1/2">
+            <div className=" flex flex-col justify-center gap-4 sm:min-w-[100px] lg:w-1/2">
               <img
                 src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
                 className="h-auto w-full rounded-lg object-cover"
