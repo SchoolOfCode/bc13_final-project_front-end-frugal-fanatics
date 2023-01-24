@@ -144,10 +144,10 @@ export const handleSubmit3 = (e, formInput, data, setData, steps, router) => {
 };
 
 export const nextStep = (steps, setFormStep, currentIndex, nextIndex) => {
-  setFormStep((currentStep) => currentStep + 1)
+  setFormStep((currentStep) => currentStep + 1);
   steps[currentIndex].status = "complete";
   steps[nextIndex].status = "current";
-}
+};
 
 // useEffect(() => {
 // 	console.log("userSavings", userSavings);
