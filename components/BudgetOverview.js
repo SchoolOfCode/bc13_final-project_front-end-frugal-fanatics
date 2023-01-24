@@ -9,10 +9,15 @@ function BudgetOverview({ data }) {
 
 	return (
 		<div className="stack flex w-full flex-col gap-10 rounded-2xl bg-[#212637] px-12 py-8 pb-14 max-[560px]:items-center xl:w-1/2">
-			<h2 className="text-2xl font-medium text-[#EDEDEE]">Budget</h2>
+			<h2
+				className="text-2xl text-[#EDEDEE]"
+				style={{ fontFamily: "Shapiro Welter Wide", fontWeight: "400" }}
+			>
+				Budget
+			</h2>
 			<div className="flex flex-col gap-6 min-[560px]:flex-row">
 				<BudgetDonut data={data} />
-				<div className="flex min-h-[180px] flex-col justify-between py-4">
+				<div className="flex min-h-[180px] flex-col justify-between py-1">
 					{labels.map((budget, index) => (
 						<div key={index} className="flex items-center gap-4 text-[#C1C6CD]">
 							<div
@@ -21,9 +26,7 @@ function BudgetOverview({ data }) {
 									backgroundColor: `${colors[index]}`,
 								}}
 							/>
-							<ul>
-								<li className="list-none text-sm">{budget}</li>
-							</ul>
+							<p className="text-md list-none">{budget}</p>
 						</div>
 					))}
 				</div>

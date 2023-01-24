@@ -6,7 +6,7 @@ function SavingsOverview({ data }) {
 		<div className="stack flex w-full flex-col gap-10 rounded-2xl bg-[#212637] px-12 py-8 pb-14 max-[560px]:items-center xl:w-1/2">
 			<h2
 				className="text-2xl font-medium text-[#EDEDEE]"
-				style={{ fontFamily: "Shapiro Welter Wide", weight: "500" }}
+				style={{ fontFamily: "Shapiro Welter Wide", fontWeight: "400" }}
 			>
 				Savings Pots
 			</h2>

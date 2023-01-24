@@ -5,6 +5,8 @@
 :root {
 	color-scheme: dark;
 	background-color: #212637;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 @layer components {
@@ -20,6 +22,11 @@
 @font-face {
 	font-family: "Shapiro Welter Wide";
 	src: url("/fonts/Shapiro45WelterWide.woff2") format("woff2");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Shapiro Welter Extd";
+	src: url("/fonts/Shapiro45WelterExtd.woff2") format("woff2");
 	font-weight: 400;
 }
 @font-face {
@@ -44,6 +51,6 @@
 }
 @font-face {
 	font-family: "Shapiro Light Heavy Wide";
-	src: url("/fonts/Shapiro65LightHeavy.woff2") format("woff2");
+	src: url("/fonts/Shapiro65LightHeavyWide.woff2") format("woff2");
 	font-weight: 600;
 }
