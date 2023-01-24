@@ -26,42 +26,42 @@ const Savings = () => {
 	const supabase = useSupabaseClient();
 	const user = useUser();
 
-	const [userSavings, setUserSavings] = useState(userSavingsState);
-	useEffect(() => {
-		if (session) {
-			getUserSavings(supabase, user, setUserSavings);
-		}
-	}, [session]);
-	// If there is no user session, push to homepage
-	useEffect(() => {
-		if (!session) {
-			router.push("/");
-		}
-	});
-	return (
-		<DashboardLayout
-			primaryNavigation={primaryNavigation}
-			secondaryNavigation={secondaryNavigation}
-			title="Savings Page"
-		>
-			<div className="flex flex-col items-center gap-8">
-				<TotalSavings data={userSavings} />
-				<SavingsPotsSection data={userSavings} />
-				<div className="mb-8 flex w-full flex-col gap-8 md:flex-row">
-					{savingArticlesData.map((articles) => (
-						<CardComponent
-							imageSrc={articles.imageSrc}
-							altSrc={articles.altSrc}
-							title={articles.title}
-							description={articles.description}
-							link={articles.link}
-							ariaLabelSrc={articles.ariaLabelSrc}
-						/>
-					))}
-				</div>
-			</div>
-		</DashboardLayout>
-	);
+  const [userSavings, setUserSavings] = useState(userSavingsState);
+  useEffect(() => {
+    if (session) {
+      getUserSavings(supabase, user, setUserSavings);
+    }
+  }, [session]);
+  //If there is no user session, push to homepage
+  // useEffect(() => {
+  //   if (!session) {
+  //     router.push("/");
+  // //   }
+  // });
+  return (
+    <DashboardLayout
+      primaryNavigation={primaryNavigation}
+      secondaryNavigation={secondaryNavigation}
+      title="Savings Page"
+    >
+      <div className="flex flex-col items-center gap-8">
+        <TotalSavings data={userSavings} />
+        <SavingsPotsSection/>
+        <div className="flex flex-col gap-10 min-[950px]:flex-row">
+          {savingArticlesData.map((articles) => (
+            <CardComponent
+              imageSrc={articles.imageSrc}
+              altSrc={articles.altSrc}
+              title={articles.title}
+              description={articles.description}
+              link={articles.link}
+              ariaLabelSrc={articles.ariaLabelSrc}
+            />
+          ))}
+        </div>
+      </div>
+    </DashboardLayout>
+  );
 };
 
 export default Savings;

@@ -1,5 +1,5 @@
 import React from "react";
-import BudgetDonut from "./../components/BudgetDonut";
+import BudgetDonut from "./../components/donuts/BudgetDonut";
 import { extractLabels } from "../utils/helpers";
 import { budgetOverviewColors as colors } from "../data/colors";
 
