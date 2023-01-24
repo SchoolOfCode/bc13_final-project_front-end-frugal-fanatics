@@ -93,8 +93,8 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favBicon.ico" />
 			</Head>
-			<LandingNavbar />
-			<main>
+			<main className="h-full bg-[#191E2B]">
+				<LandingNavbar />
 				{!showLogin && (
 					<div className="flex flex-col items-center justify-center p-32 lg:flex-row">
 						<div className="flex flex-col gap-6 pr-14 lg:w-1/2">
