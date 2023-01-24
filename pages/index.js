@@ -1,152 +1,157 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import { ArrowRightIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import {
-	useSession,
-	useUser,
-	useSupabaseClient,
+  useSession,
+  useUser,
+  useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 import LandingNavbar from "../components/LandingPageNavbar";
+import MobileLandPageNavbar from "./MobileLandPageNavBar";
 
 export default function Home() {
-	const router = useRouter();
-	const [showLogin, setShowLogin] = useState(false);
-	const supabase = useSupabaseClient();
-	const session = useSession();
-	const user = useUser();
+  const router = useRouter();
+  const [showLogin, setShowLogin] = useState(false);
+  const supabase = useSupabaseClient();
+  const session = useSession();
+  const user = useUser();
 
-	useEffect(() => {
-		if (session) {
-			router.push("/overview");
-		}
-	}, [session]);
+  useEffect(() => {
+    if (session) {
+      router.push("/overview");
+    }
+  }, [session]);
 
-	const AuthLandingLogin = () => {
-		return (
-			<div className="flex h-screen justify-center pt-32">
-				<div className="absolute h-3/5 w-1/2 rounded-lg border-4 border-black p-10">
-					<p
-						className="text-center text-[27px] text-slate-800"
-						style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
-					>
-						{"Log in to get your"}
-						<br></br>
-						{"personalised dashboard!"}
-					</p>
-					<Auth
-						supabaseClient={supabase}
-						appearance={{
-							theme: ThemeSupa,
-							style: {
-								button: {
-									// --> button needs hover styling if custom colors
-									// background: "white",
-									// color: "#1e293b",
-									// borderColor: "#1e293b",
-									// borderWidth: "2px",
-									fontSize: "20px",
-									borderRadius: "8px",
-									fontWeight: "400",
-									marginTop: "30px",
-									height: "58px",
-									paddingTop: "11px",
-									letterSpacing: "0.025em",
-								},
-								label: {
-									fontSize: "16px",
-									color: "#1e293b",
-									letterSpacing: "0.025em",
-									marginTop: "10px",
-								},
-								input: {
-									height: "58px",
-									fontSize: "20px",
-									color: "#1e293b",
-									border: "0px",
-									backgroundColor: "#f8fafc",
-								},
-								anchor: {
-									fontSize: "16px",
-									paddingTop: "20px",
-									color: "#475569",
-									textDecoration: "none",
-									letterSpacing: "0.025em",
-								},
-							},
-						}}
-						// theme="dark"
-					/>
-				</div>
-			</div>
-		);
-	};
+  const AuthLandingLogin = () => {
+    return (
+      <div className="flex h-screen justify-center pt-32">
+        <div className="max-w-[480px] rounded-lg px-4">
+          <>
+            <p
+              className="text-center text-[27px] text-[#EDEDEE]"
+              style={{ fontFamily: "Shapiro Middle Wide", weight: "500" }}
+            >
+              {"Log in to get your"}
+              <br></br>
+              {"personalised dashboard!"}
+            </p>
+            <Auth
+              supabaseClient={supabase}
+              appearance={{
+                theme: ThemeSupa,
+                style: {
+                  button: {
+                    // --> button needs hover styling if custom colors
+                    // background: "white",
+                    // color: "#1e293b",
+                    // borderColor: "#1e293b",
+                    // borderWidth: "2px",
+                    fontSize: "20px",
+                    borderRadius: "8px",
+                    fontWeight: "400",
+                    marginTop: "30px",
+                    height: "58px",
+                    paddingTop: "11px",
+                    letterSpacing: "0.025em",
+                  },
+                  label: {
+                    fontSize: "16px",
+                    fontWeight: "500",
+                    color: "#B3B3C1",
+                    letterSpacing: "0.025em",
+                    marginTop: "10px",
+                  },
+                  input: {
+                    height: "58px",
+                    fontSize: "20px",
+                    color: "#EDEDEE",
+                    border: "0px",
+                    backgroundColor: "#282E43",
+                  },
+                  anchor: {
+                    fontSize: "16px",
+                    paddingTop: "20px",
+                    color: "#8C939D",
+                    textDecoration: "none",
+                    letterSpacing: "0.025em",
+                  },
+                },
+              }}
+              // theme="dark"
+            />
+          </>
+        </div>
+      </div>
+    );
+  };
 
-	// export default AuthLandingLogin;
+  // export default AuthLandingLogin;
 
-	return (
-		<>
-			<Head>
-				<title>Create Next App</title>
-				<meta name="description" content="Generated by create next app" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favBicon.ico" />
-			</Head>
-			<main className="h-full bg-[#191E2B]">
-				<LandingNavbar />
-				{!showLogin && (
-					<div className="flex flex-col items-center justify-center p-32 lg:flex-row">
-						<div className="flex flex-col gap-6 pr-14 lg:w-1/2">
-							<h1
-								className="text-left text-6xl leading-[70px]"
-								style={{ fontFamily: "Shapiro Light Heavy Wide" }}
-							>
-								Save More.
-								<br></br>
-								Stress Less!
-							</h1>
-							<p className="font-sans text-lg font-normal leading-8 text-slate-400">
-								Gastropub hoodie vegan air plant kickstarter ascot adipisicing,
-								hoodie twee small batch incididunt fit freegan meh, microdosing.
-								Jianbing enim umami ascot, pork belly post-ironic meggings.
-							</p>
-							<div className="mt-5 space-x-5">
-								<button
-									className="inline-flex items-center justify-center rounded-lg border-2 border-[#108F68] bg-[#108F68]
+  return (
+    <>
+      <Head>
+        <title>Create Next App</title>
+        <meta name="description" content="Generated by create next app" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favBicon.ico" />
+      </Head>
+      <main className="h-full bg-[#191E2B]">
+        <LandingNavbar />
+        <MobileLandPageNavbar />
+        {!showLogin && (
+          <div className="flex flex-col items-center justify-center p-32 lg:flex-row">
+            <div className="flex flex-col gap-6 pr-14 lg:w-1/2">
+              <h1
+                className="text-left text-6xl leading-[70px]"
+                style={{ fontFamily: "Shapiro Light Heavy Wide" }}
+              >
+                Save More.
+                <br></br>
+                Stress Less!
+              </h1>
+              <p className="font-sans text-lg font-normal leading-8 text-slate-400">
+                Gastropub hoodie vegan air plant kickstarter ascot adipisicing,
+                hoodie twee small batch incididunt fit freegan meh, microdosing.
+                Jianbing enim umami ascot, pork belly post-ironic meggings.
+              </p>
+              <div className="mt-5 space-x-5">
+                <button
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-[#108F68] bg-[#108F68]
 										px-7 py-2.5 font-sans text-lg font-medium tracking-wide text-white transition-colors hover:border-[#10B981] hover:bg-[#10B981]
 									 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-									onClick={() => {
-										router.push("/onboarding");
-									}}
-								>
-									Get Started!
-								</button>
-								<button
-									className="inline-flex items-center justify-center rounded-lg border-2 border-slate-400 px-7
+                  onClick={() => {
+                    router.push("/onboarding");
+                  }}
+                >
+                  Get Started!
+                </button>
+                <button
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-slate-400 px-7
 										py-2.5 font-sans text-lg font-medium tracking-wide text-slate-300 transition-colors hover:border-white hover:bg-white
 										hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-									onClick={() => setShowLogin(!showLogin)}
-								>
-									Log In
-									<ArrowRightIcon
-										className="ml-1.5 -mr-1 h-5 w-5 stroke-[2px]"
-										aria-hidden="true"
-									/>
-								</button>
-							</div>
-						</div>
-						<div className=" flex flex-col justify-center gap-4 lg:w-1/2">
-							<img
-								src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
-								className="h-auto w-full rounded-lg object-cover"
-								alt=""
-							/>
-						</div>
-					</div>
-				)}
-				{showLogin && <AuthLandingLogin />}
-			</main>
-		</>
-	);
+                  onClick={() => setShowLogin(!showLogin)}
+                >
+                  Log In
+                  <ArrowRightIcon
+                    className="ml-1.5 -mr-1 h-5 w-5 stroke-[2px]"
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+            </div>
+            <div className=" flex flex-col justify-center gap-4 lg:w-1/2">
+              <img
+                src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
+                className="h-auto w-full rounded-lg object-cover"
+                alt=""
+              />
+            </div>
+          </div>
+        )}
+        {showLogin && <AuthLandingLogin />}
+      </main>
+    </>
+  );
 }
