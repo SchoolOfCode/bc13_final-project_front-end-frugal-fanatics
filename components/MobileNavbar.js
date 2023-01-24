@@ -8,7 +8,7 @@ const MobileNavbar = ({ setSidebarOpen }) => {
 		<div className="lg:hidden">
 			<div className="flex items-center justify-between border-b border-[#373C51] bg-[#1A1E2C] px-4 py-1.5">
 				<div>
-					<Image src="logo.svg" alt="Your Company" height="32" width="157" />
+					<Image src="logo.svg" alt="Your Company" height="27" width="126" />
 				</div>
 				<div>
 					<button
@@ -17,7 +17,10 @@ const MobileNavbar = ({ setSidebarOpen }) => {
 						onClick={() => setSidebarOpen(true)}
 					>
 						<span className="sr-only">Open sidebar</span>
-						<Bars3Icon className="h-6 w-6 stroke-[#8A8A9C]" aria-hidden="true" />
+						<Bars3Icon
+							className="h-6 w-6 stroke-[#8A8A9C]"
+							aria-hidden="true"
+						/>
 					</button>
 				</div>
 			</div>
