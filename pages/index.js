@@ -107,14 +107,16 @@ export default function Home() {
                 className="text-left text-6xl leading-[70px]"
                 style={{ fontFamily: "Shapiro Light Heavy Wide" }}
               >
-                Save More.
+                Take your money
                 <br></br>
-                Stress Less!
+                to the next level!
               </h1>
               <p className="font-sans text-lg font-normal leading-8 text-slate-400">
-                Gastropub hoodie vegan air plant kickstarter ascot adipisicing,
-                hoodie twee small batch incididunt fit freegan meh, microdosing.
-                Jianbing enim umami ascot, pork belly post-ironic meggings.
+                As the cost of living crisis we all face seemed daunting, we as
+                a group wanted to take control of our finances. To allow greater
+                visibility we created this app to centralise and visualise our
+                current financial status and future saving goals. Together lets
+                take control of our future.
               </p>
               <div className="mt-5 space-x-5">
                 <button
@@ -128,9 +130,9 @@ export default function Home() {
                   Get Started!
                 </button>
                 <button
-                  className="inline-flex items-center justify-center rounded-lg border-2 border-slate-400 px-7
-										py-2.5 font-sans text-lg font-medium tracking-wide text-slate-300 transition-colors hover:border-white hover:bg-white
-										hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="inline-flex min-w-max items-center justify-center rounded-lg border-2 border-slate-400
+										px-7 py-2.5 font-sans text-lg font-medium tracking-wide text-slate-300 transition-colors hover:border-white
+										hover:bg-white hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                   onClick={() => setShowLogin(!showLogin)}
                 >
                   Log In
