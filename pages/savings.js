@@ -8,23 +8,23 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { getUserSavings } from "../utils/queries";
 import {
-  primaryNavigation,
-  secondaryNavigation,
-  setCurrentPage,
+	primaryNavigation,
+	secondaryNavigation,
+	setCurrentPage,
 } from "../utils/navigation";
 import {
-  useUser,
-  useSession,
-  useSupabaseClient,
+	useUser,
+	useSession,
+	useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 import { userSavingsState } from "../data/states";
 
 const Savings = () => {
-  setCurrentPage(primaryNavigation, "Savings");
-  const router = useRouter();
-  const session = useSession();
-  const supabase = useSupabaseClient();
-  const user = useUser();
+	setCurrentPage(primaryNavigation, "Savings");
+	const router = useRouter();
+	const session = useSession();
+	const supabase = useSupabaseClient();
+	const user = useUser();
 
   const [userSavings, setUserSavings] = useState(userSavingsState);
   useEffect(() => {
@@ -32,12 +32,12 @@ const Savings = () => {
       getUserSavings(supabase, user, setUserSavings);
     }
   }, [session]);
-  // If there is no user session, push to homepage
-  useEffect(() => {
-    if (!session) {
-      router.push("/");
-    }
-  });
+  //If there is no user session, push to homepage
+  // useEffect(() => {
+  //   if (!session) {
+  //     router.push("/");
+  // //   }
+  // });
   return (
     <DashboardLayout
       primaryNavigation={primaryNavigation}
@@ -46,7 +46,7 @@ const Savings = () => {
     >
       <div className="flex flex-col items-center gap-8">
         <TotalSavings data={userSavings} />
-        <SavingsPotsSection data={userSavings} />
+        <SavingsPotsSection/>
         <div className="flex flex-col gap-10 min-[950px]:flex-row">
           {savingArticlesData.map((articles) => (
             <CardComponent

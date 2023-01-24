@@ -27,7 +27,6 @@ export default function Onboarding() {
 	const router = useRouter();
 	const [formInput, setFormInput] = useState(formInputState);
 	const [formStep, setFormStep] = useState(1);
-	// const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
 	const labels = extractLabels(formInput.expenses);
 	const [isFormComplete, setIsFormComplete] = useState(false);
 	const supabase = useSupabaseClient();
@@ -36,7 +35,7 @@ export default function Onboarding() {
 
 	useEffect(() => {
 		if (session && !isFormComplete) {
-			router.push("/savings");
+			router.push("/onboarding");
 		}
 
 		// Tried to force auth to default to sign up rather than sign in
@@ -48,6 +47,9 @@ export default function Onboarding() {
 
 		if (session && isFormComplete) {
 			handleSubmit(formInput, router);
+			steps[0].status = "current";
+			steps[1].status = "upcoming";
+			steps[2].status = "upcoming";
 		}
 	}, [session, isFormComplete]);
 

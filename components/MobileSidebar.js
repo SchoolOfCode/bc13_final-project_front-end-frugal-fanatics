@@ -6,6 +6,7 @@ import { classNames } from "../utils/helpers";
 import { handleNavClick } from "../utils/navigation";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const MobileSidebar = ({
 	sidebarOpen,
@@ -75,11 +76,12 @@ const MobileSidebar = ({
 							</Transition.Child>
 							<div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
 								{/* Logo starts here */}
-								<div className="flex flex-shrink-0 items-center px-4">
-									<img
-										className="h-6 w-auto"
+								<div className="flex flex-shrink-0 items-center px-6">
+									<Image
 										src="logo.svg"
 										alt="Your Company"
+										height="27"
+										width="126"
 									/>
 								</div>
 								{/* Mobile primary navigation starts here */}
@@ -93,12 +95,18 @@ const MobileSidebar = ({
 													item.current
 														? "bg-[#4E29AA] tracking-wide text-white"
 														: "tracking-wide text-white hover:bg-[#242A3D]",
-													"group flex w-full items-center rounded-md px-2 py-2 text-base font-normal"
+													"group flex w-full items-center rounded-md px-2 py-2 tracking-wide"
 												)}
+												style={{
+													fontFamily: "sans-serif",
+													fontWeight: "500",
+												}}
 											>
 												<item.icon
 													className="mr-4 h-6 w-6"
-													style={{ stroke: item.current ? "#FFF" : item.iconColor }}
+													style={{
+														stroke: item.current ? "#FFF" : item.iconColor,
+													}}
 													aria-hidden="true"
 												/>
 												{item.name}
@@ -122,6 +130,10 @@ const MobileSidebar = ({
 													: "tracking-wide text-white hover:bg-[#242A3D]",
 												"group flex w-full items-center rounded-md px-2 py-2 text-base font-normal"
 											)}
+											style={{
+												fontFamily: "sans-serif",
+												fontWeight: "500",
+											}}
 										>
 											<item.icon
 												className={classNames(

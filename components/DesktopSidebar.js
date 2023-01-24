@@ -20,9 +20,9 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 										onClick={() => handleNavClick(item.name, router)}
 										className={classNames(
 											item.current
-												? "bg-[#4E29AA] tracking-wide text-white"
-												: "tracking-wide text-white hover:bg-[#242A3D]",
-											"group flex w-full items-center rounded-md px-2 py-2 text-base font-normal"
+												? "bg-[#4E29AA] text-white"
+												: "text-white hover:bg-[#242A3D]",
+											"group flex w-full items-center rounded-xl px-6 py-3 font-sans font-medium"
 										)}
 									>
 										<item.icon
@@ -44,9 +44,9 @@ const DesktopSidebar = ({ primaryNavigation, secondaryNavigation }) => {
 									onClick={() => handleNavClick(item.name, router, supabase)}
 									className={classNames(
 										item.current
-											? "bg-[#4E29AA] tracking-wide text-white"
-											: "tracking-wide text-white hover:bg-[#242A3D]",
-										"group flex w-full items-center rounded-md px-2 py-2 text-base font-normal"
+											? "bg-[#4E29AA] text-white"
+											: "text-white hover:bg-[#242A3D]",
+										"group flex w-full items-center rounded-xl px-6 py-3 font-sans font-medium"
 									)}
 								>
 									<item.icon

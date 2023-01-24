@@ -48,11 +48,11 @@ const Overview = ({}) => {
 	}, [session, supabase, user]);
 
 	// If there is no user session, push to homepage
-	useEffect(() => {
-		if (!session) {
-			router.push("/");
-		}
-	});
+	// useEffect(() => {
+	// 	if (!session) {
+	// 		router.push("/");
+	// 	}
+	// });
 
 	return (
 		<DashboardLayout
