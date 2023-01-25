@@ -1,6 +1,6 @@
 import React from "react";
 
-import XmasDonut from "./donuts/XmasDonut";
+// import XmasDonut from "./donuts/XmasDonut";
 import xmas from "../public/xmas.png";
 import Image from "next/image";
 
@@ -29,7 +29,7 @@ function SavingsOverview({}) {
 			<div className="flex flex-col gap-3 min-[560px]:flex-row">
 				<div className="relative h-[180px] w-[180px]">
 					<div className="absolute left-1/2 top-1/2 h-full w-full translate-y-[-50%] translate-x-[-50%]">
-						<XmasDonut />
+						{/* <XmasDonut /> */}
 					</div>
 					<div className="absolute top-1/4 left-1/4">
 						<Image

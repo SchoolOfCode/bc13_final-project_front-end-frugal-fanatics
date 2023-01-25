@@ -20,9 +20,9 @@ const FormSteps = ({ steps }) => {
 									className="absolute inset-0 flex items-center"
 									aria-hidden="true"
 								>
-									<div className="h-[3px] w-full bg-[#108F68]" />
+									<div className="h-[3px] w-full bg-[#13A875]" />
 								</div>
-								<div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-[#108F68]">
+								<div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-[#13A875]">
 									<CheckIcon
 										className="h-5 w-5 text-white"
 										aria-hidden="true"
@@ -39,11 +39,11 @@ const FormSteps = ({ steps }) => {
 									<div className="h-[3px] w-full bg-[#404760]" />
 								</div>
 								<div
-									className="relative flex h-9 w-9 items-center justify-center rounded-full border-[3px] border-[#108F68] bg-[#212637]"
+									className="relative flex h-9 w-9 items-center justify-center rounded-full border-[3px] border-[#13A875] bg-[#212637]"
 									aria-current="step"
 								>
 									<span
-										className="h-3 w-3 rounded-full bg-[#108F68]"
+										className="h-3 w-3 rounded-full bg-[#13A875]"
 										aria-hidden="true"
 									/>
 									<span className="sr-only">{step.name}</span>
