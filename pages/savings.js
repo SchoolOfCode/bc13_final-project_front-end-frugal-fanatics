@@ -45,20 +45,20 @@ const Savings = () => {
 			title="Savings Page"
 		>
 			<div className="flex flex-col items-center gap-8">
-				{/* <TotalSavings data={userSavings} /> */}
+				<TotalSavings data={userSavings} />
 				<SavingsPotsSection />
-				{/* <div className="flex flex-col gap-10 min-[950px]:flex-row">
-          {savingArticlesData.map((articles) => (
-            <CardComponent
-              imageSrc={articles.imageSrc}
-              altSrc={articles.altSrc}
-              title={articles.title}
-              description={articles.description}
-              link={articles.link}
-              ariaLabelSrc={articles.ariaLabelSrc}
-            />
-          ))}
-        </div> */}
+				<div className="flex flex-col gap-10 min-[950px]:flex-row">
+					{savingArticlesData.map((articles) => (
+						<CardComponent
+							imageSrc={articles.imageSrc}
+							altSrc={articles.altSrc}
+							title={articles.title}
+							description={articles.description}
+							link={articles.link}
+							ariaLabelSrc={articles.ariaLabelSrc}
+						/>
+					))}
+				</div>
 			</div>
 		</DashboardLayout>
 	);
