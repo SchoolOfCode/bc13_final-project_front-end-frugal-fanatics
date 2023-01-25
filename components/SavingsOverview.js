@@ -131,21 +131,7 @@ function SavingsOverview({}) {
 			>
 				Savings Pots
 			</h2>
-			<div className="flex flex-col gap-12 md:flex-row">
-				{/* Xmas pot */}
-				<div className="relative h-[180px] w-[180px]">
-					<div className="absolute left-1/2 top-1/2 h-full w-full translate-y-[-50%] translate-x-[-50%]">
-						<Doughnut data={xmasDonutData} options={savingsOptions} />
-					</div>
-					<div className="absolute top-1/4 left-1/4">
-						<Image
-							src={xmasPot[0].img}
-							alt="A cartoon present with blue ribbons"
-							width={xmasPot[0].width}
-							height={xmasPot[0].height}
-						/>
-					</div>
-				</div>
+			<div className="flex flex-wrap flex-col gap-12 md:flex-row overflow-auto">
 				{/* Bday pot */}
 				<div className="relative h-[180px] w-[180px]">
 					<div className="absolute left-1/2 top-1/2 h-full w-full translate-y-[-50%] translate-x-[-50%]">
@@ -160,7 +146,7 @@ function SavingsOverview({}) {
 						/>
 					</div>
 				</div>
-				{/* Holiday pot */}
+				{/* {/* Holiday pot */}
 				<div className="relative h-[180px] w-[180px]">
 					<div className="absolute left-1/2 top-1/2 h-full w-full translate-y-[-50%] translate-x-[-50%]">
 						<Doughnut data={holidaysDonutData} options={savingsOptions} />
@@ -174,8 +160,22 @@ function SavingsOverview({}) {
 						/>
 					</div>
 				</div>
+				{/* Xmas pot */}
+				{/* <div className="relative h-[180px] w-[180px]">
+					<div className="absolute left-1/2 top-1/2 h-full w-full translate-y-[-50%] translate-x-[-50%]">
+						<Doughnut data={xmasDonutData} options={savingsOptions} />
+					</div>
+					<div className="absolute top-1/4 left-1/4">
+						<Image
+							src={xmasPot[0].img}
+							alt="A cartoon present with blue ribbons"
+							width={xmasPot[0].width}
+							height={xmasPot[0].height}
+						/>
+					</div>
+				</div> */}
 				{/* Nursery pot */}
-				<div className="relative h-[180px] w-[180px]">
+				{/* <div className="relative h-[180px] w-[180px]">
 					<div className="absolute left-1/2 top-1/2 h-full w-full translate-y-[-50%] translate-x-[-50%]">
 						<Doughnut data={nurseryDonutData} options={savingsOptions} />
 					</div>
@@ -187,7 +187,7 @@ function SavingsOverview({}) {
 							height={nurseryPot[0].height}
 						/>
 					</div>
-				</div>
+				</div>  */}
 			</div>
 		</div>
 	);
