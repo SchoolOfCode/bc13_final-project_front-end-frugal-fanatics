@@ -10,33 +10,33 @@ import palmtree from "/public/palmtree.png";
 import baby from "/public/baby.png";
 import Image from "next/image";
 
-const xmasPot = [
-	{
-		label: "Christmas",
-		total: 300,
-		goal: 750,
-		img: xmas,
-		width: 98,
-		height: 82,
-		alt: "A cartoon santa hat",
-		color: "#FFA59E",
-	},
-];
+// const xmasPot = [
+// 	{
+// 		label: "Christmas",
+// 		total: 300,
+// 		goal: 750,
+// 		img: xmas,
+// 		width: 98,
+// 		height: 82,
+// 		alt: "A cartoon santa hat",
+// 		color: "#FFA59E",
+// 	},
+// ];
 
-const xmasDonutData = {
-	labels: ["total", "goal"],
-	datasets: [
-		{
-			label: "Xmas",
-			data: [300, 750],
-			backgroundColor: ["#FFA59E", "#3D4767"],
-			hoverOffset: 0,
-			responsive: true,
-			maintainAspectRatio: true,
-			borderWidth: 0,
-		},
-	],
-};
+// const xmasDonutData = {
+// 	labels: ["total", "goal"],
+// 	datasets: [
+// 		{
+// 			label: "Xmas",
+// 			data: [300, 750],
+// 			backgroundColor: ["#FFA59E", "#3D4767"],
+// 			hoverOffset: 0,
+// 			responsive: true,
+// 			maintainAspectRatio: true,
+// 			borderWidth: 0,
+// 		},
+// 	],
+// };
 
 const birthdaysPot = [
 	{
@@ -44,10 +44,10 @@ const birthdaysPot = [
 		total: 300,
 		goal: 500,
 		img: presents,
-		width: 98,
+		width: 86,
 		height: 82,
 		alt: "A cartoon present with blue ribbons",
-		color: "#ABE6FF",
+		color: "#2D7DBC",
 	},
 ];
 
@@ -57,7 +57,7 @@ const birthdaysDonutData = {
 		{
 			label: "Birthdays",
 			data: [300, 500],
-			backgroundColor: ["#ABE6FF", "#3D4767"],
+			backgroundColor: ["#2D7DBC", "#3D4767"],
 			hoverOffset: 0,
 			responsive: true,
 			maintainAspectRatio: true,
@@ -75,7 +75,7 @@ const holidaysPot = [
 		width: 98,
 		height: 82,
 		alt: "Cartoon palm trees",
-		color: "#AFF192",
+		color: "#4EBE81",
 	},
 ];
 
@@ -85,7 +85,7 @@ const holidaysDonutData = {
 		{
 			label: "Holidays",
 			data: [340, 1000],
-			backgroundColor: ["#AFF192", "#3D4767"],
+			backgroundColor: ["#4EBE81", "#3D4767"],
 			hoverOffset: 0,
 			responsive: true,
 			maintainAspectRatio: true,
@@ -94,33 +94,33 @@ const holidaysDonutData = {
 	],
 };
 
-const nurseryPot = [
-	{
-		label: "Nursery",
-		total: 1200,
-		goal: 5000,
-		img: baby,
-		width: 98,
-		height: 82,
-		alt: "A cartoon baby bottle and baby grow",
-		color: "#B884FF",
-	},
-];
+// const nurseryPot = [
+// 	{
+// 		label: "Nursery",
+// 		total: 1200,
+// 		goal: 5000,
+// 		img: baby,
+// 		width: 98,
+// 		height: 82,
+// 		alt: "A cartoon baby bottle and baby grow",
+// 		color: "#B884FF",
+// 	},
+// ];
 
-const nurseryDonutData = {
-	labels: ["total", "goal"],
-	datasets: [
-		{
-			label: "Nursey",
-			data: [1200, 5000],
-			backgroundColor: ["#B884FF", "#3D4767"],
-			hoverOffset: 0,
-			responsive: true,
-			maintainAspectRatio: true,
-			borderWidth: 0,
-		},
-	],
-};
+// const nurseryDonutData = {
+// 	labels: ["total", "goal"],
+// 	datasets: [
+// 		{
+// 			label: "Nursey",
+// 			data: [1200, 5000],
+// 			backgroundColor: ["#B884FF", "#3D4767"],
+// 			hoverOffset: 0,
+// 			responsive: true,
+// 			maintainAspectRatio: true,
+// 			borderWidth: 0,
+// 		},
+// 	],
+// };
 
 function SavingsOverview({}) {
 	return (
@@ -131,13 +131,13 @@ function SavingsOverview({}) {
 			>
 				Savings Pots
 			</h2>
-			<div className="flex flex-wrap flex-col gap-12 md:flex-row overflow-auto">
+			<div className="flex flex-col flex-wrap gap-12 overflow-auto md:flex-row">
 				{/* Bday pot */}
 				<div className="relative h-[180px] w-[180px]">
 					<div className="absolute left-1/2 top-1/2 h-full w-full translate-y-[-50%] translate-x-[-50%]">
 						<Doughnut data={birthdaysDonutData} options={savingsOptions} />
 					</div>
-					<div className="absolute top-1/4 left-1/4">
+					<div className="absolute top-[26%] left-[28%]">
 						<Image
 							src={birthdaysPot[0].img}
 							alt="A cartoon present with blue ribbons"
@@ -151,7 +151,7 @@ function SavingsOverview({}) {
 					<div className="absolute left-1/2 top-1/2 h-full w-full translate-y-[-50%] translate-x-[-50%]">
 						<Doughnut data={holidaysDonutData} options={savingsOptions} />
 					</div>
-					<div className="absolute top-1/4 left-1/4">
+					<div className="absolute top-[25%] left-[24%]">
 						<Image
 							src={holidaysPot[0].img}
 							alt="A cartoon present with blue ribbons"

@@ -44,10 +44,10 @@ const Savings = () => {
 			secondaryNavigation={secondaryNavigation}
 			title="Savings Page"
 		>
-			<div className="flex flex-col items-center gap-8">
-				<TotalSavings data={userSavings} />
+			<div className="flex flex-col items-start gap-8">
+				{/* <TotalSavings data={userSavings} /> */}
 				<SavingsPotsSection />
-				<div className="flex flex-col gap-10 min-[950px]:flex-row">
+				<div className="mb-8 flex w-full flex-col gap-8 md:flex-row">
 					{savingArticlesData.map((articles) => (
 						<CardComponent
 							imageSrc={articles.imageSrc}

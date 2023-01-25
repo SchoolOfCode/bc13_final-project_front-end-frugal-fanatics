@@ -19,7 +19,7 @@ const nurseryPot = [
 		width: 98,
 		height: 82,
 		alt: "A cartoon baby bottle and baby grow",
-		color: "#B884FF",
+		color: "#9D80C6",
 	},
 ];
 
@@ -40,7 +40,7 @@ const NurseryPot = ({}) => {
 			{
 				label: "Nursey",
 				data: [progress, remainder],
-				backgroundColor: ["#B884FF", "#3D4767"],
+				backgroundColor: ["#9D80C6", "#3D4767"],
 				hoverOffset: 0,
 				responsive: true,
 				maintainAspectRatio: true,
@@ -91,7 +91,7 @@ const NurseryPot = ({}) => {
 				{
 					label: "Nursery",
 					data: [progress, remainder],
-					backgroundColor: ["#B884FF", "#3D4767"],
+					backgroundColor: ["#9D80C6", "#3D4767"],
 					hoverOffset: 0,
 					responsive: true,
 					maintainAspectRatio: true,
@@ -107,7 +107,7 @@ const NurseryPot = ({}) => {
 				<div className="absolute left-1/2 top-1/2 h-full w-full translate-y-[-50%] translate-x-[-50%]">
 					<Doughnut data={nurseryDonutData} options={savingsOptions} />
 				</div>
-				<div className="absolute top-1/4 left-1/4">
+				<div className="absolute top-[30%] left-[22%]">
 					<Image
 						src={nurseryPot[0].img}
 						alt="A cartoon present with blue ribbons"
@@ -116,7 +116,10 @@ const NurseryPot = ({}) => {
 					/>
 				</div>
 			</div>
-			<h3 className="mb-[-7px] text-xl font-medium text-[#EDEDEE]">
+			<h3
+				className="mb-[-7px] text-xl font-medium text-[#EDEDEE]"
+				style={{ fontFamily: "Shapiro Welter Wide", weight: "400" }}
+			>
 				{nurseryPot[0].label}
 			</h3>
 			<div className="flex flex-col items-center gap-3">
