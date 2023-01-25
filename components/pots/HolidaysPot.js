@@ -119,19 +119,17 @@ const HolidaysPot = ({}) => {
 				</div>
 			</div>
 			<h3
-				className="mb-[-7px] text-xl font-medium text-[#EDEDEE]"
+				className="mb-[-7px] mt-2 text-2xl font-medium text-[#EDEDEE]"
 				style={{ fontFamily: "Shapiro Welter Wide", weight: "400" }}
 			>
 				{holidaysPot[0].label}
 			</h3>
 			<div className="flex flex-col items-center gap-3">
-				<p className="font-light tracking-wide text-[#EDEDEE]">
-					Current: £{progress}
-				</p>
-				<p className="font-light tracking-wide text-[#EDEDEE]">Goal: £{goal}</p>
+				<p className="tracking-wide text-slate-300">Current: £{progress}</p>
+				<p className="tracking-wide text-slate-300">Goal: £{goal}</p>
 			</div>
 			<button
-				className="flex items-center gap-2 rounded-lg py-2.5 pr-6 pl-4"
+				className="flex items-center gap-2 rounded-lg bg-[#363D56] py-2.5 pr-6 pl-4"
 				color={holidaysPot[0].color}
 				onClick={openModal}
 			>
