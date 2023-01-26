@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Cloud1 } from "./../components/Cloud1.js";
 import { Cloud2 } from "./../components/Cloud2.js";
 import { useRouter } from "next/router";
