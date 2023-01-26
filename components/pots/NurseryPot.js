@@ -127,7 +127,8 @@ const NurseryPot = ({}) => {
 				<p className="tracking-wide text-slate-300">Goal: £{goal}</p>
 			</div>
 			<button
-				className="flex items-center gap-2 rounded-lg bg-[#363D56] py-2.5 pr-6 pl-4"
+				className="flex items-center gap-2 rounded-lg bg-[#363D56] py-2.5 pr-6 pl-4 hover:border-[#4E29AA] hover:bg-[#4E29AA]"
+				style={{ fontFamily: "Shapiro Welter Wide" }}
 				color={nurseryPot[0].color}
 				onClick={openModal}
 			>
@@ -137,20 +138,20 @@ const NurseryPot = ({}) => {
 			<div>
 				{showConfetti && <Confetti />}
 				<Modal
-					className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-30 backdrop-blur-sm"
+					className="fixed inset-0 flex items-center justify-center bg-[#1A1E2C] bg-opacity-95 backdrop-blur-sm"
 					isOpen={modalIsOpen}
 					onRequestClose={closeModal}
 				>
 					<div classname="flex py-6 px-6 lg:px-8">
 						<div className="flex flex-row justify-between">
 							<div
-								className="mb-2 text-left text-xl font-medium text-[#212637]"
+								className="mb-2 ml-4 text-left text-xl font-medium text-[##EDEDEE]"
 								style={{ fontFamily: "Shapiro Welter Wide" }}
 							>
 								Add to your pot
 							</div>
 							<button
-								className="flex justify-end pr-2 text-xl text-[#212637] hover:border-[#4E29AA] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+								className="flex justify-end pr-2 text-xl text-[#EDEDEE] hover:border-[#4E29AA] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
 								style={{ fontFamily: "Shapiro Welter Wide" }}
 								onClick={closeModal}
 							>
