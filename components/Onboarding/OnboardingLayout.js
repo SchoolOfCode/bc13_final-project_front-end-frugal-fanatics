@@ -1,6 +1,6 @@
 import Head from "next/head";
-import DesktopNavbar from "./DesktopNavbar";
-import MobileNavbar from "./MobileNavbar";
+import DesktopNavbar from "../Desktop/DesktopNavbar";
+import MobileNavbar from "../Mobile/MobileNavbar";
 
 const OnboardingLayout = ({
 	children,

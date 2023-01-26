@@ -1,7 +1,7 @@
 import React from "react";
-import BudgetDonut from "./../components/BudgetDonut.js";
-import { extractLabels } from "../utils/helpers.js";
-import { budgetOverviewColors as colors } from "../data/colors";
+import BudgetDonut from "./../Budgeting/BudgetDonut";
+import { extractLabels } from "../../utils/helpers.js";
+import { budgetOverviewColors as colors } from "../../data/colors";
 
 function BudgetOverview({ data }) {
 	// console.log("from budgetOverview ", data)

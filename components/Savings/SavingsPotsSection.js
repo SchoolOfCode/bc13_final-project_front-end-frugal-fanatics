@@ -1,7 +1,7 @@
-import BirthdaysPot from "./pots/BirthdaysPot";
-import XmasPot from "./pots/XmasPot";
-import NurseryPot from "./pots/NurseryPot";
-import HolidaysPot from "./pots/HolidaysPot";
+import BirthdaysPot from "../Pots/BirthdaysPot";
+import XmasPot from "../Pots/XmasPot";
+import NurseryPot from "../Pots/NurseryPot";
+import HolidaysPot from "../Pots/HolidaysPot";
 import React from "react";
 
 function SavingsPotsSection({}) {

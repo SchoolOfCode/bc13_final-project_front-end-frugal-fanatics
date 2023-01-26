@@ -1,5 +1,5 @@
 import React from "react";
-import { classNames } from "../utils/helpers";
+import { classNames } from "../../utils/helpers";
 import { CheckIcon } from "@heroicons/react/20/solid";
 
 const FormSteps = ({ steps }) => {

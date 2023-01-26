@@ -1,6 +1,6 @@
 import React from "react";
-import { classNames } from "../utils/helpers";
-import { handleNavClick } from "../utils/navigation";
+import { classNames } from "../../utils/helpers";
+import { handleNavClick } from "../../utils/navigation";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 

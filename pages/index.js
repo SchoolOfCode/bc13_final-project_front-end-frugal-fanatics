@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Cloud1 } from "./../components/Cloud1.js";
-import { Cloud2 } from "./../components/Cloud2.js";
+import { Cloud1 } from "./../components/Cloud/Cloud1.js";
+import { Cloud2 } from "./../components/Cloud/Cloud2.js";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Head from "next/head";
@@ -8,10 +8,10 @@ import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
-import LandingDesktopNavbar from "../components/LandingDesktopNavbar";
-import LandingMobileNavbar from "../components/LandingMobileNavbar";
+import LandingDesktopNavbar from "../components/Landing/LandingDesktopNavbar";
+import LandingMobileNavbar from "../components/Landing/LandingMobileNavbar";
 import piggyBankHero from "../public/piggy-bank-hero.png";
-import { FeaturesSection } from "../components/FeaturesSection";
+import { FeaturesSection } from "../components/Features/FeaturesSection";
 
 export default function Home() {
 	const router = useRouter();

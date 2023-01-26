@@ -1,11 +1,11 @@
 import { Chart as ChartJS, ArcElement } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import { extractAmounts } from "../utils/helpers.js";
+import { extractAmounts } from "../../utils/helpers.js";
 import {
 	outerBudgetOptions,
 	innerBudgetData,
 	innerBudgetOptions,
-} from "../data/charts";
+} from "../../data/charts";
 ChartJS.register(ArcElement);
 
 const BudgetDonut = ({ data }) => {

@@ -2,8 +2,8 @@
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { classNames } from "../utils/helpers";
-import { handleNavClick } from "../utils/navigation";
+import { classNames } from "../../utils/helpers";
+import { handleNavClick } from "../../utils/navigation";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";

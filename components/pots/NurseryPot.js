@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import { Chart as ChartJS, ArcElement, Chart } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { savingsOptions } from "../../data/charts";
-import TotalSavings from "../TotalSavings";
+import TotalSavings from "../Savings/TotalSavings";
 ChartJS.register(ArcElement);
 import baby from "/public/baby.png";
 import Confetti from "react-confetti";
@@ -122,13 +122,15 @@ const NurseryPot = ({}) => {
 			>
 				{nurseryPot[0].label}
 			</h3>
-			<div className="flex flex-col items-center gap-3">
+			<div
+				className="flex flex-col items-center gap-3"
+				style={{ fontFamily: "Shapiro Welter Wide" }}
+			>
 				<p className="tracking-wide text-slate-300">Current: £{progress}</p>
 				<p className="tracking-wide text-slate-300">Goal: £{goal}</p>
 			</div>
 			<button
-				className="flex items-center gap-2 rounded-lg bg-[#363D56] py-2.5 pr-6 pl-4 hover:border-[#4E29AA] hover:bg-[#4E29AA]"
-				style={{ fontFamily: "Shapiro Welter Wide" }}
+				className="flex items-center gap-2 rounded-lg bg-[#363D56] py-2.5 pr-3.5 pl-3.5 hover:border-[#4E29AA] hover:bg-[#4E29AA]"
 				color={nurseryPot[0].color}
 				onClick={openModal}
 			>

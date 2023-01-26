@@ -3,13 +3,13 @@ import { extractLabels } from "../utils/helpers";
 import { useRouter } from "next/router";
 import { steps } from "../utils/navigation";
 import { formInputState } from "../data/states";
-import FormButton from "./../components/FormButton";
-import OnboardingLayout from "../components/OnboardingLayout";
-import OnboardingContainer from "../components/OnboardingContainer";
-import FormContainer from "../components/FormContainer";
-import FormInput from "./../components/FormInput";
-import FormText from "./../components/FormText";
-import FormSteps from "./../components/FormSteps";
+import FormButton from "./../components/Form/FormButton";
+import OnboardingLayout from "../components/Onboarding/OnboardingLayout";
+import OnboardingContainer from "../components/Onboarding/OnboardingContainer";
+import FormContainer from "../components/Form/FormContainer";
+import FormInput from "./../components/Form/FormInput";
+import FormText from "./../components/Form/FormText";
+import FormSteps from "./../components/Form/FormSteps";
 import {
 	handleChange1,
 	handleChange2,
