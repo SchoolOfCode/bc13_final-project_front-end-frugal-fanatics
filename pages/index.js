@@ -11,7 +11,6 @@ import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import LandingDesktopNavbar from "../components/LandingDesktopNavbar";
 import LandingMobileNavbar from "../components/LandingMobileNavbar";
 import piggyBankHero from "../public/piggy-bank-hero.png";
-import levelUpStars from "../public/level-up-stars.png";
 import { FeaturesSection } from "../components/FeaturesSection";
 
 export default function Home() {
