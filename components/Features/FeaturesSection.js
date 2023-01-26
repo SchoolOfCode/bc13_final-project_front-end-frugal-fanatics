@@ -5,8 +5,8 @@ import clsx from "clsx";
 
 import { FeaturesContainer } from "../Features/FeaturesContainer";
 import screenshotOverview from "../../images/screenshots/edited_overview.png";
-import screenshotBudgeting from "../../images/screenshots/edited_pots.png";
-import screenshotSavings from "../../images/screenshots/edited_savings.png";
+import screenshotBudgeting from "../../images/screenshots/edited_budget.png";
+import screenshotSavings from "../../images/screenshots/edited_pots.png";
 
 const features = [
 	{
