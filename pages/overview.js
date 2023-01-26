@@ -1,7 +1,7 @@
 import BudgetOverview from "../components/Budgeting/BudgetOverview";
 import DashboardLayout from "../components/DashboardLayout";
-import SavingsOverview from "../components/Savings/SavingsOverview";
-import TotalSavings from "../components/Savings/TotalSavings";
+import SavingsOverview from "../components/SavingsOverview";
+import TotalSavings from "../components/TotalSavings";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { getUserOverview } from "../utils/queries";

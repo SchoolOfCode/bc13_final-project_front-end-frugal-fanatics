@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-key */
 import CardComponent from "../components/CardComponent";
 import DashboardLayout from "../components/DashboardLayout";
-import SavingsPotsSection from "../components/Savings/SavingsPotsSection";
-import TotalSavings from "../components/Savings/TotalSavings";
+import SavingsPotsSection from "../components/SavingsPotsSection";
+import TotalSavings from "../components/TotalSavings";
 import { savingArticlesData } from "../data/savingsArtData";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
@@ -32,7 +32,7 @@ const Savings = () => {
 			getUserSavings(supabase, user, setUserSavings);
 		}
 	}, [session]);
-	//If there is no user session, push to homepage
+	// //If there is no user session, push to homepage
 	useEffect(() => {
 		if (!session) {
 			router.push("/");
