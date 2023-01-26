@@ -32,12 +32,12 @@ const Savings = () => {
 			getUserSavings(supabase, user, setUserSavings);
 		}
 	}, [session]);
-	//If there is no user session, push to homepage
-	useEffect(() => {
-		if (!session) {
-			router.push("/");
-		}
-	});
+	// //If there is no user session, push to homepage
+	// useEffect(() => {
+	// 	if (!session) {
+	// 		router.push("/");
+	// 	}
+	// });
 	return (
 		<DashboardLayout
 			primaryNavigation={primaryNavigation}
