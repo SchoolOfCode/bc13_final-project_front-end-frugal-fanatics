@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import { Chart as ChartJS, ArcElement, Chart } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { savingsOptions } from "../../data/charts";
-import TotalSavings from "../Savings/TotalSavings";
+import TotalSavings from "../TotalSavings";
 ChartJS.register(ArcElement);
 import baby from "/public/baby.png";
 import Confetti from "react-confetti";

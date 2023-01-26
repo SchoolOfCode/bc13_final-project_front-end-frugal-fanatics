@@ -1,6 +1,6 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
-import { savingsOptions } from "../../data/charts";
+import { savingsOptions } from "../data/charts";
 import { Chart as ChartJS, ArcElement, Chart } from "chart.js";
 ChartJS.register(ArcElement);
 // import XmasDonut from "./donuts/XmasDonut";
