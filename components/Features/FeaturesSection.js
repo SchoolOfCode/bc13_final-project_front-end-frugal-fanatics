@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
 
-import { FeaturesContainer } from "./FeaturesContainer";
-import screenshotOverview from "../images/screenshots/overview.png";
-import screenshotBudgeting from "../images/screenshots/budgeting.png";
-import screenshotSavings from "../images/screenshots/savings.png";
+import { FeaturesContainer } from "../Features/FeaturesContainer";
+import screenshotOverview from "../../images/screenshots/overview.png";
+import screenshotBudgeting from "../../images/screenshots/budgeting.png";
+import screenshotSavings from "../../images/screenshots/savings.png";
 
 const features = [
   {

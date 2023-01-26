@@ -1,9 +1,9 @@
-import DesktopNavbar from "./DesktopNavbar";
-import DesktopSidebar from "./DesktopSidebar";
+import DesktopNavbar from "./Desktop/DesktopNavbar";
+import DesktopSidebar from "./Desktop/DesktopSidebar";
 import Head from "next/head";
 import { useState } from "react";
-import MobileNavbar from "./MobileNavbar";
-import MobileSidebar from "./MobileSidebar";
+import MobileNavbar from "./Mobile/MobileNavbar";
+import MobileSidebar from "./Mobile/MobileSidebar";
 
 const DashboardLayout = ({
 	children,
