@@ -33,11 +33,11 @@ const Savings = () => {
 		}
 	}, [session]);
 	//If there is no user session, push to homepage
-	useEffect(() => {
-	  if (!session) {
-	    router.push("/");
-	   }
-	});
+	// useEffect(() => {
+	// 	if (!session) {
+	// 		router.push("/");
+	// 	}
+	// });
 	return (
 		<DashboardLayout
 			primaryNavigation={primaryNavigation}
@@ -45,7 +45,7 @@ const Savings = () => {
 			title="Savings Page"
 		>
 			<div className="flex flex-col items-start gap-8">
-				{/* <TotalSavings data={userSavings} /> */}
+				<TotalSavings data={userSavings} />
 				<SavingsPotsSection />
 				<div className="mb-8 flex w-full flex-col gap-8 md:flex-row">
 					{savingArticlesData.map((articles) => (
