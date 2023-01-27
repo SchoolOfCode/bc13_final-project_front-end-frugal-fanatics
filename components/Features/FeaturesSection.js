@@ -121,7 +121,7 @@ export function FeaturesSection() {
 												{feature.description}
 											</p>
 										</div>
-										<div className="mt-14 w-[45rem] overflow-hidden rounded-2xl bg-[#181D29] shadow-xl shadow-black/10 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+										<div className="mt-14 w-[45rem] overflow-hidden overflow-x-auto rounded-2xl bg-[#181D29] shadow-xl shadow-black/10 sm:w-auto sm:overflow-visible lg:mt-0 lg:w-[67.8125rem]">
 											<Image
 												className=" w-full"
 												src={feature.image}
