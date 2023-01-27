@@ -7,6 +7,7 @@ import xmas from "../public/xmas.png";
 import palmtree from "../public/palmtree.png";
 import presents from "../public/present.png";
 import { Inter } from "@next/font/google";
+import Head from "next/head";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -73,6 +74,32 @@ export default function App({ Component, pageProps }) {
 	});
 
 	return (
+		<>
+	{/* This head adds our logo to the favicon on the browswer tab	 */}
+     <Head>
+        <link rel="icon" href="/favBicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
 		<SessionContextProvider
 			supabaseClient={supabase}
 			initialSession={pageProps.initialSession}
@@ -84,5 +111,6 @@ export default function App({ Component, pageProps }) {
 				<Component {...pageProps} data={data} setData={setData} />
 			</main>
 		</SessionContextProvider>
+	</>
 	);
 }
