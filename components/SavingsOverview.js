@@ -4,10 +4,10 @@ import { savingsOptions } from "../data/charts";
 import { Chart as ChartJS, ArcElement, Chart } from "chart.js";
 ChartJS.register(ArcElement);
 // import XmasDonut from "./donuts/XmasDonut";
-import xmas from "../public/xmas.png";
+//import xmas from "../public/xmas.png";
 import presents from "/public/present.png";
 import palmtree from "/public/palmtree.png";
-import baby from "/public/baby.png";
+//import baby from "/public/baby.png";
 import Image from "next/image";
 
 // const xmasPot = [
