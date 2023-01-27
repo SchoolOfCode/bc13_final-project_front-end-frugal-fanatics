@@ -51,7 +51,7 @@ const Budgeting = () => {
 			<div className="flex flex-col items-start gap-8">
 				<BudgetingSection data={userExpenses} income={userIncome} />
 				<div className="mb-8 flex w-full flex-col gap-8 md:flex-row">
-					{budgetArticlesData.map((articles) => (
+					{/* {budgetArticlesData.map((articles) => (
 						<CardComponent
 							imageSrc={articles.imageSrc}
 							altSrc={articles.altSrc}
@@ -60,7 +60,7 @@ const Budgeting = () => {
 							link={articles.link}
 							ariaLabelSrc={articles.ariaLabelSrc}
 						/>
-					))}
+					))} */}
 				</div>
 			</div>
 		</DashboardLayout>
