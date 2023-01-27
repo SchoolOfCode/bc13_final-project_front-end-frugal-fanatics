@@ -47,7 +47,7 @@ const Savings = () => {
 			<div className="flex flex-col items-start gap-8">
 				<TotalSavings data={userSavings} />
 				<SavingsPotsSection />
-				<div className="mb-8 flex w-full flex-col gap-8 md:flex-row">
+				{/* <div className="mb-8 flex w-full flex-col gap-8 md:flex-row">
 					{savingArticlesData.map((articles) => (
 						<CardComponent
 							imageSrc={articles.imageSrc}
@@ -58,7 +58,7 @@ const Savings = () => {
 							ariaLabelSrc={articles.ariaLabelSrc}
 						/>
 					))}
-				</div>
+				</div> */}
 			</div>
 		</DashboardLayout>
 	);
