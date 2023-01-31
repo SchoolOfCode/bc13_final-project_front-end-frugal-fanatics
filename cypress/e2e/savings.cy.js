@@ -1,3 +1,9 @@
+const { Features } = require("@headlessui/react/dist/utils/render");
+
+/**
+ * added localhost url to cypress.config to allow testing environment with local server.
+ * Commented out useeffect across budgeting,overview and savings pages to allow for testing of navigation and Features without forced routing to landing page.**/
+
 //test to check savings pahe successfully loads
 describe("The Savings Page", () => {
 	it("successfully loads", () => {
@@ -129,5 +135,20 @@ describe("When you click add savings a modal appears, then lower the pot savings
 		//change current
 		cy.get(".px-1 > .block").clear().type("200");
 		cy.contains("Save").click();
+	});
+});
+
+//check that without useffect being removed and forcing push, that you are routed back to landing page when you dont hold a valid sesssion
+
+describe("Forced navigation to landing page", () => {
+	it("should navigate to the landing page", () => {
+		// Start to try and visit the savings page without a session
+		cy.visit("/savings");
+
+		// The new url should include "/"
+		cy.url().should("contains", "/");
+
+		// The new page should contain a button with "get started"
+		cy.get("button").contains("Get Started");
 	});
 });
