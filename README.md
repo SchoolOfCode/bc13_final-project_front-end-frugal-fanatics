@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Frugal Fanatics - Frumo Budgeting App
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+![Logo](https://i.ibb.co/wwGpWGf/frumo-logo.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📝 Table of Contents
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [What problems are we solving?](#What_problems_are_we_solving?)
+- [The solution to the problem](#The_solution_to_the_problem)
+- [Future Scope](#future_scope)
+- [Setting up a local environment](#getting_started)
+- [View it live](#View_it_live)
+- [Tech Stack](#tech_stack)
+- [Instructions](#Instructions)
+- [Tech stack](#Tech_stack)
+- [In the works](#In_the_works)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgments)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 🔍 What problem are we solving? 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The cost of living crisis is like trying to fill a bucket with a hole in it. No matter how much you pour in, it just keeps leaking out. It's become a cause of stress for many of us as we try to make ends meet and afford the things we need. But don't worry, there's a solution that doesn't involve plugging the hole with your fingers. It's our budgeting app!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## ✨ The solution to the problem
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Frumo aims to make managing your money fun and easy. Our gamified tools help you set and achieve personal goals, while providing helpful resources for money decisions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+In short, our app is an easy, fun and effective way to take control of your finances and manage the cost of living crisis.
+## 👀 View it live
+Our website - [frumo.co.uk](https://frumo.co.uk/)
+##  Instructions
+
+To get started on the Frumo website, navigate to the homepage and click on the "Get Started" button. This will take you to the onboarding section where you can add information about your income, savings, and expenses. Once you have completed these steps, press the "Get Tailored Results" button.
+
+You will then be directed to the sign in/sign up page. If this is your first time using the website, please select "Don't have an account? Sign Up" and enter your email and desired password. For demo purposes we have disabled email verification so feel free to use a dummy email address.
+
+Once you have completed the sign-up process, your personalised dashboard will show on the overview page. You can also navigate to the budgeting or savings sections by clicking the corresponding tabs on the left-hand navigation bar. On the budgeting tab you can view expenses compared to your income. On the savings tab, you can set saving targets via the savings pots ("add savings button") and track your progress towards reaching them. Why not try adding savings to a pot? 
+
+
+## 💻 Tech stack
+
+**Client:** React, Next, TailwindCSS
+
+**Server:** Supabase, PostgreSQL
+
+**Testing:** Jest, Cypress
+## 🛠️ In the works
+- Improve auth user flow
+- Expand the onboarding process
+- Flesh out our gamified features and budgeting section
+- Interactive characters
+- Allow users to update their data sitewide
+
+## ✍️ Authors
+
+- [Callum Cheshire](https://github.com/callum-cheshire)
+- [Stephanie de Jong](https://github.com/skdejong)
+- [Mukti Zavery](https://github.com/mvhmz81)
+- [Fran Croutear-Foy](https://github.com/Franzsii)
+- [Shane Downes](https://github.com/shane-downes)
+- [Elliot Tasker](https://github.com/elliottasker)
+
+
+## 🫶 Acknowledgements
+
+We would like to express our deepest gratitude to the School of Code for their unwavering support and guidance during our coding journeys. Their friendly coaches and comprehensive curriculum have have been invaluable in helping us to become proficient and confident coders, we will be forever grateful for the opportunities and experiences that the School of Code has provided us.
+
+- https://www.schoolofcode.co.uk 
