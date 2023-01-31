@@ -138,29 +138,29 @@
 //   });
 // });
 
-// //Test if input of form 2 is able
-// describe("Check input is able to be 4000", () => {
-//   it("Gets, types and asserts", () => {
-//     cy.visit("https://frumo.co.uk");
+//Test if input of form 2 is able NOT WORKING
+describe("Check input is able to be 4000", () => {
+  it("Gets, types and asserts", () => {
+    cy.visit("https://frumo.co.uk");
 
-//     cy.contains("Get Started").click();
+    cy.contains("Get Started").click();
 
-//     // Should be on a new URL which
-//     // includes '/commands/actions'
-//     cy.url().should("include", "/onboarding");
+    // Should be on a new URL which
+    // includes '/commands/actions'
+    cy.url().should("include", "/onboarding");
 
-//     // Get an input, type into it
-//     cy.get(".relative > .block").type("3000");
+    // // Get an input, type into it
+    // cy.get(".relative > .block").type("3000");
 
-//     //  Verify that the value has been updated
-//     cy.get(".relative > .block").should("have.value", "3000");
+    // //  Verify that the value has been updated
+    // cy.get(".relative > .block").should("have.value", "3000");
 
-//     cy.contains("Next step").click();
+    cy.contains("Next step").click();
 
-//     // Get an input, type into it
-//     cy.get(".relative > .block").type("1000, 120,");
+    // // Get an input, type into it
+    // cy.get('[data-testid="rent"]').type("1000");
 
-//     //  Verify that the value has been updated
-//     cy.get(".relative > .block").should("have.value", "3000");
-//   });
-// });
+    //  Verify that the value has been updated
+    // cy.get('[data-testid="rent"]'').should("have.value", "1000");
+  });
+});
