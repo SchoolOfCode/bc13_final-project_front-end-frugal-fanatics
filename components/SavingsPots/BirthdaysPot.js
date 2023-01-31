@@ -13,7 +13,7 @@ ChartJS.register(ArcElement);
 const birthdaysPot = [
 	{
 		label: "Birthday",
-		total: 300,
+		total: 0,
 		goal: 500,
 		img: presents,
 		width: 86,
