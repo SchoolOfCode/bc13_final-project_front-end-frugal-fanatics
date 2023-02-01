@@ -58,7 +58,7 @@ const Savings = () => {
 							ariaLabelSrc={articles.ariaLabelSrc}
 						/>
 					))}
-				</div> 
+				</div>
 			</div>
 		</DashboardLayout>
 	);
