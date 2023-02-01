@@ -5,7 +5,7 @@
 // })
 describe("Supabase authentication", () => {
   it("logs in successfully", () => {
-    cy.visit("https://frumo.co.uk"); // visit the application
+    cy.visit("http://localhost:3000"); // visit the application
     cy.contains("Log In").click();
 
     cy.get(":nth-child(1) > .supabase-ui-auth_ui-input").type(
