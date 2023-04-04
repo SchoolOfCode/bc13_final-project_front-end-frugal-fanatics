@@ -75,3 +75,7 @@ Once you have completed the sign-up process, your personalised dashboard will sh
 We would like to express our deepest gratitude to the School of Code for their unwavering support and guidance during our coding journeys. Their friendly coaches and comprehensive curriculum have have been invaluable in helping us to become proficient and confident coders, we will be forever grateful for the opportunities and experiences that the School of Code has provided us.
 
 - https://www.schoolofcode.co.uk 
+
+## authentication
+
+We have used Supabase Authentication but have removed the requirement to verify your email so as to allow a qwuick review and run through for the project.
